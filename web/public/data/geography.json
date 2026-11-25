@@ -1,0 +1,399 @@
+{
+  "id": "geography",
+  "name": "Geography of India & Tamil Nadu",
+  "topics": [
+    {
+      "id": "river_systems",
+      "name": "Rivers & Drainage Systems",
+      "questions": [
+        {
+          "id": "q_0192",
+          "year": 2024,
+          "group": "Group 2",
+          "question": "Which of the following peninsular rivers flows westwards into the Arabian Sea?",
+          "options": [
+            "Godavari",
+            "Krishna",
+            "Narmada",
+            "Mahanadi"
+          ],
+          "correct_answer": 2,
+          "explanation": "The Narmada and Tapi rivers flow through rift valleys westwards and empty into the Arabian Sea.",
+          "difficulty": "G4",
+          "source": "PYQ_2024_G2",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_III"
+        },
+        {
+          "id": "q_0193",
+          "year": 2022,
+          "group": "Group 4",
+          "question": "The Kaveri river originates at Talakaveri located in which mountain range?",
+          "options": [
+            "Brahmagiri Hills",
+            "Anamudi Hills",
+            "Nilgiri Hills",
+            "Cardamom Hills"
+          ],
+          "correct_answer": 0,
+          "explanation": "The Kaveri river originates at Talakaveri in the Brahmagiri range of the Western Ghats in Kodagu, Karnataka.",
+          "difficulty": "G4",
+          "source": "PYQ_2022_G4",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_III"
+        },
+        {
+          "id": "q_0194",
+          "year": 2021,
+          "group": "Group 1",
+          "question": "Tamil Nadu receives the majority of its annual rainfall during which monsoon season?",
+          "options": [
+            "South-West Monsoon",
+            "North-East Monsoon (Retreating)",
+            "Pre-Monsoon Showers",
+            "Western Disturbances"
+          ],
+          "correct_answer": 1,
+          "explanation": "The North-East Monsoon (October to December) accounts for roughly 48% of Tamil Nadu's total rainfall.",
+          "difficulty": "G4",
+          "source": "PYQ_2021_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_III"
+        },
+        {
+          "id": "q_0195",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Which of the following is not a planetary wind?",
+          "options": [
+            "Westerlies",
+            "Trade winds",
+            "Monsoon",
+            "Polar easterlies"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_III"
+        },
+        {
+          "id": "q_0196",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "The place of India which does not have tropical evergreen forest is",
+          "options": [
+            "Eastern part of Western Ghats",
+            "Western part of Western Ghats",
+            "Andhaman and Nicobar islands",
+            "Eastern part of subtropical Himalayas"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_III"
+        },
+        {
+          "id": "q_0197",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Where is the head quarter of the Forest Survey of India (FSI) located?",
+          "options": [
+            "New Delhi",
+            "Dehradun",
+            "Chennai",
+            "Mumbai"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_III"
+        },
+        {
+          "id": "q_0198",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Which among these sanctuaries is not present in Tamil Nadu?",
+          "options": [
+            "Anaimalai",
+            "Point Calimer",
+            "Mundanthurai",
+            "Periyar"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_III"
+        },
+        {
+          "id": "q_0199",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "The major temperature fluctuations in surface waters of the tropical Eastern Pacific Ocean is called as",
+          "options": [
+            "Temperature inversion",
+            "Convection",
+            "Thermocline",
+            "El Nino and La Nina"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_III"
+        },
+        {
+          "id": "q_0200",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "The portion of incident radiation reflected back to space from the planet is called",
+          "options": [
+            "Atmospheric windows",
+            "Albedo",
+            "Rayleigh scattering",
+            "Law of scattering"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_III"
+        },
+        {
+          "id": "q_0201",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "A major diamond mining centre in Belgium is",
+          "options": [
+            "Aalberg",
+            "Aberdeen",
+            "Aabenraa",
+            "Andelkar"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_III"
+        },
+        {
+          "id": "q_0202",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "The phase of rapid growth of population in India falls",
+          "options": [
+            "between 1891 - 1921",
+            "between 1921 - 1951",
+            "between 1951 - 1981",
+            "between 1981 - 2001"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_III"
+        },
+        {
+          "id": "q_0203",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "In which of the following states of India, Inland water transport is not important?",
+          "options": [
+            "Kerala",
+            "West Bengal",
+            "Bihar",
+            "Gujarat"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_III"
+        },
+        {
+          "id": "q_0204",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Arrange the following sectors in India descending order according to the commercial energy consumption",
+          "options": [
+            "4, 3, 1, 2",
+            "3, 4, 1, 2",
+            "3, 4, 2, 1",
+            "4, 1, 3, 2"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_III"
+        },
+        {
+          "id": "q_0205",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Which country has come forward to help clean India’s River Ganga?",
+          "options": [
+            "Iran",
+            "Israel",
+            "Ireland",
+            "Italy"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_III"
+        },
+        {
+          "id": "q_0206",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "The Union Urban Development Ministry has selected 98 towns/cities from all over the country to graduate into smart cities in five years. Select the town/cities not included in the list from the following",
+          "options": [
+            "Coimbatore",
+            "Dindugul",
+            "Chidambaram",
+            "Erode"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_III"
+        },
+        {
+          "id": "q_geo_g1_01",
+          "year": 2022,
+          "group": "Group 1",
+          "question": "Consider the following statements regarding the River Cauvery:\nI. It originates at Talakaveri in the Brahmagiri Hills of the Western Ghats in Karnataka.\nII. The river bifurcates into two branches called Coleroon and Cauvery at the Upper Anaicut (Mukkombu).\nIII. Hogenakkal Falls is located where the river enters the Dharmapuri district of Tamil Nadu.\nIV. Bhavani, Noyyal, and Amaravathi are major right-bank tributaries of Cauvery.\nWhich of the statements given above are correct?",
+          "options": [
+            "I and III only",
+            "II and IV only",
+            "I, II and III only",
+            "I, II, III and IV"
+          ],
+          "correct_answer": 3,
+          "explanation": "All four statements are accurate geographical facts regarding the Cauvery river basin and its drainage course across Karnataka and Tamil Nadu.",
+          "source": "PYQ_2022_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_III",
+          "difficulty": "G1"
+        },
+        {
+          "id": "q_geo_g1_02",
+          "year": 2024,
+          "group": "Group 1",
+          "question": "Match List-I (Biosphere Reserves / Sanctuaries in Tamil Nadu) with List-II (Districts / Key Features):\nList-I:\n(a) Gulf of Mannar Marine Biosphere\n(b) Point Calimere Wildlife Sanctuary\n(c) Mudumalai National Park\n(d) Kalakkad Mundanthurai Tiger Reserve\nList-II:\n1. Nilgiris district (Elephant & Tiger habitat)\n2. Tirunelveli district (Agasthyamalai biome)\n3. Ramanathapuram & Thoothukudi (Coral reefs and Dugong)\n4. Nagapattinam district (Migratory waterbirds)\nSelect the correct answer using the codes given below:\n(a) - (b) - (c) - (d)",
+          "options": [
+            "3 - 4 - 1 - 2",
+            "2 - 3 - 4 - 1",
+            "3 - 1 - 4 - 2",
+            "4 - 3 - 1 - 2"
+          ],
+          "correct_answer": 0,
+          "explanation": "Gulf of Mannar (Coral/Dugong), Point Calimere (Nagapattinam migratory birds), Mudumalai (Nilgiris), KMTR (Tirunelveli Agasthyamalai).",
+          "source": "PYQ_2024_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_III",
+          "difficulty": "G1"
+        },
+        {
+          "id": "q_geo_g1_03",
+          "year": 2021,
+          "group": "Group 1",
+          "question": "Assertion [A]: Tamil Nadu receives the bulk of its annual rainfall during the North-East Monsoon season (October to December).\nReason [R]: The Western Ghats act as a topographical barrier to the South-West Monsoon winds, placing most of Tamil Nadu in a rain shadow region during June-September.\nSelect the correct answer:",
+          "options": [
+            "Both [A] and [R] are true, and [R] is the correct explanation of [A]",
+            "Both [A] and [R] are true, but [R] is NOT the correct explanation of [A]",
+            "[A] is true, but [R] is false",
+            "[A] is false, but [R] is true"
+          ],
+          "correct_answer": 0,
+          "explanation": "Because Tamil Nadu lies on the leeward (rain shadow) side of the Western Ghats during the SW monsoon, it depends on retreating NE monsoon winds which pick up moisture over the Bay of Bengal.",
+          "source": "PYQ_2021_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_III",
+          "difficulty": "G1"
+        },
+        {
+          "id": "q_geo_g1_04",
+          "year": 2022,
+          "group": "Group 1",
+          "question": "Consider the following statements regarding soil types in Tamil Nadu:\nI. Black soil (Regur) is rich in montmorillonite clay and exhibits self-ploughing characteristics upon drying.\nII. Red soil covers the largest geographical area in Tamil Nadu, derived from weathered crystalline metamorphic rocks.\nIII. Laterite soil is predominantly found in parts of Nilgiris, Salem, and Thanjavur formed by intense leaching.\nWhich of the statement(s) given above is/are correct?",
+          "options": [
+            "I and II only",
+            "II and III only",
+            "I and III only",
+            "I, II and III"
+          ],
+          "correct_answer": 3,
+          "explanation": "All three statements correctly characterize the soil taxonomy and geographical distribution across Tamil Nadu.",
+          "source": "PYQ_2022_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_III",
+          "difficulty": "G1"
+        },
+        {
+          "id": "q_geo_g1_05",
+          "year": 2024,
+          "group": "Group 1",
+          "question": "Match List-I (Mountain Passes of India) with List-II (Connecting Regions):\nList-I:\n(a) Zojila Pass\n(b) Nathu La Pass\n(c) Palghat (Palakkad) Gap\n(d) Bhor Ghat\nList-II:\n1. Sikkim with Tibet (China)\n2. Srinagar with Leh / Ladakh\n3. Mumbai with Pune\n4. Coimbatore (Tamil Nadu) with Palakkad (Kerala)\nChoose the correct code:\n(a) - (b) - (c) - (d)",
+          "options": [
+            "2 - 1 - 4 - 3",
+            "1 - 2 - 3 - 4",
+            "2 - 4 - 1 - 3",
+            "4 - 1 - 2 - 3"
+          ],
+          "correct_answer": 0,
+          "explanation": "Zojila connects Srinagar-Leh; Nathu La connects Sikkim-Tibet; Palghat gap connects Coimbatore-Palakkad; Bhor Ghat links Mumbai-Pune.",
+          "source": "PYQ_2024_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_III",
+          "difficulty": "G1"
+        }
+      ],
+      "syllabus_unit": "UNIT_III"
+    },
+    {
+      "id": "monsoon_climate",
+      "name": "Monsoon, Climate & Weather",
+      "questions": [
+        {
+          "id": "q_0207",
+          "year": 2021,
+          "group": "Group 1",
+          "question": "Tamil Nadu receives the majority of its annual rainfall during which monsoon season?",
+          "options": [
+            "South-West Monsoon",
+            "North-East Monsoon (Retreating)",
+            "Pre-Monsoon Showers",
+            "Western Disturbances"
+          ],
+          "correct_answer": 1,
+          "explanation": "The North-East Monsoon (October to December) accounts for roughly 48% of Tamil Nadu's total rainfall.",
+          "difficulty": "G4",
+          "source": "PYQ_2021_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_III"
+        }
+      ],
+      "syllabus_unit": "UNIT_III"
+    }
+  ],
+  "syllabus_unit": "UNIT_III"
+}

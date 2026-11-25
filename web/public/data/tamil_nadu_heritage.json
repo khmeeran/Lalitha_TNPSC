@@ -1,0 +1,190 @@
+{
+  "id": "tamil_nadu_heritage",
+  "name": "Tamil Nadu History and Heritage",
+  "topics": [
+    {
+      "id": "sangam_literature",
+      "name": "Sangam Literature & Ancient Polity",
+      "questions": [
+        {
+          "id": "q_0369",
+          "year": 2022,
+          "group": "Group 1",
+          "question": "The Keeladi archaeological excavations along the Vaigai river basin have proven that the Sangam Age dates back to",
+          "options": [
+            "6th Century BCE",
+            "1st Century CE",
+            "3rd Century BCE",
+            "10th Century BCE"
+          ],
+          "correct_answer": 0,
+          "explanation": "Carbon-dating results from Beta Analytic (USA) pushed the antiquity of Keeladi urban settlement to 6th Century BCE (580 BCE).",
+          "difficulty": "G4",
+          "source": "PYQ_2022_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_VIII"
+        },
+        {
+          "id": "q_0370",
+          "year": 2024,
+          "group": "Group 2",
+          "question": "Thirukkural is structured into three main divisions (Paal). What are they?",
+          "options": [
+            "Aram (Virtue), Porul (Wealth), Inbam (Love)",
+            "Aram (Virtue), Veedu (Salvation), Porul (Wealth)",
+            "Neethi (Justice), Kodai (Charity), Veeram (Valour)",
+            "Thavam (Penance), Inbam (Love), Ozhukkam (Conduct)"
+          ],
+          "correct_answer": 0,
+          "explanation": "Thiruvalluvar organized Thirukkural into 1330 couplets across Aram (38 chapters), Porul (70 chapters), and Inbam (25 chapters).",
+          "difficulty": "G2",
+          "source": "PYQ_2024_G2",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_VIII"
+        },
+        {
+          "id": "q_tam_g1_01",
+          "year": 2022,
+          "group": "Group 1",
+          "question": "Consider the following statements regarding the Sangam Tinai (physiographic landscapes) framework:\nI. Kurinji represents the mountainous landscape with hunting and gathering, presided over by Murugan (Seyon).\nII. Mullai represents pastoral forest tracts associated with cattle rearing, presided over by Mayon (Vishnu).\nIII. Marutham represents fertile agrarian plains associated with paddy cultivation, presided over by Vendan (Indra).\nIV. Neythal represents coastal seaboard regions associated with fishing and salt-making, presided over by Varunan.\nWhich of the statements given above are correct?",
+          "options": [
+            "I and III only",
+            "II and IV only",
+            "I, II and III only",
+            "I, II, III and IV"
+          ],
+          "correct_answer": 3,
+          "explanation": "According to Tolkappiyam Porulatikaram, the five-fold ecological landscape (Aintinai) and their presiding deities are perfectly represented in all four statements.",
+          "source": "PYQ_2022_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_VIII",
+          "difficulty": "G1"
+        },
+        {
+          "id": "q_tam_g1_02",
+          "year": 2024,
+          "group": "Group 1",
+          "question": "Match List-I (Archaeological Sites in Tamil Nadu) with List-II (Major Findings / Significance):\nList-I:\n(a) Keeladi (Sivagangai)\n(b) Kodumanal (Erode)\n(c) Korkai (Thoothukudi)\n(d) Mayiladumparai (Krishnagiri)\nList-II:\n1. Ancient pearl fishery port of the Early Pandyas mentioned in Sangam literature and Greco-Roman records\n2. Industrial gem-cutting center, quartz beads, and iron smelting workshops\n3. Advanced brick structures, drainage channels, Tamil-Brahmi potsherds dated to 6th century BCE\n4. Iron Age artifacts carbon-dated to 2172 BCE establishing early iron usage in Tamil Nadu\nSelect the correct answer using the codes given below:\n(a) - (b) - (c) - (d)",
+          "options": [
+            "3 - 2 - 1 - 4",
+            "2 - 3 - 4 - 1",
+            "3 - 1 - 4 - 2",
+            "4 - 2 - 1 - 3"
+          ],
+          "correct_answer": 0,
+          "explanation": "Keeladi (Vaigai urban culture 6th c. BCE), Kodumanal (gem cutting/smelting), Korkai (Pandya pearl port), Mayiladumparai (earliest Iron Age date 2172 BCE).",
+          "source": "PYQ_2024_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_VIII",
+          "difficulty": "G1"
+        },
+        {
+          "id": "q_tam_g1_03",
+          "year": 2021,
+          "group": "Group 1",
+          "question": "Assertion [A]: Thiruvalluvar in Thirukkural asserts that righteousness in governance (Sengonmai) requires an unbiased ruler who delivers justice without fear or favour.\nReason [R]: Thirukkural explicitly posits that the king's sceptre, rather than his royal spear or army, is the ultimate guardian of the realm's welfare.\nSelect the correct answer:",
+          "options": [
+            "Both [A] and [R] are true, and [R] is the correct explanation of [A]",
+            "Both [A] and [R] are true, but [R] is NOT the correct explanation of [A]",
+            "[A] is true, but [R] is false",
+            "[A] is false, but [R] is true"
+          ],
+          "correct_answer": 0,
+          "explanation": "Kural 546: 'Not spear gives king the victory, but sceptre swaying right.' Both assertion and reason correctly articulate Valluvar's doctrine of righteous governance.",
+          "source": "PYQ_2021_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_VIII",
+          "difficulty": "G1"
+        },
+        {
+          "id": "q_tam_g1_04",
+          "year": 2022,
+          "group": "Group 1",
+          "question": "Consider the following statements regarding the Justice Party (South Indian Liberal Federation):\nI. It was established in 1916 by Dr. C. Natesa Mudaliar, Sir P. Theagaraya Chetty, and Dr. T.M. Nair.\nII. It published the English daily 'Justice' to champion the cause of the non-Brahmin majority.\nIII. The Justice Ministry passed the historic 1921 Communal Government Order introducing reservations in government services.\nIV. It established the Hindu Religious Endowments Board in 1926 to democratize temple administration.\nWhich of the statements given above are correct?",
+          "options": [
+            "I and II only",
+            "II and III only",
+            "I, III and IV only",
+            "I, II, III and IV"
+          ],
+          "correct_answer": 3,
+          "explanation": "All four statements represent verified foundational milestones of the Justice Party in colonial Madras Presidency.",
+          "source": "PYQ_2022_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_VIII",
+          "difficulty": "G1"
+        },
+        {
+          "id": "q_tam_g1_05",
+          "year": 2024,
+          "group": "Group 1",
+          "question": "Match List-I (Ancient Tamil Epics / Literature) with List-II (Authors / Creators):\nList-I:\n(a) Silappadikaram\n(b) Manimekalai\n(c) Civaka Cintamani\n(d) Kundalakesi\nList-II:\n1. Seethalai Sathanar\n2. Ilango Adigal\n3. Nagakuthanaar\n4. Tirutakkatevar\nChoose the correct code:\n(a) - (b) - (c) - (d)",
+          "options": [
+            "2 - 1 - 4 - 3",
+            "1 - 2 - 3 - 4",
+            "2 - 4 - 1 - 3",
+            "4 - 1 - 2 - 3"
+          ],
+          "correct_answer": 0,
+          "explanation": "Silappadikaram by Ilango Adigal; Manimekalai by Seethalai Sathanar; Civaka Cintamani by Tirutakkatevar; Kundalakesi by Nagakuthanaar.",
+          "source": "PYQ_2024_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_VIII",
+          "difficulty": "G1"
+        }
+      ],
+      "syllabus_unit": "UNIT_VIII"
+    },
+    {
+      "id": "archaeological_keeladi",
+      "name": "Archaeological Sites: Keeladi, Korkai & Kodumanal",
+      "questions": [
+        {
+          "id": "q_0371",
+          "year": 2022,
+          "group": "Group 1",
+          "question": "The Keeladi archaeological excavations along the Vaigai river basin have proven that the Sangam Age dates back to",
+          "options": [
+            "6th Century BCE",
+            "1st Century CE",
+            "3rd Century BCE",
+            "10th Century BCE"
+          ],
+          "correct_answer": 0,
+          "explanation": "Carbon-dating results from Beta Analytic (USA) pushed the antiquity of Keeladi urban settlement to 6th Century BCE (580 BCE).",
+          "difficulty": "G4",
+          "source": "PYQ_2022_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_VIII"
+        }
+      ],
+      "syllabus_unit": "UNIT_VIII"
+    },
+    {
+      "id": "thirukkural_teachings",
+      "name": "Thirukkural & Ethical Philosophy",
+      "questions": [
+        {
+          "id": "q_0372",
+          "year": 2024,
+          "group": "Group 2",
+          "question": "Thirukkural is structured into three main divisions (Paal). What are they?",
+          "options": [
+            "Aram (Virtue), Porul (Wealth), Inbam (Love)",
+            "Aram (Virtue), Veedu (Salvation), Porul (Wealth)",
+            "Neethi (Justice), Kodai (Charity), Veeram (Valour)",
+            "Thavam (Penance), Inbam (Love), Ozhukkam (Conduct)"
+          ],
+          "correct_answer": 0,
+          "explanation": "Thiruvalluvar organized Thirukkural into 1330 couplets across Aram (38 chapters), Porul (70 chapters), and Inbam (25 chapters).",
+          "difficulty": "G2",
+          "source": "PYQ_2024_G2",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_VIII"
+        }
+      ],
+      "syllabus_unit": "UNIT_VIII"
+    }
+  ],
+  "syllabus_unit": "UNIT_VIII"
+}

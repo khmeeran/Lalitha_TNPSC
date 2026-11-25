@@ -1,0 +1,1594 @@
+{
+  "id": "aptitude_mental_ability",
+  "name": "Aptitude and Mental Ability",
+  "topics": [
+    {
+      "id": "percentages_profit",
+      "name": "Percentages, Profit & Loss",
+      "questions": [
+        {
+          "id": "q_0284",
+          "year": 2024,
+          "group": "Group 4",
+          "question": "If 20% of a number is equal to 50, what is 60% of that number?",
+          "options": [
+            "100",
+            "150",
+            "200",
+            "250"
+          ],
+          "correct_answer": 1,
+          "explanation": "If 20% is 50, then 1% = 2.5, and 60% = 2.5 * 60 = 150.",
+          "difficulty": "G4",
+          "source": "PYQ_2024_G4",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0285",
+          "year": 2022,
+          "group": "Group 2",
+          "question": "Find the simple interest on Rs. 10,000 at 5% per annum for 2 years.",
+          "options": [
+            "Rs. 500",
+            "Rs. 1,000",
+            "Rs. 1,500",
+            "Rs. 2,000"
+          ],
+          "correct_answer": 1,
+          "explanation": "Simple Interest = (P * N * R) / 100 = (10000 * 2 * 5) / 100 = Rs. 1,000.",
+          "difficulty": "G4",
+          "source": "PYQ_2022_G2",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0286",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Among the 50 students in a class, what percentage of students like biology and chemistry?",
+          "options": [
+            "64%",
+            "46%",
+            "23%",
+            "77%"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0287",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "For any $n$ observations of data, what is the value of $(\\Sigma x) - n\\overline{x}$?",
+          "options": [
+            "$n(\\Sigma x)$",
+            "$(n - 2)\\overline{x}$",
+            "$(n - 1)\\overline{x}$",
+            "0"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0288",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Simplify: $\\frac{0.728 \\times 0.728 - 0.272 \\times 0.272}{0.456}$",
+          "options": [
+            "0.456",
+            "1",
+            "0.728",
+            "0.272"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0289",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "If $\\frac{x}{y} = \\frac{3}{5}$, then $\\frac{5x + 2y}{5x - 2y}$ is equal to",
+          "options": [
+            "3",
+            "5",
+            "$\\frac{2}{5}$",
+            "$\\frac{5}{2}$"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0290",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "A person's present age is two-fifth of the age of his mother. After 8 years, he will be one half of the age of his mother. How old is the mother at present?",
+          "options": [
+            "42",
+            "40",
+            "45",
+            "48"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0291",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Find the value of $\\frac{1.2 \\times 1.2 \\times 1.2 - 0.2 \\times 0.2 \\times 0.2}{1.2 \\times 1.2 + 1.2 \\times 0.2 + 0.2 \\times 0.2}$",
+          "options": [
+            "1.2",
+            "1",
+            "0.2",
+            "1.4"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0292",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "A bicycle marked at Rs. 1,500 is sold for Rs. 1,350. What is the percentage of discount?",
+          "options": [
+            "12",
+            "15",
+            "11",
+            "10"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0293",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Which one of the following is the smallest ratio?\n7 : 13, 17 : 25, 7 : 15, 15 : 23",
+          "options": [
+            "7 : 13",
+            "17 : 25",
+            "7 : 15",
+            "15 : 23"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0294",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "In a mixture of 60 litres, the ratio of milk and water is 2 : 1. If this ratio is to be 1 : 2, then what is the quantity of water to be further added?",
+          "options": [
+            "20 l",
+            "30 l",
+            "50 l",
+            "60 l"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0295",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Two numbers are in the ratio 3 : 5. If 9 be subtracted from each, then they are in the ratio 12 : 23. Find the second number.",
+          "options": [
+            "52",
+            "53",
+            "54",
+            "55"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0296",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Sum of squares of three positive numbers is 608 and they are in the ratio 2 : 3 : 5. Then, find the numbers.",
+          "options": [
+            "6, 9, 15",
+            "8, 12, 20",
+            "10, 15, 25",
+            "14, 21, 35"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0297",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "If 30% of $A = 0.25$ of $B = \\frac{1}{5}$ of $C$, then find the ratio $A : B : C$.",
+          "options": [
+            "$15 : 12 : 10$",
+            "$12 : 15 : 10$",
+            "$10 : 12 : 15$",
+            "$10 : 15 : 12$"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0298",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "What is the third proportional to 0.34 and 0.50?",
+          "options": [
+            "0.74",
+            "0.75",
+            "0.76",
+            "0.77"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0299",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "In a cylinder, if radius is doubled and height is halved then what happens to the curved surface area?",
+          "options": [
+            "Halved",
+            "Doubled",
+            "Does not change",
+            "Four times"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0300",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "The length of side of a rhombus is $5 \\mathrm{m}$ and one of its diagonal is $8 \\mathrm{m}$. Then what is the length of other diagonal?",
+          "options": [
+            "$5 \\mathrm{m}$",
+            "$7 \\mathrm{m}$",
+            "$6 \\mathrm{m}$",
+            "$8 \\mathrm{m}$"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0301",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "A, B and C can complete a piece of work in 24, 6 and 12 days respectively. If they work together, in how many days they will complete the same work?",
+          "options": [
+            "$1/24$ day",
+            "$7/24$ day",
+            "$24/7$ days",
+            "$24/11$ days"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0302",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "12 men complete the 2400 sq.m ploughing work in 10 days. How many men are required to complete 3600 sq.m ploughing work in 18 days?",
+          "options": [
+            "$10$ men",
+            "$15$ men",
+            "$18$ men",
+            "$20$ men"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0303",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "2 men and 7 boys can do a piece of work in 14 days, 3 men and 8 boys can do the same in 11 days. In how many days, 3 times the work can be completed by 8 men and 6 boys?",
+          "options": [
+            "$21$ days",
+            "$18$ days",
+            "$24$ days",
+            "$36$ days"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G1",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0304",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "The length, breadth and height of a hall are $8 \\mathrm{m}$, $10 \\mathrm{m}$, $4 \\mathrm{m}$ respectively and the hall has one door of area $3 \\mathrm{m} \\times 1.5 \\mathrm{m}$. Find the cost of painting the walls at the rate of Rs. 200 per square metre.",
+          "options": [
+            "Rs. 28,800",
+            "Rs. 59,900",
+            "Rs. 27,900",
+            "Rs. 60,800"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0305",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "If the capacity of a cylindrical tank is $1848 \\mathrm{m}^3$ and the diameter of its base is $14 \\mathrm{m}$, then find the depth of the tank?",
+          "options": [
+            "12 m",
+            "14 m",
+            "15 m",
+            "18 m"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0306",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "The length of a chain used as the boundary of a semicircular park is $72 \\mathrm{m}$. What is the area of the park?",
+          "options": [
+            "$77 \\mathrm{m}^2$",
+            "$91 \\mathrm{m}^2$",
+            "$126 \\mathrm{m}^2$",
+            "$308 \\mathrm{m}^2$"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0307",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Find the least number which when divided by 5, 6, 7 and 8 leaving a remainder 3, but when divided by 9 leaves no remainder.",
+          "options": [
+            "1677",
+            "1683",
+            "2523",
+            "3363"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0308",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Find the next number in the following series\n\n4, 6, 9, 13½",
+          "options": [
+            "20½",
+            "22¾",
+            "19",
+            "17½"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0309",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "What is the standard deviation of the first $n$ natural numbers?",
+          "options": [
+            "$\\sqrt{\\frac{n^2 - 1}{12}}$",
+            "$\\sqrt{\\frac{n^2 + 1}{12}}$",
+            "$\\sqrt{\\frac{n(n + 1)}{2}}$",
+            "$\\sqrt{\\frac{n(n + 1)(2n + 1)}{6}}$"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0310",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "In the series 6 4 1 2 2 8 7 4 2 1 5 3 8 6 2 1 7 1 4 1 3 2 8 6 How many pairs of alternate numbers have a difference of 2?",
+          "options": [
+            "2",
+            "4",
+            "6",
+            "8"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0311",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "If $+$ means $\\times$, $\\times$ means $-$$, $\\div$ means $+$ and $-$ means $\\div$ then what is the value of $(175 - 25) \\div (5 \\div 20) \\times (3 \\div 10)$",
+          "options": [
+            "265",
+            "78",
+            "77",
+            "354"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0312",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "In a geometric series, if the fourth term is $\\frac{2}{3}$ and seventh term is $\\frac{16}{81}$, then what is the first term of the series?",
+          "options": [
+            "$\\frac{2}{3}$",
+            "$\\frac{4}{9}$",
+            "$\\frac{8}{27}$",
+            "$\\frac{9}{4}$"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0313",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Find the percentage increase in the area of a triangle if its each side is doubled.",
+          "options": [
+            "100%",
+            "200%",
+            "300%",
+            "400%"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0314",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "The sequence follow a regular pattern. Find the correct letter for question mark, to complete the sequence. CEIKOQ?",
+          "options": [
+            "R",
+            "S",
+            "T",
+            "U"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0315",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Find Least Common Multiple of $\\frac{4}{5}, \\frac{3}{10}$ and $\\frac{7}{15}$.",
+          "options": [
+            "$\\frac{84}{5}$",
+            "$\\frac{5}{84}$",
+            "$\\frac{2}{15}$",
+            "$\\frac{12}{15}$"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0316",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Three numbers are in the ratio $1 : 2 : 3$. Their highest common factor is 12. Find the numbers",
+          "options": [
+            "12, 24, 36",
+            "24, 48, 72",
+            "12, 24, 48",
+            "48, 60, 72"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0317",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "If the two numbers are in the ratio of $2 : 3$ and the product of their highest common factor and least common multiple is 150, then find the sum of the numbers.",
+          "options": [
+            "5",
+            "10",
+            "20",
+            "25"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0318",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Alex invested an amount of Rs. 8,000 in a fixed deposit scheme for 2 years at compound interest rate 5% per annum. How much amount will Alex get on maturity of the fixed deposit?",
+          "options": [
+            "Rs. 8,600",
+            "Rs. 8,620",
+            "Rs. 8,820",
+            "Rs. 8,840"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0319",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "The difference between the compound interest and simple interest on a certain sum at 8% per annum for 2 years is Rs. 240. Find the sum.",
+          "options": [
+            "Rs. 35,000",
+            "Rs. 35,700",
+            "Rs. 37,500",
+            "Rs. 40,000"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0320",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "If the rate of simple interest is 12% per annum, then find the amount that would get interest of Rs. 6,000 per annum.",
+          "options": [
+            "Rs. 82,000",
+            "Rs. 50,000",
+            "Rs. 72,000",
+            "Rs. 45,000"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0321",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Three solid metal cubes, whose edges are 6 cm, 8 cm and 10 cm are melted and a new cube is made. Find the length of edge of the new cube.",
+          "options": [
+            "12 cm",
+            "24 cm",
+            "20 cm",
+            "48 cm"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0322",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Find the number in the place of question mark : 21, 25, 34, 50, ?, 111, 160",
+          "options": [
+            "86",
+            "72",
+            "75",
+            "59"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0323",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "A can do a work in 10 days and B can do the same work in 15 days. They earn Rs. 1,500 together. How will they share this amount?",
+          "options": [
+            "Rs. 850 and Rs. 650",
+            "Rs. 900 and Rs. 600",
+            "Rs. 950 and Rs. 550",
+            "Rs. 1,000 and Rs. 500"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0324",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "If \"NOIDA\" is written as 39658, how will \"INDIA\" be written?",
+          "options": [
+            "36568",
+            "63568",
+            "63569",
+            "65368"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0325",
+          "year": 2017,
+          "group": "Group 1",
+          "question": "There are 8 mango trees in a straight line. The distance between each mango tree with other is 3 metres. What is the distance between the first and the eighth tree?",
+          "options": [
+            "24 m",
+            "21 m",
+            "30 m",
+            "27 m"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2017_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0326",
+          "year": 2017,
+          "group": "Group 1",
+          "question": "1, 4, 6, 9, 11, 14, 16 _______ next to 16 is",
+          "options": [
+            "19",
+            "17",
+            "18",
+            "16"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2017_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_apt_g1_01",
+          "year": 2022,
+          "group": "Group 1",
+          "question": "A cylindrical container of base radius 7 cm and height 20 cm is filled with water up to a depth of 15 cm. A solid metallic spherical ball of radius 3.5 cm is completely submerged into the water. Calculate the rise in the water level inside the cylindrical container.\n(Use $\\pi = \\frac{22}{7}$)",
+          "options": [
+            "1.17 cm",
+            "2.33 cm",
+            "0.58 cm",
+            "3.50 cm"
+          ],
+          "correct_answer": 0,
+          "explanation": "Volume of sphere = (4/3) * pi * r^3 = (4/3) * (22/7) * (3.5)^3 = 179.67 cm^3. Rise in water level h = Volume of sphere / (pi * R^2) = 179.67 / ((22/7) * 7^2) = 179.67 / 154 = 1.1667 cm ~ 1.17 cm.",
+          "source": "PYQ_2022_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X",
+          "difficulty": "G1"
+        },
+        {
+          "id": "q_apt_g1_02",
+          "year": 2024,
+          "group": "Group 1",
+          "question": "Consider the following statements regarding the seating arrangement of five officers A, B, C, D, and E facing North:\nI. C is sitting exactly in the middle between A and E.\nII. B is sitting to the immediate right of E.\nIII. D is sitting to the extreme left of the row.\nWhich of the following conclusions logically and necessarily follows from these statements?",
+          "options": [
+            "A is sitting to the immediate right of D",
+            "E is sitting at the extreme right end",
+            "C is second from the left end",
+            "B is sitting in the middle of the row"
+          ],
+          "correct_answer": 0,
+          "explanation": "Order from left to right: D is extreme left (1st). Remaining positions 2, 3, 4, 5. Since C is between A and E, and B is to the immediate right of E, the order must be D, A, C, E, B. Thus A is to the immediate right of D.",
+          "source": "PYQ_2024_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X",
+          "difficulty": "G1"
+        }
+      ],
+      "syllabus_unit": "UNIT_X"
+    },
+    {
+      "id": "simple_compound_interest",
+      "name": "Simple & Compound Interest",
+      "questions": [
+        {
+          "id": "q_0327",
+          "year": 2022,
+          "group": "Group 2",
+          "question": "Find the simple interest on Rs. 10,000 at 5% per annum for 2 years.",
+          "options": [
+            "Rs. 500",
+            "Rs. 1,000",
+            "Rs. 1,500",
+            "Rs. 2,000"
+          ],
+          "correct_answer": 1,
+          "explanation": "Simple Interest = (P * N * R) / 100 = (10000 * 2 * 5) / 100 = Rs. 1,000.",
+          "difficulty": "G4",
+          "source": "PYQ_2022_G2",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        }
+      ],
+      "syllabus_unit": "UNIT_X"
+    },
+    {
+      "id": "logical_reasoning",
+      "name": "Logical Reasoning & Puzzles",
+      "questions": [
+        {
+          "id": "q_0328",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Among the 50 students in a class, what percentage of students like biology and chemistry?",
+          "options": [
+            "64%",
+            "46%",
+            "23%",
+            "77%"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0329",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "For any $n$ observations of data, what is the value of $(\\Sigma x) - n\\overline{x}$?",
+          "options": [
+            "$n(\\Sigma x)$",
+            "$(n - 2)\\overline{x}$",
+            "$(n - 1)\\overline{x}$",
+            "0"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0330",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Simplify: $\\frac{0.728 \\times 0.728 - 0.272 \\times 0.272}{0.456}$",
+          "options": [
+            "0.456",
+            "1",
+            "0.728",
+            "0.272"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0331",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "If $\\frac{x}{y} = \\frac{3}{5}$, then $\\frac{5x + 2y}{5x - 2y}$ is equal to",
+          "options": [
+            "3",
+            "5",
+            "$\\frac{2}{5}$",
+            "$\\frac{5}{2}$"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0332",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "A person's present age is two-fifth of the age of his mother. After 8 years, he will be one half of the age of his mother. How old is the mother at present?",
+          "options": [
+            "42",
+            "40",
+            "45",
+            "48"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0333",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Find the value of $\\frac{1.2 \\times 1.2 \\times 1.2 - 0.2 \\times 0.2 \\times 0.2}{1.2 \\times 1.2 + 1.2 \\times 0.2 + 0.2 \\times 0.2}$",
+          "options": [
+            "1.2",
+            "1",
+            "0.2",
+            "1.4"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0334",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "A bicycle marked at Rs. 1,500 is sold for Rs. 1,350. What is the percentage of discount?",
+          "options": [
+            "12",
+            "15",
+            "11",
+            "10"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0335",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Which one of the following is the smallest ratio?\n7 : 13, 17 : 25, 7 : 15, 15 : 23",
+          "options": [
+            "7 : 13",
+            "17 : 25",
+            "7 : 15",
+            "15 : 23"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0336",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "In a mixture of 60 litres, the ratio of milk and water is 2 : 1. If this ratio is to be 1 : 2, then what is the quantity of water to be further added?",
+          "options": [
+            "20 l",
+            "30 l",
+            "50 l",
+            "60 l"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0337",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Two numbers are in the ratio 3 : 5. If 9 be subtracted from each, then they are in the ratio 12 : 23. Find the second number.",
+          "options": [
+            "52",
+            "53",
+            "54",
+            "55"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0338",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Sum of squares of three positive numbers is 608 and they are in the ratio 2 : 3 : 5. Then, find the numbers.",
+          "options": [
+            "6, 9, 15",
+            "8, 12, 20",
+            "10, 15, 25",
+            "14, 21, 35"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0339",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "If 30% of $A = 0.25$ of $B = \\frac{1}{5}$ of $C$, then find the ratio $A : B : C$.",
+          "options": [
+            "$15 : 12 : 10$",
+            "$12 : 15 : 10$",
+            "$10 : 12 : 15$",
+            "$10 : 15 : 12$"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0340",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "What is the third proportional to 0.34 and 0.50?",
+          "options": [
+            "0.74",
+            "0.75",
+            "0.76",
+            "0.77"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0341",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "In a cylinder, if radius is doubled and height is halved then what happens to the curved surface area?",
+          "options": [
+            "Halved",
+            "Doubled",
+            "Does not change",
+            "Four times"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0342",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "The length of side of a rhombus is $5 \\mathrm{m}$ and one of its diagonal is $8 \\mathrm{m}$. Then what is the length of other diagonal?",
+          "options": [
+            "$5 \\mathrm{m}$",
+            "$7 \\mathrm{m}$",
+            "$6 \\mathrm{m}$",
+            "$8 \\mathrm{m}$"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0343",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "A, B and C can complete a piece of work in 24, 6 and 12 days respectively. If they work together, in how many days they will complete the same work?",
+          "options": [
+            "$1/24$ day",
+            "$7/24$ day",
+            "$24/7$ days",
+            "$24/11$ days"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0344",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "12 men complete the 2400 sq.m ploughing work in 10 days. How many men are required to complete 3600 sq.m ploughing work in 18 days?",
+          "options": [
+            "$10$ men",
+            "$15$ men",
+            "$18$ men",
+            "$20$ men"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0345",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "2 men and 7 boys can do a piece of work in 14 days, 3 men and 8 boys can do the same in 11 days. In how many days, 3 times the work can be completed by 8 men and 6 boys?",
+          "options": [
+            "$21$ days",
+            "$18$ days",
+            "$24$ days",
+            "$36$ days"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G1",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0346",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "The length, breadth and height of a hall are $8 \\mathrm{m}$, $10 \\mathrm{m}$, $4 \\mathrm{m}$ respectively and the hall has one door of area $3 \\mathrm{m} \\times 1.5 \\mathrm{m}$. Find the cost of painting the walls at the rate of Rs. 200 per square metre.",
+          "options": [
+            "Rs. 28,800",
+            "Rs. 59,900",
+            "Rs. 27,900",
+            "Rs. 60,800"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0347",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "If the capacity of a cylindrical tank is $1848 \\mathrm{m}^3$ and the diameter of its base is $14 \\mathrm{m}$, then find the depth of the tank?",
+          "options": [
+            "12 m",
+            "14 m",
+            "15 m",
+            "18 m"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0348",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "The length of a chain used as the boundary of a semicircular park is $72 \\mathrm{m}$. What is the area of the park?",
+          "options": [
+            "$77 \\mathrm{m}^2$",
+            "$91 \\mathrm{m}^2$",
+            "$126 \\mathrm{m}^2$",
+            "$308 \\mathrm{m}^2$"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0349",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Find the least number which when divided by 5, 6, 7 and 8 leaving a remainder 3, but when divided by 9 leaves no remainder.",
+          "options": [
+            "1677",
+            "1683",
+            "2523",
+            "3363"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0350",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Find the next number in the following series\n\n4, 6, 9, 13½",
+          "options": [
+            "20½",
+            "22¾",
+            "19",
+            "17½"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0351",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "What is the standard deviation of the first $n$ natural numbers?",
+          "options": [
+            "$\\sqrt{\\frac{n^2 - 1}{12}}$",
+            "$\\sqrt{\\frac{n^2 + 1}{12}}$",
+            "$\\sqrt{\\frac{n(n + 1)}{2}}$",
+            "$\\sqrt{\\frac{n(n + 1)(2n + 1)}{6}}$"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0352",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "In the series 6 4 1 2 2 8 7 4 2 1 5 3 8 6 2 1 7 1 4 1 3 2 8 6 How many pairs of alternate numbers have a difference of 2?",
+          "options": [
+            "2",
+            "4",
+            "6",
+            "8"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0353",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "If $+$ means $\\times$, $\\times$ means $-$$, $\\div$ means $+$ and $-$ means $\\div$ then what is the value of $(175 - 25) \\div (5 \\div 20) \\times (3 \\div 10)$",
+          "options": [
+            "265",
+            "78",
+            "77",
+            "354"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0354",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "In a geometric series, if the fourth term is $\\frac{2}{3}$ and seventh term is $\\frac{16}{81}$, then what is the first term of the series?",
+          "options": [
+            "$\\frac{2}{3}$",
+            "$\\frac{4}{9}$",
+            "$\\frac{8}{27}$",
+            "$\\frac{9}{4}$"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0355",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Find the percentage increase in the area of a triangle if its each side is doubled.",
+          "options": [
+            "100%",
+            "200%",
+            "300%",
+            "400%"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0356",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "The sequence follow a regular pattern. Find the correct letter for question mark, to complete the sequence. CEIKOQ?",
+          "options": [
+            "R",
+            "S",
+            "T",
+            "U"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0357",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Find Least Common Multiple of $\\frac{4}{5}, \\frac{3}{10}$ and $\\frac{7}{15}$.",
+          "options": [
+            "$\\frac{84}{5}$",
+            "$\\frac{5}{84}$",
+            "$\\frac{2}{15}$",
+            "$\\frac{12}{15}$"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0358",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Three numbers are in the ratio $1 : 2 : 3$. Their highest common factor is 12. Find the numbers",
+          "options": [
+            "12, 24, 36",
+            "24, 48, 72",
+            "12, 24, 48",
+            "48, 60, 72"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0359",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "If the two numbers are in the ratio of $2 : 3$ and the product of their highest common factor and least common multiple is 150, then find the sum of the numbers.",
+          "options": [
+            "5",
+            "10",
+            "20",
+            "25"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0360",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Alex invested an amount of Rs. 8,000 in a fixed deposit scheme for 2 years at compound interest rate 5% per annum. How much amount will Alex get on maturity of the fixed deposit?",
+          "options": [
+            "Rs. 8,600",
+            "Rs. 8,620",
+            "Rs. 8,820",
+            "Rs. 8,840"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0361",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "The difference between the compound interest and simple interest on a certain sum at 8% per annum for 2 years is Rs. 240. Find the sum.",
+          "options": [
+            "Rs. 35,000",
+            "Rs. 35,700",
+            "Rs. 37,500",
+            "Rs. 40,000"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0362",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "If the rate of simple interest is 12% per annum, then find the amount that would get interest of Rs. 6,000 per annum.",
+          "options": [
+            "Rs. 82,000",
+            "Rs. 50,000",
+            "Rs. 72,000",
+            "Rs. 45,000"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0363",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Three solid metal cubes, whose edges are 6 cm, 8 cm and 10 cm are melted and a new cube is made. Find the length of edge of the new cube.",
+          "options": [
+            "12 cm",
+            "24 cm",
+            "20 cm",
+            "48 cm"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0364",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Find the number in the place of question mark : 21, 25, 34, 50, ?, 111, 160",
+          "options": [
+            "86",
+            "72",
+            "75",
+            "59"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0365",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "A can do a work in 10 days and B can do the same work in 15 days. They earn Rs. 1,500 together. How will they share this amount?",
+          "options": [
+            "Rs. 850 and Rs. 650",
+            "Rs. 900 and Rs. 600",
+            "Rs. 950 and Rs. 550",
+            "Rs. 1,000 and Rs. 500"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0366",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "If \"NOIDA\" is written as 39658, how will \"INDIA\" be written?",
+          "options": [
+            "36568",
+            "63568",
+            "63569",
+            "65368"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0367",
+          "year": 2017,
+          "group": "Group 1",
+          "question": "There are 8 mango trees in a straight line. The distance between each mango tree with other is 3 metres. What is the distance between the first and the eighth tree?",
+          "options": [
+            "24 m",
+            "21 m",
+            "30 m",
+            "27 m"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2017_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        },
+        {
+          "id": "q_0368",
+          "year": 2017,
+          "group": "Group 1",
+          "question": "1, 4, 6, 9, 11, 14, 16 _______ next to 16 is",
+          "options": [
+            "19",
+            "17",
+            "18",
+            "16"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2017_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_X"
+        }
+      ],
+      "syllabus_unit": "UNIT_X"
+    }
+  ],
+  "syllabus_unit": "UNIT_X"
+}

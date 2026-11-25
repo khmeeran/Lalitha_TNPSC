@@ -1,0 +1,36 @@
+# Dependencies & Build Outputs
+node_modules/
+web/node_modules/
+.next/
+web/.next/
+out/
+web/out/
+build/
+.vercel
+
+# Environment & Secrets
+.env
+.env.local
+.env*.local
+
+# OS Artifacts
+Thumbs.db
+.DS_Store
+Desktop.ini
+
+# Raw Source PDFs & Heavy Media / Demo Artifacts
+/data/raw_pdfs/
+/generated_assets/
+/route_screenshots/
+/*.mp4
+/*.gif
+/*.png
+/lighthouse_report*
+
+# Python & Logs
+__pycache__/
+*.pyc
+*.log
+npm-debug.log*
+*.tsbuildinfo
+next-env.d.ts

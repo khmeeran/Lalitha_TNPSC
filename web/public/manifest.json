@@ -1,0 +1,60 @@
+{
+  "name": "TNPSC Wizard: Lalitha's Exam Quest",
+  "short_name": "TNPSC Wizard",
+  "description": "High-Fantasy Educational RPG for TNPSC Group 1, 2, and 4 Civil Services Aspirants",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0F0320",
+  "theme_color": "#6A0DAD",
+  "orientation": "portrait-primary",
+  "categories": ["education", "games"],
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-maskable-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icons/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "The Sanctuary & Trials",
+      "short_name": "Sanctuary",
+      "description": "Launch the main RPG trial and adventure map",
+      "url": "/",
+      "icons": [{ "src": "/icons/icon-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Grind Mode (Cursed Topics)",
+      "short_name": "Grind Mode",
+      "description": "Spaced repetition practice for active misconceptions",
+      "url": "/?tab=GRIND",
+      "icons": [{ "src": "/icons/icon-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Mastery Reliquary & Oracle",
+      "short_name": "Reliquary",
+      "description": "View Velan's Daily Oracle and Spell Power Staves",
+      "url": "/progress",
+      "icons": [{ "src": "/icons/icon-192x192.png", "sizes": "192x192" }]
+    }
+  ]
+}

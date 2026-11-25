@@ -1,0 +1,738 @@
+{
+  "version": "1.0.0",
+  "provenance": "Official TNPSC Group 1, Group 2 & Group 4 Combined Syllabus (General Studies)",
+  "totalUnits": 10,
+  "masteryPassThreshold": 80,
+  "difficultyScaling": {
+    "tier1_early": {
+      "levelRange": "1-10",
+      "difficulty": "G4",
+      "style": "Factual, Direct Recall (SSLC Standard)",
+      "targetGroup": "Group 4 & VAO"
+    },
+    "tier2_mid": {
+      "levelRange": "11-20",
+      "difficulty": "G2",
+      "style": "Analytical, Comparative, Matching (HSC/Degree Standard)",
+      "targetGroup": "Group 2 & 2A"
+    },
+    "tier3_high": {
+      "levelRange": "21+",
+      "difficulty": "G1",
+      "style": "Multi-Statement, Assertion-Reasoning (Degree Standard)",
+      "targetGroup": "Group 1 & Boss Battles"
+    }
+  },
+  "pyqPriorityPolicy": {
+    "minimumPyqRatio": 0.7,
+    "practiceRatio": 0.3,
+    "lastYearsSpan": 10
+  },
+  "units": [
+    {
+      "unitNumber": 1,
+      "unitCode": "UNIT_I",
+      "officialTitle": "General Science",
+      "realmId": "realm_1_science",
+      "realmName": "Science Sanctuary",
+      "bossQuizId": "quiz_science_boss",
+      "nodes": [
+        {
+          "nodeId": "node_sci_1",
+          "title": "Scientific Temperament & Mechanics",
+          "subClause": "Unit 1 • Clause 1.1 Nature of Universe, Mechanics, Energy",
+          "levelRequirement": 1,
+          "difficultyTier": "G4",
+          "isBoss": false,
+          "storyHook": {
+            "narrativeEn": "Galileo and Newton unlocked the invisible mechanical laws that govern falling apples and planetary orbits across the Tamil cosmos.",
+            "investigatorGoal": "Investigate how forces, gravitation, and energy laws operate within everyday mechanical phenomena.",
+            "narrativeTa": "கலிலியோவும் நியூட்டனும் ஆப்பிள் விழுவதையும் கோள்களின் சுழற்சியையும் ஆளும் கண்ணுக்குத் தெரியாத இயக்கவியல் விதிகளை அண்டமெங்கும் வெளிப்படுத்தினர்.",
+            "investigatorGoalTa": "விசைகள், புவியீர்ப்பு மற்றும் ஆற்றல் விதிகள் அன்றாட இயக்கவியலில் எவ்வாறு செயல்படுகின்றன என்பதை ஆராயுங்கள்."
+          },
+          "titleTa": "அறிவியல் மனப்பான்மை மற்றும் இயக்கவியல்"
+        },
+        {
+          "nodeId": "node_sci_2",
+          "title": "Elements, Compounds, Acids & Bases",
+          "subClause": "Unit 1 • Clause 2.1 Applied Chemistry & Fertilizers",
+          "levelRequirement": 4,
+          "difficultyTier": "G4",
+          "isBoss": false,
+          "storyHook": {
+            "narrativeEn": "In ancient alchemy and modern soil science, the delicate balance between acids and bases determines whether crops flourish or wither.",
+            "investigatorGoal": "Analyze chemical bonds, pH indicators, and industrial fertilizers vital for Tamil Nadu agriculture.",
+            "narrativeTa": "பண்டைய ரசவாதம் மற்றும் நவீன மண் அறிவியலில், அமிலங்களுக்கும் காரங்களுக்கும் இடையிலான நுட்பமான சமநிலையே பயிர் செழிப்பதை தீர்மானிக்கிறது.",
+            "investigatorGoalTa": "தமிழ்நாடு விவசாயத்திற்கு இன்றியமையாத வேதியியல் பிணைப்புகள், pH குறிகாட்டிகள் மற்றும் உரங்களை பகுப்பாய்வு செய்யுங்கள்."
+          },
+          "titleTa": "தனிமங்கள், சேர்மங்கள், அமிலங்கள் மற்றும் காரங்கள்"
+        },
+        {
+          "nodeId": "node_sci_3",
+          "title": "Human Physiology, Genetics & Diseases",
+          "subClause": "Unit 1 • Clause 3.1 Life Sciences, Nutrition & Health",
+          "levelRequirement": 11,
+          "difficultyTier": "G2",
+          "isBoss": false,
+          "storyHook": {
+            "narrativeEn": "Deep within the human genome and cellular machinery lies the code of life, immunity, and resistance against pathogens.",
+            "investigatorGoal": "Trace hereditary transmission, nutritional physiology, and epidemiological defenses.",
+            "narrativeTa": "மனித மரபணு மற்றும் செல்லுலார் அமைப்பிற்குள் வாழ்க்கை, நோய் எதிர்ப்பு சக்தி மற்றும் நோய்க்கிருமிகளுக்கு எதிரான பாதுகாப்புக் குறியீடுகள் பொதிந்துள்ளன.",
+            "investigatorGoalTa": "பரம்பரை கடத்தல், ஊட்டச்சத்து உடலியல் மற்றும் தொற்றுநோய் பாதுகாப்பு முறைகளைக் கண்டறியுங்கள்."
+          },
+          "titleTa": "மனித உடலியல், மரபியல் மற்றும் நோய்கள்"
+        },
+        {
+          "nodeId": "node_sci_boss",
+          "title": "Science Citadel Boss Trial",
+          "subClause": "Unit 1 • Comprehensive Mastery Evaluation",
+          "levelRequirement": 15,
+          "difficultyTier": "G1",
+          "isBoss": true,
+          "storyHook": {
+            "narrativeEn": "The Grand Alchemist of the Science Citadel challenges you to prove the fundamental empirical laws of the universe.",
+            "investigatorGoal": "Synthesize physics, chemistry, and biology to unlock the Citadel's sealed inner sanctum.",
+            "narrativeTa": "அறிவியல் கோட்டையின் தலைமை அறிஞர் பிரபஞ்சத்தின் அடிப்படைக் கோட்பாடுகளை நிரூபிக்க உங்களுக்கு சவால் விடுக்கிறார்.",
+            "investigatorGoalTa": "இயற்பியல், வேதியியல் மற்றும் உயிரியலை ஒருங்கிணைத்து கோட்டையின் அந்தரங்கக் கருவூலத்தைத் திறக்கவும்."
+          },
+          "titleTa": "அறிவியல் கோட்டை இறுதித் தேர்வு"
+        }
+      ],
+      "realmNameTa": "அறிவியல் சரணாலயம்",
+      "officialTitleTa": "பொது அறிவியல்"
+    },
+    {
+      "unitNumber": 2,
+      "unitCode": "UNIT_II",
+      "officialTitle": "Current Events",
+      "realmId": "realm_2_current_affairs",
+      "realmName": "Current Affairs Cave",
+      "bossQuizId": "quiz_current_boss",
+      "nodes": [
+        {
+          "nodeId": "node_ca_1",
+          "title": "National Landmarks & State Profiles",
+          "subClause": "Unit 2 • Clause 1.1 Latest Diary of Events",
+          "levelRequirement": 5,
+          "difficultyTier": "G4",
+          "isBoss": false,
+          "storyHook": {
+            "narrativeEn": "From the corridors of Fort St. George to New Delhi, momentous summits and historical summits reshape modern statecraft.",
+            "investigatorGoal": "Chronicle the landmark events, state honors, and strategic summits from the latest Commission records.",
+            "narrativeTa": "புனித ஜார்ஜ் கோட்டை முதல் புது தில்லி வரை, முக்கிய மாநாடுகளும் வரலாற்றுச் சிறப்புமிக்க முடிவுகளும் நவீன அரசாட்சியை வடிவமைக்கின்றன.",
+            "investigatorGoalTa": "சமீபத்திய தேர்வாணையக் குறிப்புகளிலிருந்து முக்கிய நிகழ்வுகள், மாநில விருதுகள் மற்றும் உச்சிமாநாடுகளைப் பதிவு செய்யுங்கள்."
+          },
+          "titleTa": "தேசிய நிகழ்வுகள் மற்றும் மாநிலச் சிறப்புகள்"
+        },
+        {
+          "nodeId": "node_ca_2",
+          "title": "Socio-Economic Policy & Welfare Schemes",
+          "subClause": "Unit 2 • Clause 2.1 Public Welfare & Schemes",
+          "levelRequirement": 13,
+          "difficultyTier": "G2",
+          "isBoss": false,
+          "storyHook": {
+            "narrativeEn": "Pioneering welfare schemes like the Midday Meal and Pudhumai Penn revolutionized social mobility across Tamil households.",
+            "investigatorGoal": "Investigate the budgetary targets, eligible demographics, and societal impacts of key welfare initiatives.",
+            "narrativeTa": "மதிய உணவுத் திட்டம் மற்றும் புதுமைப் பெண் போன்ற முன்னோடி நலத்திட்டங்கள் தமிழ்நாட்டுக் குடும்பங்களில் சமூக முன்னேற்றத்தை விரைவுபடுத்தின.",
+            "investigatorGoalTa": "முக்கிய மக்கள் நலத் திட்டங்களின் நிதி ஒதுக்கீடு, பயனாளிகள் மற்றும் சமூகத் தாக்கங்களை ஆராயுங்கள்."
+          },
+          "titleTa": "சமூக-பொருளாதாரக் கொள்கை மற்றும் நலத்திட்டங்கள்"
+        },
+        {
+          "nodeId": "node_ca_boss",
+          "title": "Current Affairs Apex Trial",
+          "subClause": "Unit 2 • Integrated Current Affairs Evaluation",
+          "levelRequirement": 21,
+          "difficultyTier": "G1",
+          "isBoss": true,
+          "storyHook": {
+            "narrativeEn": "The Commission's Chief Examiner presents the Apex Diary of Events to test your real-time administrative readiness.",
+            "investigatorGoal": "Demonstrate mastery over current policy shifts, national awards, and bilateral agreements.",
+            "narrativeTa": "உங்கள் நிகழ்நேர நிர்வாகத் தயார்நிலையைச் சோதிக்க தேர்வாணையத்தின் தலைமை ஆய்வாளர் நிகழ்வுகளின் தொகுப்பை வழங்குகிறார்.",
+            "investigatorGoalTa": "தற்போதைய கொள்கை மாற்றங்கள், தேசிய விருதுகள் மற்றும் இருதரப்பு ஒப்பந்தங்களில் தேர்ச்சி பெறுங்கள்."
+          },
+          "titleTa": "நடப்பு நிகழ்வுகள் உச்சக்கட்டத் தேர்வு"
+        }
+      ],
+      "realmNameTa": "நடப்பு நிகழ்வுக் குகை",
+      "officialTitleTa": "நடப்பு நிகழ்வுகள்"
+    },
+    {
+      "unitNumber": 3,
+      "unitCode": "UNIT_III",
+      "officialTitle": "Geography of India & Tamil Nadu",
+      "realmId": "realm_3_geography",
+      "realmName": "Geography Valley",
+      "bossQuizId": "quiz_geo_boss",
+      "nodes": [
+        {
+          "nodeId": "node_geo_1",
+          "title": "Location, Physical Features & Monsoons",
+          "subClause": "Unit 3 • Clause 1.1 Weather, Climate & Rainfall",
+          "levelRequirement": 3,
+          "difficultyTier": "G4",
+          "isBoss": false,
+          "storyHook": {
+            "narrativeEn": "The roaring Southwest and retreating Northeast monsoons bring life-giving rain to the Western Ghats and Coromandel coast.",
+            "investigatorGoal": "Map the wind patterns, rain shadow zones, and seasonal climatic variations shaping Tamil territory.",
+            "narrativeTa": "ஆர்ப்பரிக்கும் தென்மேற்கு மற்றும் பின்னடையும் வடகிழக்குப் பருவமழைகள் மேற்குத் தொடர்ச்சி மலைக்கும் சோழமண்டலக் கடற்கரைக்கும் உயிரூட்டும் மழையைத் தருகின்றன.",
+            "investigatorGoalTa": "தமிழ்நாட்டின் காற்றுப் போக்குகள், மழை மறைவுப் பகுதிகள் மற்றும் பருவகால காலநிலை மாற்றங்களை வரைபடமாக்குங்கள்."
+          },
+          "titleTa": "அமைவிடம், இயற்கை அமைப்பு மற்றும் பருவமழை"
+        },
+        {
+          "nodeId": "node_geo_2",
+          "title": "Rivers, Soil & Wildlife Sanctuaries",
+          "subClause": "Unit 3 • Clause 2.1 Water Resources & Agriculture",
+          "levelRequirement": 8,
+          "difficultyTier": "G4",
+          "isBoss": false,
+          "storyHook": {
+            "narrativeEn": "From the sacred Cauvery delta to the Mudumalai tiger corridor, water networks sustain both ancient kingdoms and fragile ecosystems.",
+            "investigatorGoal": "Identify river basins, fertile alluvial soil belts, and biosphere reserves under conservation.",
+            "narrativeTa": "புனித காவிரி டெல்டா முதல் முதுமலை புலிகள் காப்பகம் வரை, நீர்நிலைகள் பண்டைய அரசுகளையும் சூழலியல் மண்டலங்களையும் பாதுகாக்கின்றன.",
+            "investigatorGoalTa": "ஆற்றுப் படுகைகள், வளமான வண்டல் மண் பகுதிகள் மற்றும் உயிர்க்கோளக் காப்பகங்களை அடையாளம் காணுங்கள்."
+          },
+          "titleTa": "ஆறுகள், மண் வகைகள் மற்றும் வனவிலங்கு சரணாலயங்கள்"
+        },
+        {
+          "nodeId": "node_geo_3",
+          "title": "Demography, Minerals & Disaster Management",
+          "subClause": "Unit 3 • Clause 3.1 Transport, Population & Ecology",
+          "levelRequirement": 16,
+          "difficultyTier": "G2",
+          "isBoss": false,
+          "storyHook": {
+            "narrativeEn": "Beneath the red soil of Neyveli and the Salem hills lie strategic lignite and iron ore reserves powering industrial corridors.",
+            "investigatorGoal": "Analyze population density gradients, mineral deposits, and disaster mitigation strategies.",
+            "narrativeTa": "நெய்வேலியின் செம்மண் மற்றும் சேலம் மலைகளுக்கு அடியில் தொழில்துறை வளர்ச்சிக்கு உதவும் பழுப்பு நிலக்கரி மற்றும் இரும்புத் தாதுக்கள் உள்ளன.",
+            "investigatorGoalTa": "மக்கள்தொகை அடர்த்தி, கனிம வளங்கள் மற்றும் பேரிடர் தடுப்பு உத்திகளை பகுப்பாய்வு செய்யுங்கள்."
+          },
+          "titleTa": "மக்கள்தொகை, கனிம வளங்கள் மற்றும் பேரிடர் மேலாண்மை"
+        },
+        {
+          "nodeId": "node_geo_boss",
+          "title": "Geography Summit Boss Trial",
+          "subClause": "Unit 3 • Multi-statement Regional Geography",
+          "levelRequirement": 22,
+          "difficultyTier": "G1",
+          "isBoss": true,
+          "storyHook": {
+            "narrativeEn": "At the Geography Summit, ancient mariners and cartographers demand an account of India's physical and economic topology.",
+            "investigatorGoal": "Solve multi-statement geographical puzzles connecting topography to human development.",
+            "narrativeTa": "புவியியல் சிகரத்தில், பண்டைய மாலுமிகளும் நிலவரைவியலாளர்களும் இந்தியாவின் இயற்கை மற்றும் பொருளாதார அமைப்பை விளக்கக் கோருகின்றனர்.",
+            "investigatorGoalTa": "நிலப்பரப்பையும் மனித வளர்ச்சியையும் இணைக்கும் பல-கூற்றுப் புவியியல் புதிர்களைத் தீர்க்கவும்."
+          },
+          "titleTa": "புவியியல் சிகரம் இறுதித் தேர்வு"
+        }
+      ],
+      "realmNameTa": "புவியியல் பள்ளத்தாக்கு",
+      "officialTitleTa": "இந்தியப் புவியியல்"
+    },
+    {
+      "unitNumber": 4,
+      "unitCode": "UNIT_IV",
+      "officialTitle": "History and Culture of India",
+      "realmId": "realm_4_ancient",
+      "realmName": "History Highlands",
+      "bossQuizId": "quiz_ancient_boss",
+      "nodes": [
+        {
+          "nodeId": "node_hist_1",
+          "title": "Indus Valley Civilization & Urban Planning",
+          "subClause": "Unit 4 • Clause 1.1 Harappa, Mohenjo-daro & Lothal",
+          "levelRequirement": 1,
+          "difficultyTier": "G4",
+          "isBoss": false,
+          "storyHook": {
+            "narrativeEn": "Five millennia ago along the Indus and Sabarmati, ancient engineers constructed grid-pattern cities with advanced drainage and tidal docks.",
+            "investigatorGoal": "Uncover Lothal's dockyard secrets and the seal motifs of Mohenjo-daro's Great Bath.",
+            "narrativeTa": "ஐந்தாயிரம் ஆண்டுகளுக்கு முன்பு சிந்து மற்றும் சபர்மதி நதிக்கரைகளில், பண்டைய பொறியாளர்கள் கழிவுநீர் அமைப்பு மற்றும் கப்பல் துறைமுகங்களுடன் திட்டமிட்ட நகரங்களை உருவாக்கினர்.",
+            "investigatorGoalTa": "லோத்தல் கப்பல் கட்டும் தளத்தின் ரகசியங்களையும் மொகஞ்சதாரோ பெருங்குள முத்திரைகளையும் கண்டறியுங்கள்."
+          },
+          "titleTa": "சிந்து சமவெளி நாகரிகம் மற்றும் நகரத் திட்டமிடல்"
+        },
+        {
+          "nodeId": "node_hist_2",
+          "title": "Sangam Age & Three Crowned Monarchs",
+          "subClause": "Unit 4 • Clause 1.2 Chera, Chola, Pandya & Velir",
+          "levelRequirement": 2,
+          "difficultyTier": "G4",
+          "isBoss": false,
+          "storyHook": {
+            "narrativeEn": "At the confluence of ancient rivers, the Chera, Chola, and Pandya monarchs patronized fearless poets and maritime trade with imperial Rome.",
+            "investigatorGoal": "Examine the Sangam anthologies to decode the political hierarchy of the Muventhar and Velir chieftains.",
+            "narrativeTa": "பண்டைய ஆறுகளின் சங்கமத்தில், சேர, சோழ, பாண்டிய மன்னர்கள் அஞ்சாநெஞ்சப் புலவர்களையும் ரோமானியக் கடல் வணிகத்தையும் போற்றினர்.",
+            "investigatorGoalTa": "மூவேந்தர் மற்றும் வேளிர் குறுநில மன்னர்களின் அரசியல் அமைப்பை அறிய சங்க இலக்கியங்களை ஆராயுங்கள்."
+          },
+          "titleTa": "சங்க காலம் மற்றும் மூவேந்தர்கள்"
+        },
+        {
+          "nodeId": "node_hist_3",
+          "title": "Mauryan Empire & Ashoka's Edicts",
+          "subClause": "Unit 4 • Clause 2.1 Rock Edict XIII & Dhamma",
+          "levelRequirement": 4,
+          "difficultyTier": "G4",
+          "isBoss": false,
+          "storyHook": {
+            "narrativeEn": "Standing on the blood-soaked battlefield of Kalinga in 261 BCE, Emperor Ashoka dropped his sword in horror as he witnessed the devastation.",
+            "investigatorGoal": "Decipher the Prakrit inscriptions on Major Rock Edict XIII to uncover his transformation to Dhamma.",
+            "narrativeTa": "கி.மு. 261-ல் கலிங்கப் போர்க்களத்தில் நின்ற பேரரசர் அசோகர், போரின் கோரத்தைக் கண்டு மனம் வருந்தி வாளினைக் கீழே போட்டார்.",
+            "investigatorGoalTa": "தர்மத்திற்கு அவர் மாறிய வரலாற்றை அறிய பாறை கல்வெட்டு XIII-ன் பிராகிருத வரிகளை ஆராயுங்கள்."
+          },
+          "titleTa": "மௌரியப் பேரரசு மற்றும் அசோகரின் கல்வெட்டுகள்"
+        },
+        {
+          "nodeId": "node_hist_4",
+          "title": "Gupta Empire Administration & Culture",
+          "subClause": "Unit 4 • Clause 2.2 Inscriptions & Literature",
+          "levelRequirement": 9,
+          "difficultyTier": "G4",
+          "isBoss": false,
+          "storyHook": {
+            "narrativeEn": "In the golden courts of Pataliputra, Harisena carved the Allahabad Prashasti celebrating Samudragupta's southern campaign.",
+            "investigatorGoal": "Trace the administrative councils, numismatic emblems, and classical arts of the Gupta golden age.",
+            "narrativeTa": "பாடலிபுத்திரத்தின் பொற்கால அரசவையில், ஹரிசேனர் சமுத்திரகுப்தரின் தென்னிந்தியப் படையெடுப்பைப் போற்றி அலகாபாத் பிரசஸ்தியைச் செதுக்கினார்.",
+            "investigatorGoalTa": "குப்தர் கால நிர்வாகக் குழுக்கள், நாணயச் சின்னங்கள் மற்றும் செவ்வியல் கலைகளைத் தடமறியுங்கள்."
+          },
+          "titleTa": "குப்தப் பேரரசின் நிர்வாகம் மற்றும் பண்பாடு"
+        },
+        {
+          "nodeId": "node_hist_5",
+          "title": "Delhi Sultanate & Vijayanagar Empire",
+          "subClause": "Unit 4 • Clause 3.1 South Indian Expeditions & Nayaks",
+          "levelRequirement": 14,
+          "difficultyTier": "G2",
+          "isBoss": false,
+          "storyHook": {
+            "narrativeEn": "Across the Tungabhadra river, Harihara and Bukka raised the battlements of Vijayanagara to defend southern culture and trade.",
+            "investigatorGoal": "Investigate Krishnadevaraya's Amuktamalyada and the Nayak administrative system in Tamil country.",
+            "narrativeTa": "துங்கபத்ரா நதிக்கரையில் ஹரிஹரரும் புக்கரும் தென்னிந்தியப் பண்பாட்டையும் வணிகத்தையும் பாதுகாக்க விஜயநகரக் கோட்டைகளை எழுப்பினர்.",
+            "investigatorGoalTa": "கிருஷ்ணதேவராயரின் ஆமுக்தமால்யதா மற்றும் தமிழ்நாட்டில் நாயக்கர் நிர்வாக முறையை ஆராயுங்கள்."
+          },
+          "titleTa": "டெல்லி சுல்தானியம் மற்றும் விஜயநகரப் பேரரசு"
+        },
+        {
+          "nodeId": "node_hist_boss",
+          "title": "Chola Imperial Fortress Boss Trial",
+          "subClause": "Unit 4 • Imperial Chola & Temple Inscriptions",
+          "levelRequirement": 18,
+          "difficultyTier": "G1",
+          "isBoss": true,
+          "storyHook": {
+            "narrativeEn": "Rajaraja Chola's master sculptors challenge you beneath the soaring vimana of Thanjavur's Brihadisvara Temple.",
+            "investigatorGoal": "Demonstrate complete command over Chola naval expeditions, village assemblies (Uttiramerur), and temple bronzes.",
+            "narrativeTa": "தஞ்சாவூர் பிரகதீஸ்வரர் கோயிலின் உயர்ந்த விமானத்தின் கீழ் ராஜராஜ சோழனின் சிற்பிகள் உங்களுக்கு சவால் விடுக்கின்றனர்.",
+            "investigatorGoalTa": "சோழர் கடற்படை வெற்றிகள், உத்திரமேரூர் கிராம சபைகள் மற்றும் செப்புத் திருமேனிகளில் முழு ஆளுமையை நிரூபியுங்கள்."
+          },
+          "titleTa": "சோழப் பேரரசு கோட்டை இறுதித் தேர்வு"
+        }
+      ],
+      "realmNameTa": "வரலாற்றுச் சிகரங்கள்",
+      "officialTitleTa": "இந்திய வரலாறு மற்றும் பண்பாடு"
+    },
+    {
+      "unitNumber": 5,
+      "unitCode": "UNIT_V",
+      "officialTitle": "Indian Polity",
+      "realmId": "realm_5_polity",
+      "realmName": "Polity Peak",
+      "bossQuizId": "quiz_polity_boss",
+      "nodes": [
+        {
+          "nodeId": "node_pol_1",
+          "title": "Preamble & Fundamental Rights (Part III)",
+          "subClause": "Unit 5 • Clause 1.1 Articles 12-35 & Writs",
+          "levelRequirement": 3,
+          "difficultyTier": "G4",
+          "isBoss": false,
+          "storyHook": {
+            "narrativeEn": "In the Constituent Assembly, Dr. B.R. Ambedkar forged Part III as the Magna Carta of India, guarding human dignity against state excess.",
+            "investigatorGoal": "Master Articles 12 to 35 and the five sovereign prerogative writs under Article 32.",
+            "narrativeTa": "அரசியலமைப்பு நிர்ணய சபையில் டாக்டர் பி.ஆர். அம்பேத்கர் இந்திய குடியரசின் இறையாண்மை, சமதர்மம் மற்றும் நீதியை அடிப்படை உரிமைகளில் பொறித்தார்.",
+            "investigatorGoalTa": "அடிப்படை உரிமைகளின் சரத்துகள் (12-35) மற்றும் அரசியலமைப்புத் தீர்வு வழிமுறைகளை ஆராயுங்கள்."
+          },
+          "titleTa": "முகப்புரை மற்றும் அடிப்படை உரிமைகள் (பகுதி III)"
+        },
+        {
+          "nodeId": "node_pol_2",
+          "title": "DPSP & Fundamental Duties (Part IV & IV-A)",
+          "subClause": "Unit 5 • Clause 1.2 Articles 36-51A",
+          "levelRequirement": 7,
+          "difficultyTier": "G4",
+          "isBoss": false,
+          "storyHook": {
+            "narrativeEn": "Dr. Ambedkar described the Directive Principles as instruments of socio-economic democracy, guiding the moral conscience of governance.",
+            "investigatorGoal": "Classify the Socialistic, Gandhian, and Liberal-Intellectual principles alongside Article 51A duties.",
+            "narrativeTa": "நலன்புரி அரசின் சமூக-பொருளாதார நீதியைப் பாதுகாக்க முகப்புரையும் அரசு நெறிமுறைக் கோட்பாடுகளும் (பகுதி IV) வழிகாட்டுகின்றன.",
+            "investigatorGoalTa": "நீதிமன்றத்தால் செயல்படுத்த முடியாத வழிகாட்டு நெறிமுறைகளுக்கும் அடிப்படைக் கடமைகளுக்கும் உள்ள தொடர்பை ஆராயுங்கள்."
+          },
+          "titleTa": "அரசு நெறிமுறைக் கோட்பாடுகள் மற்றும் அடிப்படைக் கடமைகள்"
+        },
+        {
+          "nodeId": "node_pol_3",
+          "title": "Union & State Executive: President & Governor",
+          "subClause": "Unit 5 • Clause 2.1 Cabinet, Legislature & Ordinances",
+          "levelRequirement": 12,
+          "difficultyTier": "G2",
+          "isBoss": false,
+          "storyHook": {
+            "narrativeEn": "The President of the Union and Governors of the States wield constitutional powers spanning executive action, vetoes, and emergency ordinances.",
+            "investigatorGoal": "Analyze Article 123 ordinance limits, Cabinet responsibility, and discretionary executive safeguards.",
+            "narrativeTa": "ராஷ்டிரபதி பவன் முதல் சென்னை செயின்ட் ஜார்ஜ் கோட்டை வரை, நாடாளுமன்ற ஜனநாயகம் கூட்டாட்சி நிர்வாகத்தைப் பேணுகிறது.",
+            "investigatorGoalTa": "குடியரசுத் தலைவர், பிரதமர், ஆளுநர் மற்றும் மாநில அமைச்சரவையின் அதிகாரங்களை ஒப்பிடுங்கள்."
+          },
+          "titleTa": "மத்திய மற்றும் மாநில நிர்வாகம்: குடியரசுத் தலைவர் & ஆளுநர்"
+        },
+        {
+          "nodeId": "node_pol_4",
+          "title": "Judiciary, Federalism & Centre-State Relations",
+          "subClause": "Unit 5 • Clause 3.1 Sarkaria & Punchhi Commissions",
+          "levelRequirement": 17,
+          "difficultyTier": "G2",
+          "isBoss": false,
+          "storyHook": {
+            "narrativeEn": "Balancing federal autonomy and national integrity, judicial sentinels interpret the delicate distribution of legislative lists.",
+            "investigatorGoal": "Evaluate Sarkaria and Punchhi Commission recommendations on Centre-State relations and judicial review.",
+            "narrativeTa": "அரசியலமைப்புச் சட்டம் கூட்டாட்சி சமநிலையைப் பாதுகாக்கும் நிலையில், உச்ச நீதிமன்றம் குடிமக்களின் உரிமைகளுக்குக் காவலனாக நிற்கிறது.",
+            "investigatorGoalTa": "சர்க்காரியா குழு, ராஜமன்னார் குழு மற்றும் நீதிப் பேராணைகளின் (Writs) பயன்பாட்டை ஆராயுங்கள்."
+          },
+          "titleTa": "நீதித்துறை, கூட்டாட்சி மற்றும் மத்திய-மாநில உறவுகள்"
+        },
+        {
+          "nodeId": "node_pol_boss",
+          "title": "Constitutional Sentinel Boss Trial",
+          "subClause": "Unit 5 • Comprehensive Multi-Statement Constitutional Law",
+          "levelRequirement": 23,
+          "difficultyTier": "G1",
+          "isBoss": true,
+          "storyHook": {
+            "narrativeEn": "The Constitutional Sentinel stands guardian at the apex court gates, demanding proof of constitutional jurisprudence.",
+            "investigatorGoal": "Conquer complex multi-statement constitutional trials to earn the Guardian of the Republic title.",
+            "narrativeTa": "அரசியலமைப்புச் சட்டத்தின் நுட்பமான அறிவை வெளிப்படுத்தி குடியரசின் காவலர் பட்டத்தைப் பெறுங்கள்.",
+            "investigatorGoalTa": "குடியரசின் காவலர் பட்டத்தை வெல்ல சிக்கலான பல-கூற்று அரசியலமைப்புத் தேர்வுகளில் வெற்றி பெறுங்கள்."
+          },
+          "titleTa": "அரசியலமைப்பு காவலர் இறுதித் தேர்வு"
+        }
+      ],
+      "realmNameTa": "ஆட்சியியல் முகடு",
+      "officialTitleTa": "இந்திய ஆட்சியியல்"
+    },
+    {
+      "unitNumber": 6,
+      "unitCode": "UNIT_VI",
+      "officialTitle": "Indian Economy",
+      "realmId": "realm_6_economy",
+      "realmName": "Treasury Citadel",
+      "bossQuizId": "quiz_econ_boss",
+      "nodes": [
+        {
+          "nodeId": "node_econ_1",
+          "title": "Planning Commission, NITI Aayog & Five Year Plans",
+          "subClause": "Unit 6 • Clause 1.1 Economic Planning Models",
+          "levelRequirement": 6,
+          "difficultyTier": "G4",
+          "isBoss": false,
+          "storyHook": {
+            "narrativeEn": "From Mahalanobis heavy-industry models to NITI Aayog's cooperative federalism, Indian planners steered a newly independent nation.",
+            "investigatorGoal": "Examine Five-Year Plan milestones, poverty eradication strategies, and agricultural green revolutions.",
+            "narrativeTa": "மஹலநோபிஸ் கனரகத் தொழில் மாதிரிகள் முதல் நிதி ஆயோக்கின் கூட்டுறவு கூட்டாட்சி வரை, இந்தியப் பொருளாதாரத் திட்டமிடல் நாட்டை வழிநடத்தியது.",
+            "investigatorGoalTa": "ஐந்தாண்டுத் திட்டங்களின் மைல்கற்கள், வறுமை ஒழிப்பு மற்றும் பசுமைப் புரட்சி உத்திகளை ஆராயுங்கள்."
+          },
+          "titleTa": "திட்டக் குழு, நிதி ஆயோக் மற்றும் ஐந்தாண்டுத் திட்டங்கள்"
+        },
+        {
+          "nodeId": "node_econ_2",
+          "title": "Reserve Bank, Monetary Policy & GST",
+          "subClause": "Unit 6 • Clause 2.1 Fiscal Federalism & Taxes",
+          "levelRequirement": 15,
+          "difficultyTier": "G2",
+          "isBoss": false,
+          "storyHook": {
+            "narrativeEn": "Inside the Reserve Bank's vaults, monetary policy committees adjust repo rates to tame inflation and protect currency stability.",
+            "investigatorGoal": "Decode the GST Council's voting architecture, fiscal deficit parameters, and commercial banking reforms.",
+            "narrativeTa": "ரிசர்வ் வங்கியின் பணவியல் கொள்கைக் குழு பணவீக்கத்தைக் கட்டுப்படுத்தவும் நாணய நிலைத்தன்மையைப் பாதுகாக்கவும் ரெப்போ விகிதங்களைச் சீரமைக்கிறது.",
+            "investigatorGoalTa": "ஜி.எஸ்.டி கவுன்சில் வாக்களிப்பு முறை, நிதிப் பற்றாக்குறை மற்றும் வங்கிச் சீர்திருத்தங்களைப் பகுப்பாய்வு செய்யுங்கள்."
+          },
+          "titleTa": "இந்திய ரிசர்வ் வங்கி, பணவியல் கொள்கை மற்றும் ஜி.எஸ்.டி"
+        },
+        {
+          "nodeId": "node_econ_boss",
+          "title": "Fiscal Grandmaster Boss Trial",
+          "subClause": "Unit 6 • Macroeconomics & Public Finance",
+          "levelRequirement": 24,
+          "difficultyTier": "G1",
+          "isBoss": true,
+          "storyHook": {
+            "narrativeEn": "The Fiscal Grandmaster presides over the national treasury, testing your ability to balance budgets and stimulate economic growth.",
+            "investigatorGoal": "Solve macroeconomic assertion-reasoning trials to claim master fiscal credentials.",
+            "narrativeTa": "தேசிய கருவூலத்தின் தலைமை நிதி அறிஞர், வரவு செலவுத் திட்ட சமநிலை மற்றும் பொருளாதார வளர்ச்சி குறித்த உங்கள் அறிவைச் சோதிக்கிறார்.",
+            "investigatorGoalTa": "பேரியல் பொருளாதாரக் கூற்று-காரண வினாக்களைத் தீர்த்து நிதித் தகுதியை நிரூபியுங்கள்."
+          },
+          "titleTa": "நிதிப் பேரறிஞர் இறுதித் தேர்வு"
+        }
+      ],
+      "realmNameTa": "பொருளாதாரக் கோட்டை",
+      "officialTitleTa": "இந்தியப் பொருளாதாரம்"
+    },
+    {
+      "unitNumber": 7,
+      "unitCode": "UNIT_VII",
+      "officialTitle": "Indian National Movement",
+      "realmId": "realm_7_freedom",
+      "realmName": "Freedom Fortress",
+      "bossQuizId": "quiz_freedom_boss",
+      "nodes": [
+        {
+          "nodeId": "node_free_1",
+          "title": "1857 Great Revolt & National Renaissance",
+          "subClause": "Unit 7 • Clause 1.1 Early Uprisings against British",
+          "levelRequirement": 5,
+          "difficultyTier": "G4",
+          "isBoss": false,
+          "storyHook": {
+            "narrativeEn": "Long before 1857, the ramparts of Vellore Fort erupted in 1806 as Indian sepoys revolted against tyrannical East India Company orders.",
+            "investigatorGoal": "Chronicle early resistance leaders from Veerapandiya Kattabomman and Marudhu Pandiyars to the 1857 rebellion.",
+            "narrativeTa": "1857-க்கு முன்பே 1806-ல் வேலூர் கோட்டையில் கிழக்கிந்திய கம்பெனியின் கொடுமைகளுக்கு எதிராக இந்தியச் சிப்பாய்கள் புரட்சி செய்தனர்.",
+            "investigatorGoalTa": "வீரபாண்டிய கட்டபொம்மன், மருது பாண்டியர்கள் முதல் 1857 புரட்சி வரையிலான தொடக்ககால எதிர்ப்புகளைத் தடமறியுங்கள்."
+          },
+          "titleTa": "1857 பெருங்கலகம் மற்றும் தேசிய மறுமலர்ச்சி"
+        },
+        {
+          "nodeId": "node_free_2",
+          "title": "Indian National Congress & Emergence of Leaders",
+          "subClause": "Unit 7 • Clause 2.1 Gandhi, Nehru, Bose, Ambedkar",
+          "levelRequirement": 10,
+          "difficultyTier": "G2",
+          "isBoss": false,
+          "storyHook": {
+            "narrativeEn": "In the dusty streets of Vedaranyam and Dandi, unarmed freedom fighters defied imperial salt monopolies with sheer moral force.",
+            "investigatorGoal": "Track the non-cooperation movements, Swadeshi shipping under V.O. Chidambaram, and national congress pacts.",
+            "narrativeTa": "வேதாரண்யம் மற்றும் தண்டி வீதிகளில் நிராயுதபாணியான விடுதலை வீரர்கள் ஏகாதிபத்திய உப்புச் சட்டத்தை அறவழியில் உடைத்தனர்.",
+            "investigatorGoalTa": "ஒத்துழையாமை இயக்கம், வ.உ. சிதம்பரனாரின் சுதேசி கப்பல் இயக்கம் மற்றும் தேசிய ஒப்பந்தங்களை ஆராயுங்கள்."
+          },
+          "titleTa": "இந்திய தேசிய காங்கிரஸ் மற்றும் தலைவர்களின் எழுச்சி"
+        },
+        {
+          "nodeId": "node_free_boss",
+          "title": "National Movement Pinnacle Trial",
+          "subClause": "Unit 7 • Satyagraha Chronology & Partitions",
+          "levelRequirement": 20,
+          "difficultyTier": "G1",
+          "isBoss": true,
+          "storyHook": {
+            "narrativeEn": "The Freedom Vanguard summons the spirit of the martyrs to evaluate your knowledge of the liberation struggle.",
+            "investigatorGoal": "Order the chronological chain of national declarations, round table conferences, and independence acts.",
+            "narrativeTa": "விடுதலைப் போராட்டத் தியாகிகளின் நினைவாக, இந்திய விடுதலை வரலாற்றில் உங்கள் ஆளுமையைச் சோதிக்கிறது.",
+            "investigatorGoalTa": "தேசியப் பிரகடனங்கள், வட்டமேசை மாநாடுகள் மற்றும் சுதந்திரச் சட்டங்களின் காலவரிசையை வரிசைப்படுத்துங்கள்."
+          },
+          "titleTa": "தேசிய இயக்க உச்சக்கட்டத் தேர்வு"
+        }
+      ],
+      "realmNameTa": "விடுதலைக் கோட்டை",
+      "officialTitleTa": "இந்திய தேசிய இயக்கம்"
+    },
+    {
+      "unitNumber": 8,
+      "unitCode": "UNIT_VIII",
+      "officialTitle": "History, Culture, Heritage & Socio-Political Movements in TN",
+      "realmId": "realm_8_heritage",
+      "realmName": "Tamil Heritage Sanctum",
+      "bossQuizId": "quiz_heritage_boss",
+      "nodes": [
+        {
+          "nodeId": "node_herit_1",
+          "title": "Keeladi Excavations & Sangam Archaeology",
+          "subClause": "Unit 8 • Clause 1.1 Urban Tamil Society & Artefacts",
+          "levelRequirement": 2,
+          "difficultyTier": "G4",
+          "isBoss": false,
+          "storyHook": {
+            "narrativeEn": "Along the Vaigai river banks at Keeladi, carbon-dating revealed a literate, urban Sangam civilization thriving as early as the 6th century BCE.",
+            "investigatorGoal": "Examine Tamil-Brahmi potsherds, ring wells, and woven textiles confirming urban civilization.",
+            "narrativeTa": "வைகை ஆற்றங்கரையில் உள்ள கீழடியில், கி.மு. 6-ஆம் நூற்றாண்டிலேயே எழுத்தறிவு மிக்க நகர்ப்புறச் சங்க நாகரிகம் செழித்திருந்தது உறுதி செய்யப்பட்டது.",
+            "investigatorGoalTa": "தமிழ்-பிராமி எழுத்துப் பொறித்த பானை ஓடுகள், உறைகிணறுகள் மற்றும் நெசவுத் தொழில் சான்றுகளை ஆராயுங்கள்."
+          },
+          "titleTa": "கீழடி அகழாய்வுகள் மற்றும் சங்க காலத் தொல்லியல்"
+        },
+        {
+          "nodeId": "node_herit_2",
+          "title": "Thirukkural: Secular Ethics & Universal Values",
+          "subClause": "Unit 8 • Clause 2.1 Daily Life & Socio-Political Context",
+          "levelRequirement": 8,
+          "difficultyTier": "G4",
+          "isBoss": false,
+          "storyHook": {
+            "narrativeEn": "Across 1,330 couplets, Thiruvalluvar inscribed universal, secular ethics devoid of religious bias into the Tamil psyche.",
+            "investigatorGoal": "Interpret key couplets on statecraft, ethics, friendship, and justice applied to modern administration.",
+            "narrativeTa": "1,330 குறட்பாக்களில் திருவள்ளுவர் மதச்சார்பற்ற உலகப் பொதுமறை அறத்தைத் தமிழ் வாழ்வியலில் பதித்தார்.",
+            "investigatorGoalTa": "அரசாட்சி, அறம், நட்பு மற்றும் நீதி குறித்த குறட்பாக்களை நவீன நிர்வாகத்துடன் பொருத்திப் பாருங்கள்."
+          },
+          "titleTa": "திருக்குறள்: மதச்சார்பற்ற அறமும் உலகப் பொதுமையும்"
+        },
+        {
+          "nodeId": "node_herit_3",
+          "title": "Early Agitations in TN & Social Reformers",
+          "subClause": "Unit 8 • Clause 3.1 Periyar, Justice Party & Self-Respect",
+          "levelRequirement": 16,
+          "difficultyTier": "G2",
+          "isBoss": false,
+          "storyHook": {
+            "narrativeEn": "Through the Self-Respect Movement and Justice Party manifestos, Periyar E.V. Ramasamy dismantled caste orthodoxy and championed rationalism.",
+            "investigatorGoal": "Analyze the South Indian Liberal Federation, the Vaikom Satyagraha, and women's property rights resolutions.",
+            "narrativeTa": "சுயமரியாதை இயக்கம் மற்றும் நீதிக்கட்சி அறிக்கைகளின் மூலம் தந்தை பெரியார் சாதி ஆதிக்கத்தை உடைத்து பகுத்தறிவை விதைத்தார்.",
+            "investigatorGoalTa": "தென்னிந்திய நல உரிமைச் சங்கம், வைக்கம் சத்தியாகிரகம் மற்றும் பெண்கள் சொத்துரிமைத் தீர்மானங்களைப் பகுப்பாய்வு செய்யுங்கள்."
+          },
+          "titleTa": "தமிழ்நாட்டில் தொடக்ககாலப் போராட்டங்கள் மற்றும் சமூக சீர்திருத்தவாதிகள்"
+        },
+        {
+          "nodeId": "node_herit_boss",
+          "title": "Tamil Heritage Master Sanctum Trial",
+          "subClause": "Unit 8 • Advanced Cultural & Inscription Analysis",
+          "levelRequirement": 22,
+          "difficultyTier": "G1",
+          "isBoss": true,
+          "storyHook": {
+            "narrativeEn": "The Guardians of the Tamil Sangam demand proof of your scholarship in Dravidian heritage and epigraphy.",
+            "investigatorGoal": "Pass the advanced inscription and literature evaluation to unlock the Sangam Seal.",
+            "narrativeTa": "தமிழ்ச் சங்கக் காவலர்கள் திராவிட மரபு மற்றும் கல்வெட்டியல் குறித்த உங்கள் புலமையைச் சோதிக்கின்றனர்.",
+            "investigatorGoalTa": "கல்வெட்டுகள் மற்றும் செவ்வியல் இலக்கியத் தேர்வில் வெற்றி பெற்று சங்க முத்திரையைத் திறக்கவும்."
+          },
+          "titleTa": "தமிழ் மரபு மைய இறுதித் தேர்வு"
+        }
+      ],
+      "realmNameTa": "தமிழ் மரபு மையம்",
+      "officialTitleTa": "தமிழ்நாட்டின் வரலாறு, மரபு, பண்பாடு மற்றும் சமூக-அரசியல் இயக்கங்கள்"
+    },
+    {
+      "unitNumber": 9,
+      "unitCode": "UNIT_IX",
+      "officialTitle": "Development Administration in Tamil Nadu",
+      "realmId": "realm_9_admin",
+      "realmName": "Administration Spire",
+      "bossQuizId": "quiz_admin_boss",
+      "nodes": [
+        {
+          "nodeId": "node_adm_1",
+          "title": "Human Development Indicators & Social Welfare Schemes",
+          "subClause": "Unit 9 • Clause 1.1 Tamil Nadu HDI & Public Health",
+          "levelRequirement": 7,
+          "difficultyTier": "G4",
+          "isBoss": false,
+          "storyHook": {
+            "narrativeEn": "Tamil Nadu stands as an economic and public health exemplar, consistently leading national rankings in maternal health and HDI.",
+            "investigatorGoal": "Examine the Primary Health Centre network, midday nutrition metrics, and social development indexes.",
+            "narrativeTa": "தமிழ்நாடு மகப்பேறு நலம் மற்றும் மனித மேம்பாட்டுக் குறியீடுகளில் தேசிய அளவில் தொடர்ந்து முன்னணியில் திகழ்கிறது.",
+            "investigatorGoalTa": "ஆரம்ப சுகாதார நிலையங்கள், மதிய உணவுத் திட்ட அளவீடுகள் மற்றும் சமூக வளர்ச்சிக் குறியீடுகளை ஆராயுங்கள்."
+          },
+          "titleTa": "மனித மேம்பாட்டுக் குறியீடுகள் மற்றும் சமூக நலத்திட்டங்கள்"
+        },
+        {
+          "nodeId": "node_adm_2",
+          "title": "E-Governance & Social Justice Policies",
+          "subClause": "Unit 9 • Clause 2.1 TNeGA, Reservation & Growth Trends",
+          "levelRequirement": 18,
+          "difficultyTier": "G2",
+          "isBoss": false,
+          "storyHook": {
+            "narrativeEn": "Through e-Sevai centers and transparent reservation models, the Tamil Nadu e-Governance Agency democratized citizen access to the state.",
+            "investigatorGoal": "Evaluate digital public infrastructure, industrial park corridors, and social justice quotas.",
+            "narrativeTa": "இ-சேவை மையங்கள் மற்றும் வெளிப்படையான இடஒதுக்கீட்டு முறைகள் மூலம் தமிழ்நாடு மின்-ஆளுமை முகமை மக்களுக்கான சேவைகளை எளிமைப்படுத்தியது.",
+            "investigatorGoalTa": "டிஜிட்டல் பொதுக் கட்டமைப்பு, தொழிற்பூங்கா வழித்தடங்கள் மற்றும் சமூக நீதி இடஒதுக்கீடுகளை மதிப்பீடு செய்யுங்கள்."
+          },
+          "titleTa": "மின்-ஆளுமை மற்றும் சமூக நீதிக் கொள்கைகள்"
+        },
+        {
+          "nodeId": "node_adm_boss",
+          "title": "Development Administration Apex Trial",
+          "subClause": "Unit 9 • Policy Impact & Comparative Metrics",
+          "levelRequirement": 25,
+          "difficultyTier": "G1",
+          "isBoss": true,
+          "storyHook": {
+            "narrativeEn": "The Chief Administrative Council tests your readiness to execute district governance and welfare schemes.",
+            "investigatorGoal": "Analyze state economic indicators and policy trade-offs to clear the Administrative Apex Trial.",
+            "narrativeTa": "மாவட்ட நிர்வாகம் மற்றும் மக்கள் நலத் திட்டங்களைச் செயல்படுத்தும் உங்கள் திறனைத் தலைமை நிர்வாகக் குழு சோதிக்கிறது.",
+            "investigatorGoalTa": "மாநிலப் பொருளாதாரக் குறியீடுகள் மற்றும் கொள்கை முடிவுகளைப் பகுப்பாய்வு செய்து தேர்வில் வெற்றி பெறுங்கள்."
+          },
+          "titleTa": "வளர்ச்சி நிர்வாக உச்சக்கட்டத் தேர்வு"
+        }
+      ],
+      "realmNameTa": "நிர்வாகக் கோபுரம்",
+      "officialTitleTa": "தமிழக வளர்ச்சி நிர்வாகம்"
+    },
+    {
+      "unitNumber": 10,
+      "unitCode": "UNIT_X",
+      "officialTitle": "Aptitude and Mental Ability",
+      "realmId": "realm_10_aptitude",
+      "realmName": "Aptitude Arena",
+      "bossQuizId": "quiz_apt_boss",
+      "nodes": [
+        {
+          "nodeId": "node_apt_1",
+          "title": "Simplification, Percentage, HCF & LCM",
+          "subClause": "Unit 10 • Clause 1.1 Fast Calculations & Basic Math",
+          "levelRequirement": 1,
+          "difficultyTier": "G4",
+          "isBoss": false,
+          "storyHook": {
+            "narrativeEn": "In ancient arithmetic, Tamil mathematicians used rhythmic verse to calculate rapid HCF, LCM, and percentage shares.",
+            "investigatorGoal": "Master prime factorization shortcuts, LCM word problems, and percentage conversion tricks.",
+            "narrativeTa": "பண்டைய கணிதத்தில், தமிழ் கணித அறிஞர்கள் செய்யுள் வடிவில் விரைவாக மீ.பொ.வ, மீ.சி.ம மற்றும் சதவீதக் கணக்குகளைக் கணித்தனர்.",
+            "investigatorGoalTa": "பகா காரணிப்படுத்தல் குறுக்குவழிகள், மீ.சி.ம கணக்குகள் மற்றும் சதவீத மாற்ற நுட்பங்களில் தேர்ச்சி பெறுங்கள்."
+          },
+          "titleTa": "சுருக்குதல், சதவீதம், மீ.பொ.வ (HCF) & மீ.சி.ம (LCM)"
+        },
+        {
+          "nodeId": "node_apt_2",
+          "title": "Ratio, Proportion, Time & Work",
+          "subClause": "Unit 10 • Clause 2.1 Unitary Method & Pipes",
+          "levelRequirement": 6,
+          "difficultyTier": "G4",
+          "isBoss": false,
+          "storyHook": {
+            "narrativeEn": "When builders constructed temple reservoirs, work rates and proportional distributions were calculated with geometric precision.",
+            "investigatorGoal": "Solve unitary work-rate equations, pipe flow differentials, and compound ratio puzzles.",
+            "narrativeTa": "பண்டைய கோயில் குளங்களைக் கட்டும்போது, வேலை விகிதங்களும் பங்கீடுகளும் துல்லியமான வடிவியல் கணக்கீடுகளால் நிர்ணயிக்கப்பட்டன.",
+            "investigatorGoalTa": "வேலை-நேரச் சமன்பாடுகள், குழாய் நீரோட்ட வேறுபாடுகள் மற்றும் கூட்டு விகிதப் புதிர்களைத் தீர்க்கவும்."
+          },
+          "titleTa": "விகிதம், விகிதாச்சாரம், நேரம் மற்றும் வேலை"
+        },
+        {
+          "nodeId": "node_apt_3",
+          "title": "Simple & Compound Interest, Mensuration",
+          "subClause": "Unit 10 • Clause 3.1 Area, Volume & 2D/3D Geometry",
+          "levelRequirement": 12,
+          "difficultyTier": "G2",
+          "isBoss": false,
+          "storyHook": {
+            "narrativeEn": "From land surveying along agricultural canals to compounding mercantile capital, interest and mensuration govern civil logistics.",
+            "investigatorGoal": "Calculate compound vs simple interest differentials and 3D surface area/volume formulas.",
+            "narrativeTa": "வேளாண் கால்வாய்களின் நில அளவை முதல் வணிக மூலதனத்தின் கூட்டுவட்டி வரை, வட்டியும் அளவியலும் நிர்வாகத்தை வழிநடத்துகின்றன.",
+            "investigatorGoalTa": "தனிவட்டி மற்றும் கூட்டுவட்டி வேறுபாடுகள் மற்றும் முப்பரிமாணப் பரப்பளவு/கனஅளவு சூத்திரங்களைக் கணக்கிடுங்கள்."
+          },
+          "titleTa": "தனிவட்டி, கூட்டுவட்டி மற்றும் அளவியல்"
+        },
+        {
+          "nodeId": "node_apt_boss",
+          "title": "Mental Ability Grand Champion Arena",
+          "subClause": "Unit 10 • Multi-step Puzzles, Dice & Logical Reasoning",
+          "levelRequirement": 19,
+          "difficultyTier": "G1",
+          "isBoss": true,
+          "storyHook": {
+            "narrativeEn": "The Grand Mathemagician opens the Arena of Logic, where only sharp deductive reasoning grants victory.",
+            "investigatorGoal": "Conquer multi-step reasoning puzzles, dice permutations, and pattern sequences under exam pressure.",
+            "narrativeTa": "கணிதப் பேரறிஞர் தர்க்கக் களத்தைத் திறக்கிறார்; கூர்மையான பகுத்தறிவு மட்டுமே இங்கு வெற்றியைத் தரும்.",
+            "investigatorGoalTa": "பல்நிலை தர்க்கப் புதிர்கள், பகடை வரிசைகள் மற்றும் எண் தொடர் வினாக்களைத் தேர்வு நேர அழுத்தத்தில் தீர்க்கவும்."
+          },
+          "titleTa": "மனக்கணக்கு நுண்ணறிவுப் பெருங்கோட்டைத் தேர்வு"
+        }
+      ],
+      "realmNameTa": "திறனறிவுக் களம்",
+      "officialTitleTa": "திறனறிவு மற்றும் மனக்கணக்கு நுண்ணறிவு"
+    }
+  ]
+}

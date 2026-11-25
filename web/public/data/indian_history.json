@@ -1,0 +1,1525 @@
+{
+  "id": "indian_history",
+  "name": "Indian History",
+  "topics": [
+    {
+      "id": "ashoka_edicts",
+      "name": "Ashoka's Edicts & Mauryan Empire",
+      "questions": [
+        {
+          "id": "q_0001",
+          "year": 2018,
+          "group": "Group 2",
+          "question": "Which of the following rock edicts of Ashoka mentions the Kalinga war?",
+          "options": [
+            "Rock Edict I",
+            "Rock Edict XIII",
+            "Rock Edict V",
+            "Rock Edict II"
+          ],
+          "correct_answer": 1,
+          "explanation": "Rock Edict XIII contains the vivid description of the Kalinga war and Ashoka's remorse over the devastation.",
+          "difficulty": "G4",
+          "source": "PYQ_2018_G2",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0002",
+          "year": 2022,
+          "group": "Group 1",
+          "question": "The script predominantly used in Ashoka's major rock edicts found in India is",
+          "options": [
+            "Brahmi",
+            "Kharosthi",
+            "Aramaic",
+            "Greek"
+          ],
+          "correct_answer": 0,
+          "explanation": "Most of Ashoka's inscriptions in India were written in the Prakrit language using the Brahmi script.",
+          "difficulty": "G4",
+          "source": "PYQ_2022_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0003",
+          "year": 2024,
+          "group": "Group 4",
+          "question": "Which Indus Valley Civilization site is renowned for possessing a massive tidal dockyard?",
+          "options": [
+            "Harappa",
+            "Mohenjo-daro",
+            "Lothal",
+            "Kalibangan"
+          ],
+          "correct_answer": 2,
+          "explanation": "Lothal in Gujarat had a world-famous brick dockyard connected to the ancient course of the Sabarmati river.",
+          "difficulty": "G4",
+          "source": "PYQ_2024_G4",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0004",
+          "year": 2019,
+          "group": "Group 2",
+          "question": "The famous bronze statue of the 'Dancing Girl' was excavated from which Indus Valley site?",
+          "options": [
+            "Mohenjo-daro",
+            "Harappa",
+            "Banawali",
+            "Rakhigarhi"
+          ],
+          "correct_answer": 0,
+          "explanation": "The bronze Dancing Girl masterpiece was excavated by Ernest Mackay at Mohenjo-daro in 1926.",
+          "difficulty": "G4",
+          "source": "PYQ_2019_G2",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0005",
+          "year": 2022,
+          "group": "Group 2",
+          "question": "The Brihadisvara Temple at Thanjavur was consecrated by which celebrated Chola emperor?",
+          "options": [
+            "Rajaraja Chola I",
+            "Rajendra Chola I",
+            "Kulothunga Chola I",
+            "Parantaka Chola I"
+          ],
+          "correct_answer": 0,
+          "explanation": "Rajaraja Chola I commissioned the Brihadisvara (Big Temple) in Thanjavur, completed around 1010 CE.",
+          "difficulty": "G4",
+          "source": "PYQ_2022_G2",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0006",
+          "year": 2021,
+          "group": "Group 1",
+          "question": "The Uttaramerur stone inscriptions of Parantaka Chola I provide detailed evidence regarding the functioning of",
+          "options": [
+            "Military cantonments",
+            "Village administration (Kudavolai)",
+            "Maritime trade guilds",
+            "Royal taxation courts"
+          ],
+          "correct_answer": 1,
+          "explanation": "The Uttaramerur inscriptions describe the democratic Kudavolai electoral system for village assembly committees (Variyams).",
+          "difficulty": "G4",
+          "source": "PYQ_2021_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0007",
+          "year": 2017,
+          "group": "Group 2",
+          "question": "Which Gupta emperor is famously referred to as the 'Napoleon of India' by historian Vincent Smith?",
+          "options": [
+            "Chandragupta I",
+            "Samudragupta",
+            "Chandragupta II",
+            "Kumaragupta"
+          ],
+          "correct_answer": 1,
+          "explanation": "Samudragupta's extensive military conquests recorded on the Allahabad Pillar Edict earned him the title.",
+          "difficulty": "G4",
+          "source": "PYQ_2017_G2",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0008",
+          "year": 2019,
+          "group": "Group 4",
+          "question": "Which Sultan of Delhi introduced market control regulations and price monitoring officers (Shahna-i-Mandi)?",
+          "options": [
+            "Balban",
+            "Alauddin Khilji",
+            "Muhammad bin Tughlaq",
+            "Firoz Shah Tughlaq"
+          ],
+          "correct_answer": 1,
+          "explanation": "Alauddin Khilji instituted strict price ceilings and market surveillance in Delhi to maintain a massive standing army.",
+          "difficulty": "G4",
+          "source": "PYQ_2019_G4",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0009",
+          "year": 2024,
+          "group": "Group 2",
+          "question": "The celebrated literary masterpiece 'Amuktamalyada' in Telugu was authored by",
+          "options": [
+            "Krishnadevaraya",
+            "Harihara II",
+            "Deva Raya II",
+            "Achyuta Deva Raya"
+          ],
+          "correct_answer": 0,
+          "explanation": "Emperor Krishnadevaraya composed Amuktamalyada, detailing the story of Andal and statecraft principles.",
+          "difficulty": "G4",
+          "source": "PYQ_2024_G2",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0010",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Choose the correct sequence of the following using the codes given below:\nI. Qutbuddin Aibak, Iltutmish, Raziya, Balban\nII. Jahangir, Humayun, Akbar, Shahjahan\nIII. Balaji Viswanath, Balaji Baji rao, Baji Rao I, Shivaji",
+          "options": [
+            "I and II only",
+            "II and III only",
+            "I only",
+            "III only"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G1",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0011",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Which of the following were among the main exports of Indus valley people. Select the correct answer from the codes given below : I. Wheat II. Barley III. Cotton IV. Gold",
+          "options": [
+            "I, II and III",
+            "II and III",
+            "I and II",
+            "III and IV"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G1",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0012",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Which of the following is/are not correct? Minto-Morley reforms of 1909 introduced the following. I. The system of direct election was introduced in provinces II. The act did not enfranchise women III. It introduced dyarchy in provinces IV. Communal electorate was introduced",
+          "options": [
+            "I only",
+            "I and III",
+            "II and III",
+            "III only"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G1",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0013",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Who bestowed the title Sardar on Vallabhai Patel?",
+          "options": [
+            "Dadabhai Naoroji",
+            "Jawaharlal Nehru",
+            "Mahatma Gandhi",
+            "Rajendra Prasad"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0014",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "During 1857 revolt which army remained loyal to the British?",
+          "options": [
+            "Bombay Army",
+            "Bengal Army",
+            "Madras Army",
+            "Avadh Army"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0015",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Pick out the wrong statement.",
+          "options": [
+            "Veerappa, the Zamindar of Koppal rose against the Nizam of Hyderabad in 1819",
+            "Gadkaris were military classes who garrisoned Maratha forts",
+            "Chakra Bisoi was the khonds leader",
+            "Sindhu and Kanhu were the leaders of the Kols"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0016",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Identify the statement, which is not the cause for the failure of Quit India Movement",
+          "options": [
+            "(a) alone",
+            "(a) and (b) alone",
+            "(c) alone",
+            "(a), (b) and (d) alone"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0017",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "In the Australian Federal elections 2015 for the Prime Minister of Australia, who emerged as winner?",
+          "options": [
+            "Tony Abbot",
+            "Kevin Rudd",
+            "Malcolm Turnbull",
+            "Julia Gillard"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0018",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Consider the following pairs:\n\nI. Thallophyta – Algae and Fungi\nII. Tracheophyta – All vascular plants\nIII. Bryophyta – Liver worts and Fungi\nIV. Pteridophyta – Mosses and Mushrooms\n\nWhich of the pair given above is/are correct?",
+          "options": [
+            "III and IV",
+            "I and II",
+            "I and IV",
+            "II and III"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G1",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0019",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Arrange the following common units of classification in ascending order :\n\nI. Family\nII. Order\nIII. Species\nIV. Variety\nV. Genus",
+          "options": [
+            "II, I, III, IV, V",
+            "V, IV, III, II, I",
+            "III, V, IV, II, I",
+            "IV, III, V, I, II"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0020",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "If a colour blind woman marries a normal visioned man, they will produce",
+          "options": [
+            "Normal visioned sons and daughters",
+            "Colour blind sons and normal visioned daughters",
+            "Normal sons and colour blind daughters",
+            "Colour blind sons and daughters"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0021",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Which one of the following is NOT correctly matched?",
+          "options": [
+            "Anopheles Stephensi – Leishmaniasis",
+            "Glossina Palpalis – Sleeping sickness",
+            "Culex Pipiens – Filariasis",
+            "Aedes Aegypti – Dengue fever"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0022",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Who was known as the Father of Library movement in Tamil Nadu?",
+          "options": [
+            "Thiru. T.K. Avinashilingam",
+            "Thiru. M.P. Periyasamy",
+            "Thiru. M. Bhaktavatsalam",
+            "Thiru. Muthiah Chettiar"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0023",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "In which Indian state the women, except Brahmin and Bania community, terminate their marriage relationship through the custom called “Chudi Pahanana”.",
+          "options": [
+            "Andhra Pradesh",
+            "Chattisgarh",
+            "Jharghand",
+            "Uttaranchal"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0024",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Which of the following statements about Mother Teresa is/are True?",
+          "options": [
+            "I and III correct",
+            "II and IV correct",
+            "I and IV correct",
+            "I, III and IV correct"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0025",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "The Dravidian Mahajana Sabha was founded by",
+          "options": [
+            "Pundit Iyothee Thoss",
+            "C.S. Srinivasa Raghava Iyengar",
+            "P. Theagaraya Chetty",
+            "C. Natesa Mudaliar"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0026",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "In which Indian National Congress session, Mahatma Gandhi was made its President?",
+          "options": [
+            "Nagpur",
+            "Gaya",
+            "Belgaum",
+            "Kanpur"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0027",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Which Act is called as Black Act by the Indians?",
+          "options": [
+            "Vernacular Press Act",
+            "Indian Arms Act",
+            "Rowlatt Act",
+            "Opium Act"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0028",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Which country was affected by 'Typhoon Goni'?",
+          "options": [
+            "Philippines",
+            "Japan",
+            "Sri Lanka",
+            "Canada"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0029",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "The Leader of the Congress Party in the Lok Sabha as on September 2015",
+          "options": [
+            "Mallikarjuna Karge",
+            "Sonia Gandhi",
+            "Ghulam Nabi Azad",
+            "Rahul Gandhi"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0030",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "The last movie for which late M.S. Viswanathan composed music is",
+          "options": [
+            "Engirundho Vanthan",
+            "Suvadugal",
+            "Devadoss",
+            "Ninaithalae Inikkum"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0031",
+          "year": 2017,
+          "group": "Group 1",
+          "question": "List out the following Bahmani rulers in chronological order and mark the correct choice :",
+          "options": [
+            "I, III, IV, II",
+            "I, IV, III, II",
+            "IV, I, III, II",
+            "IV, I, II, III"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2017_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0032",
+          "year": 2017,
+          "group": "Group 1",
+          "question": "The twenty second Tirthankara of Jainism was",
+          "options": [
+            "Rishabha",
+            "Badrabhagu",
+            "Parsva",
+            "Neminatha"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2017_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0033",
+          "year": 2017,
+          "group": "Group 1",
+          "question": "Consider the following pairs:",
+          "options": [
+            "I and IV only",
+            "II only",
+            "IV only",
+            "II and III only"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2017_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0034",
+          "year": 2017,
+          "group": "Group 1",
+          "question": "Who constructed a canal of 150 miles from Yamuna to Hissar for agricultural purpose?",
+          "options": [
+            "Qutb-ub-din-Aibak",
+            "Firoz Shah Tughlaqu",
+            "Khizir Khan",
+            "Sikandar Lodi"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2017_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0035",
+          "year": 2017,
+          "group": "Group 1",
+          "question": "The villages Raksas and Tagdi related to which battle?",
+          "options": [
+            "Battle of Talikotta",
+            "Battle of Takkolam",
+            "Battle of Panipat 1761",
+            "Battle of Adayar"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2017_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0036",
+          "year": 2017,
+          "group": "Group 1",
+          "question": "\"Khudai Khidmatgar\" movement was organised by",
+          "options": [
+            "Abdul Gaffar Khan",
+            "Syed Ahmed Khan",
+            "Liaquat Ali Khan",
+            "Muhammed Iqbal"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2017_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0037",
+          "year": 2017,
+          "group": "Group 1",
+          "question": "Which is not correctly matched?",
+          "options": [
+            "Rahmat Ali - Pakistan",
+            "Vinoba Bhave - Second Individual Satyagrahi",
+            "Linlithgow - August Offer",
+            "Rajaji - Kulakalvi Thittam"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2017_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0038",
+          "year": 2017,
+          "group": "Group 1",
+          "question": "Ramsay Macdonald, the British Prime Minister announced the communal award on",
+          "options": [
+            "16th August, 1932",
+            "20th September, 1932",
+            "17th November, 1932",
+            "16th August, 1946"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2017_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0039",
+          "year": 2017,
+          "group": "Group 1",
+          "question": "Choose the incorrect pair from the following :",
+          "options": [
+            "Sarvajanik Sabha - M.G. Ranade",
+            "Indian National Congress - A.O. Hume",
+            "London Indian Association - Dadabai Naoroji",
+            "Madras Native Association - Surendranath Banerjee"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2017_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0040",
+          "year": 2017,
+          "group": "Group 1",
+          "question": "Who was the First Women President of Indian National Congress?",
+          "options": [
+            "Sarojini Naidu",
+            "Annie Besant",
+            "Vijayalakshmi Pandit",
+            "Indira Gandhi"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2017_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0041",
+          "year": 2017,
+          "group": "Group 1",
+          "question": "Arrange the following items according to the chronological order :",
+          "options": [
+            "II, I, IV, III",
+            "IV, III, II, I",
+            "I, IV, II, III",
+            "I, IV, III, II"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2017_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_hist_g1_01",
+          "year": 2022,
+          "group": "Group 1",
+          "question": "Consider the following statements regarding the Kudavolai electoral system of the Imperial Cholas documented in the Uttaramerur Inscriptions of Parantaka I (919 & 921 CE):\nI. The village of Uttaramerur was divided into 30 wards (Kudumbus) for local self-governance.\nII. Candidates had to own at least one-fourth veli of taxable land and possess a house built on their own site.\nIII. Candidates were required to be between 35 and 70 years of age and proficient in Vedic literature and commentaries.\nIV. Women and men who had served on any committee for the previous three years were barred from contesting.\nWhich of the statements given above are correct?",
+          "options": [
+            "I and II only",
+            "II and III only",
+            "I, II and III only",
+            "I, II, III and IV"
+          ],
+          "correct_answer": 3,
+          "explanation": "All four clauses are historically authentic provisions recorded on the walls of the Vaikunta Perumal temple at Uttaramerur during the reign of Parantaka Chola I.",
+          "source": "PYQ_2022_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV",
+          "difficulty": "G1"
+        },
+        {
+          "id": "q_hist_g1_02",
+          "year": 2024,
+          "group": "Group 1",
+          "question": "Match List-I (Ancient and Medieval South Indian Inscriptions / Texts) with List-II (Dynasties / Rulers):\nList-I:\n(a) Aihole Inscription of Ravikirti\n(b) Uttaramerur Inscription\n(c) Velvikudi Copper Plates\n(d) Hathigumpha Inscription\nList-II:\n1. Parantaka Chola I\n2. Pulakesin II (Chalukya)\n3. Kharavela (Kalinga)\n4. Nedunjadayan / Jatila Parantaka (Pandya)\nChoose the correct code:\n(a) - (b) - (c) - (d)",
+          "options": [
+            "2 - 1 - 4 - 3",
+            "1 - 2 - 3 - 4",
+            "2 - 4 - 1 - 3",
+            "4 - 1 - 2 - 3"
+          ],
+          "correct_answer": 0,
+          "explanation": "Aihole = Pulakesin II; Uttaramerur = Parantaka Chola I; Velvikudi plates = Pandya ruler Nedunjadayan; Hathigumpha = King Kharavela of Kalinga.",
+          "source": "PYQ_2024_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV",
+          "difficulty": "G1"
+        }
+      ],
+      "syllabus_unit": "UNIT_IV"
+    },
+    {
+      "id": "indus_valley",
+      "name": "Indus Valley Civilization",
+      "questions": [
+        {
+          "id": "q_0042",
+          "year": 2024,
+          "group": "Group 4",
+          "question": "Which Indus Valley Civilization site is renowned for possessing a massive tidal dockyard?",
+          "options": [
+            "Harappa",
+            "Mohenjo-daro",
+            "Lothal",
+            "Kalibangan"
+          ],
+          "correct_answer": 2,
+          "explanation": "Lothal in Gujarat had a world-famous brick dockyard connected to the ancient course of the Sabarmati river.",
+          "difficulty": "G4",
+          "source": "PYQ_2024_G4",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0043",
+          "year": 2019,
+          "group": "Group 2",
+          "question": "The famous bronze statue of the 'Dancing Girl' was excavated from which Indus Valley site?",
+          "options": [
+            "Mohenjo-daro",
+            "Harappa",
+            "Banawali",
+            "Rakhigarhi"
+          ],
+          "correct_answer": 0,
+          "explanation": "The bronze Dancing Girl masterpiece was excavated by Ernest Mackay at Mohenjo-daro in 1926.",
+          "difficulty": "G4",
+          "source": "PYQ_2019_G2",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        }
+      ],
+      "syllabus_unit": "UNIT_IV"
+    },
+    {
+      "id": "chola_dynasty",
+      "name": "Chola Dynasty & South Indian Kingdoms",
+      "questions": [
+        {
+          "id": "q_0044",
+          "year": 2022,
+          "group": "Group 2",
+          "question": "The Brihadisvara Temple at Thanjavur was consecrated by which celebrated Chola emperor?",
+          "options": [
+            "Rajaraja Chola I",
+            "Rajendra Chola I",
+            "Kulothunga Chola I",
+            "Parantaka Chola I"
+          ],
+          "correct_answer": 0,
+          "explanation": "Rajaraja Chola I commissioned the Brihadisvara (Big Temple) in Thanjavur, completed around 1010 CE.",
+          "difficulty": "G4",
+          "source": "PYQ_2022_G2",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0045",
+          "year": 2021,
+          "group": "Group 1",
+          "question": "The Uttaramerur stone inscriptions of Parantaka Chola I provide detailed evidence regarding the functioning of",
+          "options": [
+            "Military cantonments",
+            "Village administration (Kudavolai)",
+            "Maritime trade guilds",
+            "Royal taxation courts"
+          ],
+          "correct_answer": 1,
+          "explanation": "The Uttaramerur inscriptions describe the democratic Kudavolai electoral system for village assembly committees (Variyams).",
+          "difficulty": "G4",
+          "source": "PYQ_2021_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0046",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Choose the correct sequence of the following using the codes given below:\nI. Qutbuddin Aibak, Iltutmish, Raziya, Balban\nII. Jahangir, Humayun, Akbar, Shahjahan\nIII. Balaji Viswanath, Balaji Baji rao, Baji Rao I, Shivaji",
+          "options": [
+            "I and II only",
+            "II and III only",
+            "I only",
+            "III only"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G1",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0047",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Which of the following were among the main exports of Indus valley people. Select the correct answer from the codes given below : I. Wheat II. Barley III. Cotton IV. Gold",
+          "options": [
+            "I, II and III",
+            "II and III",
+            "I and II",
+            "III and IV"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G1",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0048",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Which of the following is/are not correct? Minto-Morley reforms of 1909 introduced the following. I. The system of direct election was introduced in provinces II. The act did not enfranchise women III. It introduced dyarchy in provinces IV. Communal electorate was introduced",
+          "options": [
+            "I only",
+            "I and III",
+            "II and III",
+            "III only"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G1",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0049",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Who bestowed the title Sardar on Vallabhai Patel?",
+          "options": [
+            "Dadabhai Naoroji",
+            "Jawaharlal Nehru",
+            "Mahatma Gandhi",
+            "Rajendra Prasad"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0050",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "During 1857 revolt which army remained loyal to the British?",
+          "options": [
+            "Bombay Army",
+            "Bengal Army",
+            "Madras Army",
+            "Avadh Army"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0051",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Pick out the wrong statement.",
+          "options": [
+            "Veerappa, the Zamindar of Koppal rose against the Nizam of Hyderabad in 1819",
+            "Gadkaris were military classes who garrisoned Maratha forts",
+            "Chakra Bisoi was the khonds leader",
+            "Sindhu and Kanhu were the leaders of the Kols"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0052",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Identify the statement, which is not the cause for the failure of Quit India Movement",
+          "options": [
+            "(a) alone",
+            "(a) and (b) alone",
+            "(c) alone",
+            "(a), (b) and (d) alone"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0053",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "In the Australian Federal elections 2015 for the Prime Minister of Australia, who emerged as winner?",
+          "options": [
+            "Tony Abbot",
+            "Kevin Rudd",
+            "Malcolm Turnbull",
+            "Julia Gillard"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0054",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Consider the following pairs:\n\nI. Thallophyta – Algae and Fungi\nII. Tracheophyta – All vascular plants\nIII. Bryophyta – Liver worts and Fungi\nIV. Pteridophyta – Mosses and Mushrooms\n\nWhich of the pair given above is/are correct?",
+          "options": [
+            "III and IV",
+            "I and II",
+            "I and IV",
+            "II and III"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G1",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0055",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Arrange the following common units of classification in ascending order :\n\nI. Family\nII. Order\nIII. Species\nIV. Variety\nV. Genus",
+          "options": [
+            "II, I, III, IV, V",
+            "V, IV, III, II, I",
+            "III, V, IV, II, I",
+            "IV, III, V, I, II"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0056",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "If a colour blind woman marries a normal visioned man, they will produce",
+          "options": [
+            "Normal visioned sons and daughters",
+            "Colour blind sons and normal visioned daughters",
+            "Normal sons and colour blind daughters",
+            "Colour blind sons and daughters"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0057",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Which one of the following is NOT correctly matched?",
+          "options": [
+            "Anopheles Stephensi – Leishmaniasis",
+            "Glossina Palpalis – Sleeping sickness",
+            "Culex Pipiens – Filariasis",
+            "Aedes Aegypti – Dengue fever"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0058",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Who was known as the Father of Library movement in Tamil Nadu?",
+          "options": [
+            "Thiru. T.K. Avinashilingam",
+            "Thiru. M.P. Periyasamy",
+            "Thiru. M. Bhaktavatsalam",
+            "Thiru. Muthiah Chettiar"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0059",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "In which Indian state the women, except Brahmin and Bania community, terminate their marriage relationship through the custom called “Chudi Pahanana”.",
+          "options": [
+            "Andhra Pradesh",
+            "Chattisgarh",
+            "Jharghand",
+            "Uttaranchal"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0060",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Which of the following statements about Mother Teresa is/are True?",
+          "options": [
+            "I and III correct",
+            "II and IV correct",
+            "I and IV correct",
+            "I, III and IV correct"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0061",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "The Dravidian Mahajana Sabha was founded by",
+          "options": [
+            "Pundit Iyothee Thoss",
+            "C.S. Srinivasa Raghava Iyengar",
+            "P. Theagaraya Chetty",
+            "C. Natesa Mudaliar"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0062",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "In which Indian National Congress session, Mahatma Gandhi was made its President?",
+          "options": [
+            "Nagpur",
+            "Gaya",
+            "Belgaum",
+            "Kanpur"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0063",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Which Act is called as Black Act by the Indians?",
+          "options": [
+            "Vernacular Press Act",
+            "Indian Arms Act",
+            "Rowlatt Act",
+            "Opium Act"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0064",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Which country was affected by 'Typhoon Goni'?",
+          "options": [
+            "Philippines",
+            "Japan",
+            "Sri Lanka",
+            "Canada"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0065",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "The Leader of the Congress Party in the Lok Sabha as on September 2015",
+          "options": [
+            "Mallikarjuna Karge",
+            "Sonia Gandhi",
+            "Ghulam Nabi Azad",
+            "Rahul Gandhi"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0066",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "The last movie for which late M.S. Viswanathan composed music is",
+          "options": [
+            "Engirundho Vanthan",
+            "Suvadugal",
+            "Devadoss",
+            "Ninaithalae Inikkum"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0067",
+          "year": 2017,
+          "group": "Group 1",
+          "question": "List out the following Bahmani rulers in chronological order and mark the correct choice :",
+          "options": [
+            "I, III, IV, II",
+            "I, IV, III, II",
+            "IV, I, III, II",
+            "IV, I, II, III"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2017_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0068",
+          "year": 2017,
+          "group": "Group 1",
+          "question": "The twenty second Tirthankara of Jainism was",
+          "options": [
+            "Rishabha",
+            "Badrabhagu",
+            "Parsva",
+            "Neminatha"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2017_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0069",
+          "year": 2017,
+          "group": "Group 1",
+          "question": "Consider the following pairs:",
+          "options": [
+            "I and IV only",
+            "II only",
+            "IV only",
+            "II and III only"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2017_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0070",
+          "year": 2017,
+          "group": "Group 1",
+          "question": "Who constructed a canal of 150 miles from Yamuna to Hissar for agricultural purpose?",
+          "options": [
+            "Qutb-ub-din-Aibak",
+            "Firoz Shah Tughlaqu",
+            "Khizir Khan",
+            "Sikandar Lodi"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2017_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0071",
+          "year": 2017,
+          "group": "Group 1",
+          "question": "The villages Raksas and Tagdi related to which battle?",
+          "options": [
+            "Battle of Talikotta",
+            "Battle of Takkolam",
+            "Battle of Panipat 1761",
+            "Battle of Adayar"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2017_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0072",
+          "year": 2017,
+          "group": "Group 1",
+          "question": "\"Khudai Khidmatgar\" movement was organised by",
+          "options": [
+            "Abdul Gaffar Khan",
+            "Syed Ahmed Khan",
+            "Liaquat Ali Khan",
+            "Muhammed Iqbal"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2017_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0073",
+          "year": 2017,
+          "group": "Group 1",
+          "question": "Which is not correctly matched?",
+          "options": [
+            "Rahmat Ali - Pakistan",
+            "Vinoba Bhave - Second Individual Satyagrahi",
+            "Linlithgow - August Offer",
+            "Rajaji - Kulakalvi Thittam"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2017_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0074",
+          "year": 2017,
+          "group": "Group 1",
+          "question": "Ramsay Macdonald, the British Prime Minister announced the communal award on",
+          "options": [
+            "16th August, 1932",
+            "20th September, 1932",
+            "17th November, 1932",
+            "16th August, 1946"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2017_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0075",
+          "year": 2017,
+          "group": "Group 1",
+          "question": "Choose the incorrect pair from the following :",
+          "options": [
+            "Sarvajanik Sabha - M.G. Ranade",
+            "Indian National Congress - A.O. Hume",
+            "London Indian Association - Dadabai Naoroji",
+            "Madras Native Association - Surendranath Banerjee"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2017_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0076",
+          "year": 2017,
+          "group": "Group 1",
+          "question": "Who was the First Women President of Indian National Congress?",
+          "options": [
+            "Sarojini Naidu",
+            "Annie Besant",
+            "Vijayalakshmi Pandit",
+            "Indira Gandhi"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2017_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        },
+        {
+          "id": "q_0077",
+          "year": 2017,
+          "group": "Group 1",
+          "question": "Arrange the following items according to the chronological order :",
+          "options": [
+            "II, I, IV, III",
+            "IV, III, II, I",
+            "I, IV, II, III",
+            "I, IV, III, II"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2017_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        }
+      ],
+      "syllabus_unit": "UNIT_IV"
+    },
+    {
+      "id": "gupta_empire",
+      "name": "Gupta Empire & Golden Age",
+      "questions": [
+        {
+          "id": "q_0078",
+          "year": 2017,
+          "group": "Group 2",
+          "question": "Which Gupta emperor is famously referred to as the 'Napoleon of India' by historian Vincent Smith?",
+          "options": [
+            "Chandragupta I",
+            "Samudragupta",
+            "Chandragupta II",
+            "Kumaragupta"
+          ],
+          "correct_answer": 1,
+          "explanation": "Samudragupta's extensive military conquests recorded on the Allahabad Pillar Edict earned him the title.",
+          "difficulty": "G4",
+          "source": "PYQ_2017_G2",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        }
+      ],
+      "syllabus_unit": "UNIT_IV"
+    },
+    {
+      "id": "delhi_sultanate",
+      "name": "Delhi Sultanate & Mughals",
+      "questions": [
+        {
+          "id": "q_0079",
+          "year": 2019,
+          "group": "Group 4",
+          "question": "Which Sultan of Delhi introduced market control regulations and price monitoring officers (Shahna-i-Mandi)?",
+          "options": [
+            "Balban",
+            "Alauddin Khilji",
+            "Muhammad bin Tughlaq",
+            "Firoz Shah Tughlaq"
+          ],
+          "correct_answer": 1,
+          "explanation": "Alauddin Khilji instituted strict price ceilings and market surveillance in Delhi to maintain a massive standing army.",
+          "difficulty": "G4",
+          "source": "PYQ_2019_G4",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        }
+      ],
+      "syllabus_unit": "UNIT_IV"
+    },
+    {
+      "id": "vijayanagar_empire",
+      "name": "Vijayanagar & Bahmani Kingdoms",
+      "questions": [
+        {
+          "id": "q_0080",
+          "year": 2024,
+          "group": "Group 2",
+          "question": "The celebrated literary masterpiece 'Amuktamalyada' in Telugu was authored by",
+          "options": [
+            "Krishnadevaraya",
+            "Harihara II",
+            "Deva Raya II",
+            "Achyuta Deva Raya"
+          ],
+          "correct_answer": 0,
+          "explanation": "Emperor Krishnadevaraya composed Amuktamalyada, detailing the story of Andal and statecraft principles.",
+          "difficulty": "G4",
+          "source": "PYQ_2024_G2",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_IV"
+        }
+      ],
+      "syllabus_unit": "UNIT_IV"
+    }
+  ],
+  "syllabus_unit": "UNIT_IV"
+}

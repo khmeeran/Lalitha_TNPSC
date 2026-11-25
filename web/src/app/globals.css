@@ -1,0 +1,457 @@
+@import "./game-ui.css";
+@import "tailwindcss";
+
+@theme {
+  --font-serif: var(--font-display);
+  --font-sans: var(--font-body);
+  --font-mono: var(--font-ui);
+}
+
+:root {
+  --font-display: var(--font-cinzel), serif;
+  --font-body: var(--font-nunito), var(--font-tamil), sans-serif;
+  --font-ui: var(--font-rajdhani), var(--font-tamil), sans-serif;
+  --background: #0F0320;
+  --foreground: #FFF8DC;
+  --primary-purple: #6A0DAD;
+  --deep-indigo: #1C053A;
+  --emerald-green: #2ECC71;
+  --glowing-gold: #FFD700;
+  --parchment-cream: #FFF8DC;
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+}
+
+/* =========================================================================
+   PHASE 7: 3-TIER ULTRA-PREMIUM TYPOGRAPHY HIERARCHY
+   Tier 1: Display Font (Cinzel Decorative)
+   Tier 2: Body Font (Nunito + Noto Sans Tamil)
+   Tier 3: UI / Stat Font (Rajdhani + Noto Sans Tamil)
+   ========================================================================= */
+
+/* TIER 1: DISPLAY FONT */
+h1, h2, h3, .realm-title, .trial-header, .font-fantasy-header, .font-display, .font-serif {
+  font-family: var(--font-display) !important;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+}
+
+/* TIER 2: BODY FONT */
+.speech-bubble, .question-text, .explanation, .font-body, .font-sans, p, span.body-text {
+  font-family: var(--font-body);
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+}
+
+/* TAMIL FONT ENFORCEMENT */
+.font-tamil {
+  font-family: var(--font-tamil), var(--font-nunito), sans-serif !important;
+  line-height: 1.7;
+  letter-spacing: 0.015em;
+}
+
+html.lang-ta,
+html.lang-ta body,
+html.lang-ta h1,
+html.lang-ta h2,
+html.lang-ta h3,
+html.lang-ta h4,
+html.lang-ta p,
+html.lang-ta span,
+html.lang-ta button,
+html.lang-ta a,
+html.lang-ta li,
+html.lang-ta .font-body,
+html.lang-ta .font-sans,
+html.lang-ta .font-ui,
+html.lang-ta .font-serif,
+html.lang-ta .font-display,
+html.lang-ta .font-fantasy-header,
+html.lang-ta .font-fantasy-header-dark,
+html.lang-ta .magic-button,
+html.lang-ta .game-menu-tab,
+html.lang-ta .question-text,
+html.lang-ta .explanation {
+  font-family: var(--font-tamil), var(--font-nunito), sans-serif !important;
+}
+
+/* TIER 3: UI / STAT / NUMBER / BUTTON FONT */
+.hud-stat, .button-label, .badge, .xp-counter, .font-ui, .font-mono, .game-menu-tab, .magic-button, .tabular-nums {
+  font-family: var(--font-ui) !important;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Drop Caps: First letter of story hook narrative (3x Cinzel gold letter) */
+.story-hook-narrative::first-letter,
+.drop-cap::first-letter {
+  font-family: var(--font-display);
+  font-size: 3em;
+  float: left;
+  line-height: 0.8;
+  margin-right: 0.15em;
+  margin-top: 0.05em;
+  color: #FFD700;
+  text-shadow: 0 0 12px rgba(255, 215, 0, 0.6);
+  font-weight: 700;
+}
+
+/* Small Caps for Realm Names */
+.realm-name-smallcaps, .small-caps {
+  font-variant: small-caps;
+  letter-spacing: 0.06em;
+}
+
+/* Gold Gradient on Titles */
+.title-gold-gradient {
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.7));
+}
+
+/* Hide scrollbar for clean carousels while maintaining touch swipe */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Subtle clean scrollbar for desktop lists */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Lalitha Mascot Physics & Micro-Interactions */
+@keyframes lalithaBreathing {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-2.5px); }
+}
+
+.animate-lalitha-breathing {
+  animation: lalithaBreathing 3.5s ease-in-out infinite;
+}
+
+@keyframes lalithaThinking {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-1.5px) rotate(1deg); }
+}
+
+.animate-lalitha-thinking {
+  animation: lalithaThinking 3.0s ease-in-out infinite;
+}
+
+@keyframes lalithaBounce {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-5px) scale(1.04); }
+}
+
+.animate-lalitha-bounce {
+  animation: lalithaBounce 1.5s ease-in-out infinite;
+}
+
+@keyframes lalithaNod {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(-2deg); }
+}
+
+.animate-lalitha-nod {
+  animation: lalithaNod 2.0s ease-in-out infinite;
+}
+
+/* Adventure Map Beacon Pulse & Trail Animations */
+@keyframes beaconPulse {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.25); opacity: 0.15; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+.animate-beacon-pulse {
+  animation: beaconPulse 2.4s ease-in-out infinite;
+}
+
+@keyframes trailPulse {
+  0% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: 20; }
+}
+
+.animate-trail-pulse {
+  animation: trailPulse 3s linear infinite;
+}
+
+/* Reduced Motion Override (WCAG 2.1 AA Compliance) */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@keyframes softPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.03); opacity: 0.9; }
+}
+
+.animate-soft-pulse {
+  animation: softPulse 2.5s ease-in-out infinite;
+}
+
+/* Velan Mascot Physics & Micro-Interactions */
+@keyframes velanBreathing {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-3px); }
+}
+
+.animate-velan-breathing {
+  animation: velanBreathing 3.5s ease-in-out infinite;
+}
+
+@keyframes wingFlutter {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  25% { transform: scale(0.96) rotate(-5deg); }
+  75% { transform: scale(1.04) rotate(5deg); }
+}
+
+.animate-wing-flutter {
+  animation: wingFlutter 0.4s ease-in-out;
+}
+
+@keyframes spectaclesBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-2px); }
+}
+
+.animate-spectacles-bounce {
+  animation: spectaclesBounce 0.3s ease-in-out;
+}
+
+/* Ergonomic 56x56px touch target expansion for 44x44px controls (Option 1) */
+.touch-target-56 {
+  position: relative !important;
+}
+.touch-target-56::after {
+  content: "" !important;
+  position: absolute !important;
+  top: -6px !important;
+  bottom: -6px !important;
+  left: -6px !important;
+  right: -6px !important;
+  pointer-events: auto !important;
+  z-index: 10 !important;
+}
+
+/* =========================================================================
+   TNPSC QUEST — LIVING WORLD VISUAL OVERHAUL STYLES & ANIMATIONS
+   Duolingo meets Mario: Tactile 3D Buttons, Comic Bubbles, Float & Particle
+   ========================================================================= */
+
+@keyframes velanHoverFloat {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(-1.5deg); }
+}
+
+.animate-velan-float {
+  animation: velanHoverFloat 3.2s ease-in-out infinite;
+}
+
+@keyframes velanFlapCycle {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  25% { transform: scale(0.92) rotate(-8deg); }
+  50% { transform: scale(1.08) rotate(6deg); }
+  75% { transform: scale(0.95) rotate(-4deg); }
+}
+
+.animate-velan-flap-continuous {
+  animation: velanFlapCycle 0.5s ease-in-out infinite;
+}
+
+@keyframes comicBubblePop {
+  0% { transform: scale(0.85); opacity: 0; }
+  70% { transform: scale(1.04); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.animate-comic-pop {
+  animation: comicBubblePop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes torchFlicker {
+  0%, 100% { opacity: 0.85; transform: scale(1); filter: drop-shadow(0 0 16px rgba(245, 158, 11, 0.45)); }
+  35% { opacity: 1; transform: scale(1.06); filter: drop-shadow(0 0 24px rgba(245, 158, 11, 0.65)); }
+  70% { opacity: 0.9; transform: scale(0.97); filter: drop-shadow(0 0 14px rgba(245, 158, 11, 0.4)); }
+}
+
+.animate-torch-flicker {
+  animation: torchFlicker 2.2s ease-in-out infinite;
+}
+
+@keyframes coinSparkleSpin {
+  0%, 100% { transform: rotateY(0deg) scale(1); }
+  50% { transform: rotateY(180deg) scale(1.1); }
+}
+
+.animate-coin-spin {
+  animation: coinSparkleSpin 3s linear infinite;
+}
+
+@keyframes beaconGlow {
+  0%, 100% { box-shadow: 0 0 15px rgba(245, 158, 11, 0.4), inset 0 0 10px rgba(245, 158, 11, 0.2); }
+  50% { box-shadow: 0 0 30px rgba(245, 158, 11, 0.8), inset 0 0 15px rgba(245, 158, 11, 0.4); }
+}
+
+.animate-beacon-glow {
+  animation: beaconGlow 2s ease-in-out infinite;
+}
+
+/* 3D Tactile Buttons (Mario / Duolingo Style) */
+.btn-tactile-amber {
+  background: linear-gradient(180deg, #F59E0B 0%, #D97706 100%);
+  box-shadow: 0 6px 0 #92400E, 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
+}
+.btn-tactile-amber:hover {
+  background: linear-gradient(180deg, #FBBF24 0%, #F59E0B 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 0 #92400E, 0 14px 20px -3px rgba(0, 0, 0, 0.45);
+}
+.btn-tactile-amber:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 #92400E, 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+}
+
+.btn-tactile-crimson {
+  background: linear-gradient(180deg, #EF4444 0%, #DC2626 100%);
+  box-shadow: 0 6px 0 #991B1B, 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
+}
+.btn-tactile-crimson:hover {
+  background: linear-gradient(180deg, #F87171 0%, #EF4444 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 0 #991B1B, 0 14px 20px -3px rgba(0, 0, 0, 0.45);
+}
+.btn-tactile-crimson:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 #991B1B, 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+}
+
+.btn-tactile-emerald {
+  background: linear-gradient(180deg, #10B981 0%, #059669 100%);
+  box-shadow: 0 6px 0 #065F46, 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
+}
+.btn-tactile-emerald:hover {
+  background: linear-gradient(180deg, #34D399 0%, #10B981 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 0 #065F46, 0 14px 20px -3px rgba(0, 0, 0, 0.45);
+}
+.btn-tactile-emerald:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 #065F46, 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+}
+
+.btn-tactile-indigo {
+  background: linear-gradient(180deg, #6366F1 0%, #4F46E5 100%);
+  box-shadow: 0 6px 0 #312E81, 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
+}
+.btn-tactile-indigo:hover {
+  background: linear-gradient(180deg, #818CF8 0%, #6366F1 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 0 #312E81, 0 14px 20px -3px rgba(0, 0, 0, 0.45);
+}
+.btn-tactile-indigo:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 #312E81, 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+}
+
+/* Comic Text Shadow for Speech Bubbles */
+.comic-text-shadow {
+  text-shadow:
+    -1.5px -1.5px 0 rgba(0, 0, 0, 0.9),
+     1.5px -1.5px 0 rgba(0, 0, 0, 0.9),
+    -1.5px  1.5px 0 rgba(0, 0, 0, 0.9),
+     1.5px  1.5px 0 rgba(0, 0, 0, 0.9),
+     0 4px 8px rgba(0, 0, 0, 0.8);
+}
+
+
+/* Voice Soundwave Equalizer Animations */
+@keyframes waveOscillate {
+  0%, 100% { height: 4px; }
+  50% { height: 18px; }
+}
+
+.animate-wave-bar-1 {
+  animation: waveOscillate 0.55s ease-in-out infinite;
+}
+.animate-wave-bar-2 {
+  animation: waveOscillate 0.7s ease-in-out infinite 0.15s;
+}
+.animate-wave-bar-3 {
+  animation: waveOscillate 0.45s ease-in-out infinite 0.3s;
+}
+.animate-wave-bar-4 {
+  animation: waveOscillate 0.65s ease-in-out infinite 0.1s;
+}
+
+/* Character Speaking Glow Rings */
+@keyframes talkingGlowEmerald {
+  0%, 100% {
+    box-shadow: 0 0 12px rgba(16, 185, 129, 0.3), inset 0 0 8px rgba(16, 185, 129, 0.2);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 28px rgba(16, 185, 129, 0.85), inset 0 0 14px rgba(16, 185, 129, 0.4);
+    transform: scale(1.02);
+  }
+}
+
+.animate-talking-velan {
+  animation: talkingGlowEmerald 1.2s ease-in-out infinite;
+}
+
+@keyframes talkingGlowAmber {
+  0%, 100% {
+    box-shadow: 0 0 12px rgba(245, 158, 11, 0.3), inset 0 0 8px rgba(245, 158, 11, 0.2);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 28px rgba(245, 158, 11, 0.85), inset 0 0 14px rgba(245, 158, 11, 0.4);
+    transform: scale(1.02);
+  }
+}
+
+.animate-talking-lalitha {
+  animation: talkingGlowAmber 1.2s ease-in-out infinite;
+}
+
+
+

@@ -1,0 +1,801 @@
+/* =========================================================================
+   TNPSC WIZARD RPG STYLE - GAME INTERFACE CSS FRAMEWORK
+   Visual Target: High-Fantasy Educational RPG (Harry Potter x Duolingo x Clash of Clans)
+   Colors: Royal Purple (#6A0DAD), Deep Indigo, Emerald Green (#2ECC71),
+           Glowing Gold (#FFD700), Warm Cream/Parchment (#FFF8DC)
+   Fonts loaded in layout.tsx: Cinzel, MedievalSharp, Nunito, Quicksand
+   ========================================================================= */
+
+:root {
+  --color-primary-purple: #6A0DAD;
+  --color-purple-dark: #3F0569;
+  --color-deep-indigo: #1C053A;
+  --color-indigo-darkest: #0F0320;
+  
+  --color-emerald-green: #2ECC71;
+  --color-emerald-dark: #1E8449;
+  --color-emerald-glow: rgba(46, 204, 113, 0.6);
+  
+  --color-glow-gold: #FFD700;
+  --color-gold-light: #FFE566;
+  --color-gold-dark: #B8860B;
+  --color-gold-shadow: #7A5805;
+  --color-gold-glow: rgba(255, 215, 0, 0.55);
+  
+  --color-parchment-cream: #FFF8DC;
+  --color-parchment-light: #FFFDF2;
+  --color-parchment-aged: #F5E8C7;
+  --color-parchment-shadow: #D8BF89;
+  
+  --color-ink-brown: #3A1E05;
+  --color-ink-purple: #260840;
+}
+
+/* =========================================================================
+   1. TYPOGRAPHY
+   ========================================================================= */
+.font-fantasy-header {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  color: var(--color-glow-gold);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.95), 0 0 12px rgba(255, 215, 0, 0.4);
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.font-fantasy-header-dark {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  color: #3E1E04;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.font-game-body {
+  font-family: var(--font-body);
+  font-weight: 600;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+}
+
+.font-ui {
+  font-family: var(--font-ui);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.4;
+}
+
+/* =========================================================================
+   2. ORNATE FRAMES & CARVED BORDERS (No plain rectangles!)
+   ========================================================================= */
+.ornate-frame {
+  position: relative;
+  background: linear-gradient(145deg, #3A0C6B 0%, #1E053A 50%, #0F0320 100%);
+  border: 3.5px solid #FFD700;
+  border-radius: 18px;
+  box-shadow:
+    0 0 20px rgba(106, 13, 173, 0.65),
+    0 0 10px rgba(255, 215, 0, 0.4),
+    inset 0 0 22px rgba(0, 0, 0, 0.8),
+    inset 0 1.5px 0 rgba(255, 248, 220, 0.45);
+}
+
+.ornate-frame::before {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border: 1.5px solid rgba(255, 215, 0, 0.5);
+  border-radius: 22px;
+  pointer-events: none;
+}
+
+/* Filigree Corner Studs */
+.ornate-corner-gem {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: radial-gradient(circle at 35% 35%, #FFE566 0%, #FFD700 45%, #996500 100%);
+  border: 1.5px solid #FFF8DC;
+  transform: rotate(45deg);
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.85);
+  z-index: 20;
+}
+.ornate-corner-tl { top: -7px; left: -7px; }
+.ornate-corner-tr { top: -7px; right: -7px; }
+.ornate-corner-bl { bottom: -7px; left: -7px; }
+.ornate-corner-br { bottom: -7px; right: -7px; }
+
+/* Thick Royal Purple Ornate Frame */
+.ornate-frame-purple {
+  background: radial-gradient(ellipse at 50% 20%, #4E0A84 0%, #200438 80%, #110220 100%);
+  border: 3px solid #E6B800;
+  border-radius: 20px;
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.7),
+    0 0 25px rgba(106, 13, 173, 0.5),
+    inset 0 2px 0 rgba(255, 255, 255, 0.25),
+    inset 0 -3px 0 rgba(0, 0, 0, 0.6);
+}
+
+/* =========================================================================
+   3. PHYSICAL 3D MAGIC BUTTONS (Not flat CSS)
+   ========================================================================= */
+.magic-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-family: var(--font-ui);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-variant-numeric: tabular-nums;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.12s ease-in-out;
+  border-radius: 14px;
+  text-align: center;
+}
+
+/* Golden Stone Button (Continue / Primary) */
+.magic-button-gold {
+  background: linear-gradient(180deg, #FFE873 0%, #FFC700 40%, #D49000 100%);
+  color: #381B02;
+  border: 2px solid #FFF2A3;
+  box-shadow:
+    0 5px 0 #7A5100,
+    0 9px 16px rgba(0, 0, 0, 0.55),
+    0 0 16px rgba(255, 215, 0, 0.5),
+    inset 0 2px 0 rgba(255, 255, 255, 0.65);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.magic-button-gold:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+  box-shadow:
+    0 7px 0 #7A5100,
+    0 12px 22px rgba(0, 0, 0, 0.65),
+    0 0 24px rgba(255, 215, 0, 0.8),
+    inset 0 2px 0 rgba(255, 255, 255, 0.8);
+}
+
+.magic-button-gold:active {
+  transform: translateY(4px);
+  box-shadow:
+    0 1px 0 #7A5100,
+    0 3px 6px rgba(0, 0, 0, 0.5),
+    inset 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Emerald Green Button (Quiz / Confirm) */
+.magic-button-emerald {
+  background: linear-gradient(180deg, #58E293 0%, #2ECC71 45%, #1D9A51 100%);
+  color: #06381B;
+  border: 2px solid #A3F7C7;
+  box-shadow:
+    0 5px 0 #0E5E30,
+    0 9px 16px rgba(0, 0, 0, 0.55),
+    0 0 16px rgba(46, 204, 113, 0.5),
+    inset 0 2px 0 rgba(255, 255, 255, 0.6);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.magic-button-emerald:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+  box-shadow:
+    0 7px 0 #0E5E30,
+    0 12px 20px rgba(0, 0, 0, 0.65),
+    0 0 24px rgba(46, 204, 113, 0.75),
+    inset 0 2px 0 rgba(255, 255, 255, 0.8);
+}
+
+.magic-button-emerald:active {
+  transform: translateY(4px);
+  box-shadow:
+    0 1px 0 #0E5E30,
+    0 3px 6px rgba(0, 0, 0, 0.5),
+    inset 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Purple Wizard Rune Button */
+.magic-button-purple {
+  background: linear-gradient(180deg, #9C39EE 0%, #7614C3 45%, #4C0982 100%);
+  color: #FFF8DC;
+  border: 2px solid #D594FF;
+  box-shadow:
+    0 5px 0 #280345,
+    0 9px 16px rgba(0, 0, 0, 0.55),
+    0 0 16px rgba(156, 57, 238, 0.5),
+    inset 0 2px 0 rgba(255, 255, 255, 0.4);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.magic-button-purple:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+  box-shadow:
+    0 7px 0 #280345,
+    0 12px 20px rgba(0, 0, 0, 0.65),
+    0 0 24px rgba(156, 57, 238, 0.8);
+}
+
+.magic-button-purple:active {
+  transform: translateY(4px);
+  box-shadow:
+    0 1px 0 #280345,
+    0 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* Round Media Control Style Button (Prev / Play / Next) */
+.magic-button-round {
+  width: 58px;
+  height: 58px;
+  border-radius: 9999px;
+  padding: 0;
+  font-size: 20px;
+}
+
+/* =========================================================================
+   4. PARCHMENT BOX (The Unrolled Ancient Scroll)
+   ========================================================================= */
+.parchment-box {
+  position: relative;
+  background:
+    radial-gradient(ellipse at 50% 50%, #FFFDF2 0%, #FBF1D5 60%, #E9D5A4 100%);
+  color: var(--color-ink-brown);
+  border: 4px solid #A77A38;
+  border-radius: 16px;
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.65),
+    inset 0 0 28px rgba(167, 122, 56, 0.35),
+    inset 0 2px 0 rgba(255, 255, 255, 0.7);
+}
+
+/* Top & Bottom Scroll Roll Ends */
+.parchment-scroll-header {
+  height: 28px;
+  background: linear-gradient(180deg, #7C4F1C 0%, #B67F37 50%, #5E3910 100%);
+  border-bottom: 2px solid #3E1E04;
+  border-radius: 12px 12px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.3);
+}
+
+.parchment-scroll-header::before,
+.parchment-scroll-header::after {
+  content: "";
+  position: absolute;
+  top: -3px;
+  width: 14px;
+  height: 34px;
+  background: radial-gradient(circle at 40% 40%, #FFD700 0%, #A87600 80%);
+  border: 1.5px solid #FFE873;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
+}
+.parchment-scroll-header::before { left: -10px; }
+.parchment-scroll-header::after { right: -10px; }
+
+/* Parchment Card Tile (For Question Options & Logs) */
+.parchment-tile {
+  background: #FFFDF0;
+  border: 2.5px solid #D1AC69;
+  border-radius: 12px;
+  color: #381A02;
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  transition: all 0.15s ease;
+  cursor: pointer;
+}
+
+.parchment-tile:hover {
+  background: #FFF8D6;
+  border-color: #A37525;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(163, 117, 37, 0.25);
+}
+
+.parchment-tile.active-selected {
+  background: #FEF3C7;
+  border-color: #2ECC71;
+  border-width: 3px;
+  box-shadow: 0 0 14px rgba(46, 204, 113, 0.45);
+}
+
+/* =========================================================================
+   5. COMIC-BOOK STYLE SPEECH BUBBLE
+   ========================================================================= */
+.comic-speech-bubble-rpg {
+  position: relative;
+  background: #FFFDF4;
+  border: 3.5px solid #200438;
+  border-radius: 20px;
+  padding: 14px 18px;
+  color: #200438;
+  font-family: var(--font-body);
+  font-weight: 600;
+  box-shadow:
+    0 6px 0 #200438,
+    0 12px 24px rgba(0, 0, 0, 0.4),
+    0 0 12px rgba(255, 215, 0, 0.35);
+}
+
+/* Tail pointing down */
+.comic-speech-bubble-rpg::after {
+  content: "";
+  position: absolute;
+  bottom: -18px;
+  left: 36px;
+  width: 0;
+  height: 0;
+  border-left: 14px solid transparent;
+  border-right: 14px solid transparent;
+  border-top: 18px solid #FFFDF4;
+  filter: drop-shadow(0 3.5px 0 #200438);
+}
+
+/* Tail pointing left */
+.comic-speech-bubble-rpg-left::after {
+  content: "";
+  position: absolute;
+  left: -20px;
+  top: 40%;
+  width: 0;
+  height: 0;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-right: 20px solid #FFFDF4;
+  filter: drop-shadow(-3.5px 0 0 #200438);
+}
+
+/* =========================================================================
+   6. GLASS TUBE PROGRESS BARS (Mana Potions & XP Gems)
+   ========================================================================= */
+.potion-glass-tube {
+  position: relative;
+  background: rgba(15, 3, 32, 0.75);
+  border: 2.5px solid #FFD700;
+  border-radius: 9999px;
+  padding: 3px;
+  box-shadow:
+    inset 0 2px 5px rgba(0, 0, 0, 0.9),
+    0 0 10px rgba(255, 215, 0, 0.3),
+    0 3px 6px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+/* Highlight reflection on glass tube */
+.potion-glass-tube::before {
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: 8px;
+  right: 8px;
+  height: 38%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0) 100%);
+  border-radius: 9999px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* Emerald Mana Liquid */
+.liquid-fill-emerald {
+  height: 100%;
+  background: linear-gradient(90deg, #1D9A51 0%, #2ECC71 60%, #76FFAB 100%);
+  border-radius: 9999px;
+  box-shadow: 0 0 14px rgba(46, 204, 113, 0.8);
+  position: relative;
+  transition: width 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Golden XP Liquid */
+.liquid-fill-gold {
+  height: 100%;
+  background: linear-gradient(90deg, #D49000 0%, #FFD700 60%, #FFF399 100%);
+  border-radius: 9999px;
+  box-shadow: 0 0 14px rgba(255, 215, 0, 0.8);
+  position: relative;
+  transition: width 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Purple Mystical Mana Liquid */
+.liquid-fill-purple {
+  height: 100%;
+  background: linear-gradient(90deg, #4C0982 0%, #9C39EE 60%, #E2A6FF 100%);
+  border-radius: 9999px;
+  box-shadow: 0 0 14px rgba(156, 57, 238, 0.8);
+  position: relative;
+  transition: width 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* =========================================================================
+   7. RPG MENU TABS
+   ========================================================================= */
+.game-menu-tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 14px;
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  font-variant-numeric: tabular-nums;
+  text-transform: uppercase;
+  color: #E2D3A8;
+  background: linear-gradient(180deg, #2D084F 0%, #16022B 100%);
+  border: 2px solid #5A2789;
+  border-radius: 12px 12px 0 0;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.game-menu-tab:hover {
+  color: #FFF8DC;
+  border-color: #FFD700;
+  background: linear-gradient(180deg, #450F78 0%, #220442 100%);
+}
+
+.game-menu-tab.active-tab {
+  color: #2D084F;
+  background: linear-gradient(180deg, #FFE873 0%, #FFD700 60%, #E6AF00 100%);
+  border: 2px solid #FFF8DC;
+  border-bottom: none;
+  box-shadow: 0 -4px 12px rgba(255, 215, 0, 0.45);
+  transform: translateY(-2px);
+}
+
+/* =========================================================================
+   8. TAMIL NADU FANTASY WORLD MAP ELEMENTS
+   ========================================================================= */
+.map-node-glow {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  min-height: 48px;
+  border-radius: 9999px;
+  background: radial-gradient(circle, #FFD700 0%, #D49000 65%, #6A0DAD 100%);
+  border: 2.5px solid #FFF8DC;
+  box-shadow:
+    0 0 18px rgba(255, 215, 0, 0.85),
+    0 4px 8px rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.touch-target-48 {
+  min-width: 48px;
+  min-height: 48px;
+}
+
+.map-node-glow:hover {
+  transform: scale(1.18);
+  box-shadow: 0 0 28px rgba(255, 215, 0, 1.0);
+}
+
+.map-node-locked {
+  filter: grayscale(0.9) opacity(0.55);
+  border-color: #718096;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+/* Glowing Dotted Trail */
+@keyframes goldDottedFlow {
+  to {
+    stroke-dashoffset: -32;
+  }
+}
+
+.golden-trail-animated {
+  stroke-dasharray: 6 6;
+  animation: goldDottedFlow 1.2s linear infinite;
+  filter: drop-shadow(0 0 6px #FFD700);
+}
+
+/* =========================================================================
+   12. ULTRA-PREMIUM CONTEXTUAL UI DIMMING (COGNITIVE FOCUS MODE)
+   "Subtract clutter, force deep attention on the active learning task"
+   ========================================================================= */
+.contextual-dimmed {
+  opacity: 0.30 !important;
+  filter: saturate(0.65) blur(0.4px);
+  transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.contextual-dimmed:hover {
+  opacity: 0.95 !important;
+  filter: saturate(1) blur(0px);
+}
+
+.contextual-highlight-card {
+  box-shadow:
+    0 0 35px rgba(255, 215, 0, 0.45),
+    0 0 70px rgba(106, 13, 173, 0.65),
+    inset 0 0 25px rgba(0, 0, 0, 0.7);
+  transform: translateY(-2px);
+  transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.contextual-map-highlight {
+  box-shadow:
+    0 0 35px rgba(46, 204, 113, 0.5),
+    0 0 65px rgba(255, 215, 0, 0.35);
+  transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.focus-switcher-pill {
+  background: linear-gradient(135deg, rgba(28, 5, 58, 0.92) 0%, rgba(15, 3, 32, 0.96) 100%);
+  border: 1.5px solid rgba(255, 215, 0, 0.6);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.8), 0 0 10px rgba(255, 215, 0, 0.25);
+  backdrop-filter: blur(10px);
+}
+
+/* =========================================================================
+   13. THE WIZARD'S OATH - INTERACTIVE ONBOARDING STYLES (PHASE 2)
+   "Visual storytelling in <60 seconds without reading text manuals"
+   ========================================================================= */
+.wizard-oath-container {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at center, rgba(30, 5, 58, 0.88) 0%, rgba(15, 3, 32, 0.97) 100%);
+  backdrop-filter: blur(12px);
+  animation: oathFadeIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes oathFadeIn {
+  from { opacity: 0; transform: scale(0.97); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.wizard-oath-card {
+  position: relative;
+  width: 95%;
+  max-width: 640px;
+  background: linear-gradient(145deg, #2B074F 0%, #17042F 55%, #0B0117 100%);
+  border: 3.5px solid #FFD700;
+  border-radius: 24px;
+  box-shadow:
+    0 0 40px rgba(106, 13, 173, 0.8),
+    0 0 20px rgba(255, 215, 0, 0.5),
+    inset 0 0 30px rgba(0, 0, 0, 0.85);
+  overflow: hidden;
+}
+
+.wizard-oath-card::before {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border: 1.5px solid rgba(255, 215, 0, 0.45);
+  border-radius: 28px;
+  pointer-events: none;
+}
+
+/* Step 2 Pulsing Action Target for Option A */
+.pulsing-action-target {
+  animation: actionPulseGlow 1.4s ease-in-out infinite;
+  position: relative;
+}
+
+@keyframes actionPulseGlow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.8), 0 0 15px rgba(46, 204, 113, 0.6);
+    border-color: #FFD700;
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(255, 215, 0, 0), 0 0 25px rgba(255, 215, 0, 0.9);
+    border-color: #FFF8DC;
+    transform: scale(1.02);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 215, 0, 0), 0 0 15px rgba(46, 204, 113, 0.6);
+    border-color: #FFD700;
+    transform: scale(1);
+  }
+}
+
+/* Step 4 Royal Wizard Seal Impact Animation */
+.wizard-seal-stamp {
+  animation: sealImpact 0.65s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes sealImpact {
+  0% {
+    opacity: 0;
+    transform: scale(2.5) rotate(-25deg);
+    filter: blur(8px);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(0.92) rotate(4deg);
+    filter: blur(0px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* XP Float-up Text */
+.xp-float-popup {
+  animation: xpFloatUp 1.2s ease-out forwards;
+}
+
+@keyframes xpFloatUp {
+  0% {
+    opacity: 0;
+    transform: translateY(10px) scale(0.8);
+  }
+  30% {
+    opacity: 1;
+    transform: translateY(-8px) scale(1.15);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-28px) scale(1);
+  }
+}
+
+/* =========================================================================
+   14. PHASE 4: MASTERY DASHBOARD & WIZARD STATS STYLES
+   "Gamified mastery metrics mapping directly to cognitive learning outcomes"
+   ========================================================================= */
+
+/* Glowing Oracle Prophecy Parchment */
+.oracle-parchment-glow {
+  position: relative;
+  background: radial-gradient(ellipse at 50% 20%, #FFFDF2 0%, #FDF3DB 60%, #EFE1BC 100%);
+  border: 3.5px solid #FFD700;
+  border-radius: 20px;
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.65),
+    0 0 20px rgba(255, 215, 0, 0.4),
+    inset 0 0 24px rgba(184, 134, 11, 0.25);
+  animation: oracleGlowPulse 3.5s ease-in-out infinite alternate;
+}
+
+@keyframes oracleGlowPulse {
+  0% {
+    box-shadow:
+      0 8px 30px rgba(0, 0, 0, 0.65),
+      0 0 15px rgba(255, 215, 0, 0.35),
+      inset 0 0 20px rgba(184, 134, 11, 0.2);
+  }
+  100% {
+    box-shadow:
+      0 12px 35px rgba(0, 0, 0, 0.75),
+      0 0 28px rgba(255, 215, 0, 0.6),
+      inset 0 0 28px rgba(184, 134, 11, 0.35);
+  }
+}
+
+/* Glass Potion Flask Fluid Container */
+.potion-flask-body {
+  position: relative;
+  width: 72px;
+  height: 94px;
+  background: rgba(15, 3, 32, 0.65);
+  border: 3px solid rgba(255, 215, 0, 0.6);
+  border-radius: 14px 14px 32px 32px;
+  overflow: hidden;
+  box-shadow:
+    inset 0 0 16px rgba(0, 0, 0, 0.8),
+    0 0 15px rgba(93, 173, 226, 0.4);
+}
+
+.potion-flask-body::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 14px;
+  height: 50px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0) 100%);
+  border-radius: 8px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.potion-liquid-fill {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(180deg, #5DADE2 0%, #2E86C1 40%, #1B4F72 100%);
+  transition: height 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 0 20px rgba(93, 173, 226, 0.8);
+}
+
+.potion-liquid-wave {
+  position: absolute;
+  top: -6px;
+  left: 0;
+  right: 0;
+  height: 12px;
+  background: radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.7) 0%, rgba(93, 173, 226, 0.8) 100%);
+  border-radius: 50%;
+  animation: potionWave 2s ease-in-out infinite alternate;
+}
+
+@keyframes potionWave {
+  0% { transform: scaleY(0.8) rotate(-3deg); }
+  100% { transform: scaleY(1.2) rotate(3deg); }
+}
+
+/* Spell Power Staff Crystal */
+.staff-crystal-gem {
+  width: 22px;
+  height: 22px;
+  transform: rotate(45deg);
+  border-radius: 4px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.staff-crystal-lit {
+  background: radial-gradient(circle at 35% 35%, #FFF8DC 0%, #FFD700 50%, #B8860B 100%);
+  border: 1.5px solid #FFF8DC;
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.9), 0 0 20px rgba(255, 215, 0, 0.5);
+  animation: crystalGlint 2.4s ease-in-out infinite;
+}
+
+.staff-crystal-unlit {
+  background: #1C053A;
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+  opacity: 0.45;
+}
+
+@keyframes crystalGlint {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.35) drop-shadow(0 0 6px #FFD700); }
+}
+
+/* Cursed Scroll Skull Badge */
+.cursed-scroll-badge {
+  background: linear-gradient(145deg, rgba(88, 14, 14, 0.85) 0%, rgba(38, 5, 5, 0.95) 100%);
+  border: 2px solid #E74C3C;
+  box-shadow: 0 0 16px rgba(231, 76, 60, 0.45);
+  animation: cursedSkullPulse 2.2s ease-in-out infinite;
+}
+
+@keyframes cursedSkullPulse {
+  0% {
+    box-shadow: 0 0 10px rgba(231, 76, 60, 0.35);
+    border-color: #E74C3C;
+  }
+  50% {
+    box-shadow: 0 0 22px rgba(231, 76, 60, 0.85);
+    border-color: #FF7675;
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(231, 76, 60, 0.35);
+    border-color: #E74C3C;
+  }
+}
+
+/* Realm Conquest Crown */
+.conquest-crown-badge {
+  background: radial-gradient(circle at 40% 30%, #FFE566 0%, #FFD700 50%, #7A5805 100%);
+  border: 2px solid #FFF8DC;
+  box-shadow: 0 0 14px rgba(255, 215, 0, 0.7);
+}

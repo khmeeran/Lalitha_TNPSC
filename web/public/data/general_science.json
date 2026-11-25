@@ -1,0 +1,1144 @@
+{
+  "id": "general_science",
+  "name": "General Science",
+  "topics": [
+    {
+      "id": "physics_mechanics",
+      "name": "Physics: Mechanics, Light & Electricity",
+      "questions": [
+        {
+          "id": "q_0224",
+          "year": 2024,
+          "group": "Group 4",
+          "question": "The rate of change of momentum of an object is directly proportional to the applied force. This is Newton's",
+          "options": [
+            "First Law of Motion",
+            "Second Law of Motion",
+            "Third Law of Motion",
+            "Universal Law of Gravitation"
+          ],
+          "correct_answer": 1,
+          "explanation": "Newton's Second Law of Motion states that F = m * a (Force equals mass times acceleration).",
+          "difficulty": "G4",
+          "source": "PYQ_2024_G4",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_I"
+        },
+        {
+          "id": "q_0225",
+          "year": 2021,
+          "group": "Group 2",
+          "question": "What is the pH value of pure distilled water at 25 degrees Celsius?",
+          "options": [
+            "0",
+            "7",
+            "14",
+            "4.5"
+          ],
+          "correct_answer": 1,
+          "explanation": "Pure water is neutral with a pH of 7.0 at standard room temperature.",
+          "difficulty": "G4",
+          "source": "PYQ_2021_G2",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_I"
+        },
+        {
+          "id": "q_0226",
+          "year": 2022,
+          "group": "Group 1",
+          "question": "Which organelle is universally known as the 'Powerhouse of the Cell'?",
+          "options": [
+            "Ribosome",
+            "Mitochondria",
+            "Golgi apparatus",
+            "Lysosome"
+          ],
+          "correct_answer": 1,
+          "explanation": "Mitochondria generate most of the cell's supply of adenosine triphosphate (ATP), used as chemical energy.",
+          "difficulty": "G4",
+          "source": "PYQ_2022_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_I"
+        },
+        {
+          "id": "q_0227",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "The purines present in nucleic acids are :\n\nI. Adenine and Cytosine\nII. Guanine and Thymine\nIII. Adenine and Guanine\nIV. Cytosine and Uracil",
+          "options": [
+            "IV",
+            "III",
+            "II",
+            "I"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_I"
+        },
+        {
+          "id": "q_0228",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Find out the correct match/es :\n\nI. Enzymes – Biological catalysts\nII. DNA – Nucleic acid\nIII. Insulin – Hormone\nIV. Vitamin E – Water soluble vitamin",
+          "options": [
+            "II only",
+            "I only",
+            "I, II and IV",
+            "I, II and III"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G1",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_I"
+        },
+        {
+          "id": "q_0229",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "The number of generalized co-ordinates required to describe the position of a simple pendulum is",
+          "options": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_I"
+        },
+        {
+          "id": "q_0230",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "If $g$ is the acceleration due to gravity and $R$ is the radius of the earth, then escape velocity is given by the relation",
+          "options": [
+            "$V_{e} = \\sqrt{2g}$",
+            "$V_{e} = 2\\sqrt{g}$",
+            "$V_{e} = \\sqrt{2Rg}$",
+            "$V_{e} = 2\\sqrt{Rg}$"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_I"
+        },
+        {
+          "id": "q_0231",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "The relation connecting Young's modulus $(E)$, Bulk modulus $(K)$ and Rigidity modulus $(N)$ is",
+          "options": [
+            "$\\frac{9}{E} = \\frac{3}{N} + \\frac{1}{K}$",
+            "$\\frac{9}{N} = \\frac{3}{E} + \\frac{1}{K}$",
+            "$\\frac{9}{N} = \\frac{1}{E} + \\frac{3}{K}$",
+            "$\\frac{9}{E} = \\frac{1}{N} + \\frac{3}{K}$"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_I"
+        },
+        {
+          "id": "q_0232",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "The S.I unit of gravitational constant $G$ is",
+          "options": [
+            "$\\mathrm{N\\,kg^{-2}}$",
+            "$\\mathrm{Nm\\,kg^{-1}}$",
+            "$\\mathrm{Nm^2\\,kg^{-1}}$",
+            "$\\mathrm{Nm^2\\,kg^{-2}}$"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_I"
+        },
+        {
+          "id": "q_0233",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Choose the correct answer:\nThe itai-itai disease of Japan was caused due to\nI. Arsenic pollution\nII. Cyanide pollution\nIII. Cadmium pollution\nIV. Lead pollution",
+          "options": [
+            "I and II",
+            "II and III",
+            "III only",
+            "IV only"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G1",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_I"
+        },
+        {
+          "id": "q_0234",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "'Bluetooth' technology is",
+          "options": [
+            "Satellite communication",
+            "Wired communication between devices",
+            "Wireless communication between devices",
+            "Communication between landline to mobile phone"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_I"
+        },
+        {
+          "id": "q_0235",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "The plant type which colours the ocean surface water red is",
+          "options": [
+            "Dinoflagellates",
+            "Golden algae",
+            "Green algae",
+            "Red algae"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_I"
+        },
+        {
+          "id": "q_0236",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Which of the following is/are wrong?\nI. $\\mathrm{Mg}_{2} \\mathrm{C}_{3}$ on hydrolysis gives acetylene\nII. $\\mathrm{Be}_{2} \\mathrm{C}$ on hydrolysis gives methane\nIII. $\\mathrm{Al}_{4} \\mathrm{C}_{3}$ on hydrolysis gives allylene",
+          "options": [
+            "I and II",
+            "II and III",
+            "I and III",
+            "I, II and III"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G1",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_I"
+        },
+        {
+          "id": "q_0237",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "For the Daniel cell $E^* = 1.10 \\, \\text{V}$. The value of equilibrium constant (K) for the reaction (at $298 \\, \\text{K}$) is",
+          "options": [
+            "$4.36 \\times 10^{39}$",
+            "$2.79 \\times 10^{41}$",
+            "$6.53 \\times 10^{35}$",
+            "$1.55 \\times 10^{37}$"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_I"
+        },
+        {
+          "id": "q_0238",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Which Indian city has been declared as the cleanest city in the 'Swachh Bharat' ranking 2015?",
+          "options": [
+            "Kochi",
+            "Thiruvananthapuram",
+            "Bengaluru",
+            "Mysuru"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_I"
+        },
+        {
+          "id": "q_0239",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Who is the chairman of the 20th law commission of India?",
+          "options": [
+            "Justice. Ajit Prakash Shah",
+            "Justice. Srikrishna",
+            "Justice. Katju",
+            "Justice. K. Balakrishnan"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_I"
+        },
+        {
+          "id": "q_0240",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Recently Union Government has decided to develop a city as spiritual capital of the country. Which among the following is this city?",
+          "options": [
+            "Ujjain",
+            "Varanasi",
+            "Nasik",
+            "Bodhgaya"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_I"
+        },
+        {
+          "id": "q_0241",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "India's largest telecom operator is",
+          "options": [
+            "TATA",
+            "Bharati Airtel",
+            "Reliance",
+            "Aircel"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_I"
+        },
+        {
+          "id": "q_0242",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Which corporation in Tamil Nadu was awarded the best corporation award for the year 2015?",
+          "options": [
+            "Chennai",
+            "Vellore",
+            "Madurai",
+            "Tirunelveli"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_I"
+        },
+        {
+          "id": "q_0243",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Every year 13th of August is observed as",
+          "options": [
+            "Voluntary Blood donation day",
+            "World Hepatitis day",
+            "Swachch Bharat day",
+            "Organ donation day"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_I"
+        },
+        {
+          "id": "q_0244",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "‘International Day of the Disappeared’ observed by United Nations Organization every year falls on",
+          "options": [
+            "November 30",
+            "December 26",
+            "August 30",
+            "October 25"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_I"
+        },
+        {
+          "id": "q_0245",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "The President of Sri Lanka as on June 2015",
+          "options": [
+            "Maithripala Sirisena",
+            "Ravi Karunanayake",
+            "Mahinda Samarasinghe",
+            "Mahinda Amaraweera"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_I"
+        },
+        {
+          "id": "q_0246",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Sunhak Peace Prize was won by",
+          "options": [
+            "Ms. Zhanna Nemtsova",
+            "Zaina Erhain",
+            "Dr. Modadugu Vijay Gupta",
+            "Mr. Zia Haider Rahman"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_I"
+        },
+        {
+          "id": "q_0247",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Which gas has been recently discovered in planet mars?",
+          "options": [
+            "Hydrogen Sulphide",
+            "Ammonia",
+            "Methane",
+            "Ethane"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_I"
+        },
+        {
+          "id": "q_0248",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Which Indian Temple was awarded 'Award of Excellence' for conservation by UNESCO in the year 2015, in Bangkok?",
+          "options": [
+            "Guruvayoor Temple, Guruvayoor",
+            "Vadakkunnathan Temple, Thrissur",
+            "Padmanabhaswamy Temple, Trivandrum",
+            "Tirumala Temple, Tirupati"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_I"
+        },
+        {
+          "id": "q_0249",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Which country devalued its own currency in August 2015?",
+          "options": [
+            "India",
+            "Japan",
+            "Germany",
+            "China"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_I"
+        },
+        {
+          "id": "q_0250",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "The 50th Anniversary of 1965 Indo-Pak war was observed on",
+          "options": [
+            "27 August 2015",
+            "30 July 2015",
+            "30 August 2015",
+            "28 August 2015"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_I"
+        },
+        {
+          "id": "q_0251",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Nobel Prize 2015 in Physics was given for the discovery of",
+          "options": [
+            "Path of electrons in electro magnetic waves",
+            "Path of neutrons in magnetic fields",
+            "Proton oscillation",
+            "Neutrino oscillation"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_I"
+        },
+        {
+          "id": "q_0252",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Identify the numbered substances in steps of Glycolysis\n\nGlucose $\\longrightarrow$ (1) $\\longrightarrow$ (2) $\\longrightarrow$ Fructose 1, 6 bisphosphate",
+          "options": [
+            "(1) is Pyruvate (2) is citrate",
+            "(1) is Glucose-6-phosphate (2) is pyruvate",
+            "(1) is Glucose-6-phosphate (2) is Fructose-6-phosphate",
+            "(1) is phosphoglycerate (2) is Glyceric acid"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_I"
+        },
+        {
+          "id": "q_0253",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Which of the following statements about 'Glycolysis' is/are True?\n\nI. Glycolysis is also known as Pentose phosphate pathway\nII. The substrate of Glycolysis is Glucose\nIII. The final product of Glycolysis is Glycogen\nIV. Glycolysis is also known as Glyoxylate cycle",
+          "options": [
+            "I and III",
+            "II only",
+            "III and IV",
+            "IV and II"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G1",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_I"
+        },
+        {
+          "id": "q_0254",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "If the time taken by a cup of tea to cool from $85^{\\circ}\\mathrm{C}$ to $75^{\\circ}\\mathrm{C}$ is 1 minute, then the time taken by it to cool from $65^{\\circ}\\mathrm{C}$ to $55^{\\circ}\\mathrm{C}$ is",
+          "options": [
+            "50 seconds",
+            "exactly 1 minute",
+            "more than 1 minute",
+            "30 seconds"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_I"
+        },
+        {
+          "id": "q_0255",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "The rest mass of a photon is",
+          "options": [
+            "zero",
+            "infinity",
+            "dependent on its wavelength",
+            "dependent on its velocity"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_I"
+        },
+        {
+          "id": "q_0256",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Which of the following sets have different dimensions?",
+          "options": [
+            "Pressure, Young's modulus, Stress",
+            "Emf, potential difference, Electric potential",
+            "Heat, Work done, Energy",
+            "Dipole moment, Electric flux, Electric field"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_I"
+        },
+        {
+          "id": "q_0257",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "New elements and rare – earths are discovered and fixed in the periodic table using",
+          "options": [
+            "Bragg's law",
+            "Moseley's law",
+            "Compton's effect",
+            "Bravais lattices"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_I"
+        },
+        {
+          "id": "q_0258",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Cretinism, myxoedema and goitre are related to the disorders of the",
+          "options": [
+            "Parathyroid gland",
+            "Thyroid gland",
+            "Adrenal gland",
+            "Pituitary gland"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_I"
+        },
+        {
+          "id": "q_0259",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "The list of coded instruction in computer is called",
+          "options": [
+            "Program",
+            "Algorithm",
+            "Flowchart",
+            "Application software"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_I"
+        },
+        {
+          "id": "q_0260",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "The planet which is known as the 'God of War'",
+          "options": [
+            "Mercury",
+            "Venus",
+            "Mars",
+            "Jupiter"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_I"
+        },
+        {
+          "id": "q_0261",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "The ice-crystal theory to explain precipitation was propounded by",
+          "options": [
+            "Tor Bergeron",
+            "E.G. Boven",
+            "Richl",
+            "Davis"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_I"
+        },
+        {
+          "id": "q_0262",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "The minute hand of a circular clock is 14 cm long and that of hour hand is 7 cm. Find how far does the tip of the minute and hour hand move in 30 minutes?",
+          "options": [
+            "88 cm, 3.66 cm",
+            "22 cm, 0.915 cm",
+            "44 cm, 1.83 cm",
+            "1.83 cm, 88 cm"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_I"
+        },
+        {
+          "id": "q_0263",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "A heap of paddy is in the form of a right circular cone whose diameter is 4.8 m and height 1.8 m. If the heap is to be covered exactly by a canvas to protect it from rain, find the area of the canvas required.",
+          "options": [
+            "22.6 m²",
+            "27.2 m²",
+            "13.6 m²",
+            "11.3 m²"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_I"
+        },
+        {
+          "id": "q_0264",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "If $a^x = b$, $b^x = c$, $c^x = a$, then what is the value of $xyz$?",
+          "options": [
+            "3",
+            "4",
+            "9",
+            "1"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_I"
+        },
+        {
+          "id": "q_0265",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Arrange the following in the order of increasing solubility in water",
+          "options": [
+            "(iv) < (iii) < (ii) < (i)",
+            "(i) < (ii) < (iii) < (iv)",
+            "(ii) < (iii) < (i) < (iv)",
+            "(iii) < (i) < (iv) < (ii)"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_I"
+        },
+        {
+          "id": "q_0266",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "An example of commonly used herbicide is",
+          "options": [
+            "p, p' – dichlorodiphenyl trichloro ethane",
+            "2, 4 – dichloro phenoxy acetic acid",
+            "Benzene hexa chloride",
+            "Naphthalene"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_I"
+        },
+        {
+          "id": "q_0267",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "World 'Car Free Day' is observed on",
+          "options": [
+            "September 12",
+            "September 22",
+            "October 22",
+            "October 18"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_I"
+        },
+        {
+          "id": "q_0268",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Which court ruled that 'Eu-us data Transfer Pact' is invalid?",
+          "options": [
+            "American Court, New York",
+            "British Court, London",
+            "European Court, Luxembourg",
+            "International Court, New York"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_I"
+        },
+        {
+          "id": "q_0269",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Consider the following statements about Suraksha Hose :",
+          "options": [
+            "1, 2 and 3 are correct",
+            "Only 2 and 3 are correct",
+            "Only 1 and 3 are correct",
+            "Only 3 is correct"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_I"
+        },
+        {
+          "id": "q_0270",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Who was awarded the Stockholm Water prize for the year 2015?",
+          "options": [
+            "Amalendu Krishna",
+            "Rajendra Singh",
+            "Mansingh Rawat",
+            "Modadugu Vijay Gupta"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_I"
+        },
+        {
+          "id": "q_0271",
+          "year": 2015,
+          "group": "Group 1",
+          "question": "Google's Alphabet Website is",
+          "options": [
+            "alpgoogle.com",
+            "googlealbet.com",
+            "abc.com",
+            "abc.xyz"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2015_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_I"
+        },
+        {
+          "id": "q_0272",
+          "year": 2017,
+          "group": "Group 1",
+          "question": "During the year 2016, total number of Indian Satellites launched by ISRO is",
+          "options": [
+            "3",
+            "4",
+            "5",
+            "6"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2017_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_I"
+        },
+        {
+          "id": "q_0273",
+          "year": 2017,
+          "group": "Group 1",
+          "question": "The valence electron of the impurity atom that is to be added to germanium crystal so as to make it a $n$-type semiconductor is",
+          "options": [
+            "6",
+            "5",
+            "4",
+            "3"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2017_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_I"
+        },
+        {
+          "id": "q_0274",
+          "year": 2017,
+          "group": "Group 1",
+          "question": "A particle executes S.H.M. The acceleration of the particle is maximum",
+          "options": [
+            "at extreme position",
+            "at mean position",
+            "midway between mean and extreme position",
+            "acceleration is same at all position"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2017_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_I"
+        },
+        {
+          "id": "q_0275",
+          "year": 2017,
+          "group": "Group 1",
+          "question": "The velocity of sound is maximum in",
+          "options": [
+            "Water",
+            "Air",
+            "Metal",
+            "Vacuum"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2017_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_I"
+        },
+        {
+          "id": "q_0276",
+          "year": 2017,
+          "group": "Group 1",
+          "question": "The aqueous solution of potassium chloride is",
+          "options": [
+            "a weak electrolyte",
+            "a strong electrolyte",
+            "a non-electrolyte",
+            "initially weak and then become a strong electrolyte"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2017_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_I"
+        },
+        {
+          "id": "q_0277",
+          "year": 2017,
+          "group": "Group 1",
+          "question": "An acid is a substance that can lose a proton is called",
+          "options": [
+            "Arrhenius concept",
+            "Bronsted-Lowry concept",
+            "Lewis concept",
+            "Usanovich concept"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2017_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_I"
+        },
+        {
+          "id": "q_0278",
+          "year": 2017,
+          "group": "Group 1",
+          "question": "Which of the following is a wrong statement?",
+          "options": [
+            "All the minerals are not ores",
+            "All the ores are not minerals",
+            "All the ores are minerals",
+            "From ores, metals can be extracted economically"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G2",
+          "source": "PYQ_2017_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_I"
+        },
+        {
+          "id": "q_0279",
+          "year": 2017,
+          "group": "Group 1",
+          "question": "Which enzyme catalyze the conversion of Pyruvic Acid into Acetyl co-enzyme A in the respiratory process?",
+          "options": [
+            "Pyruvic acid oxidase",
+            "Pyruvate synthetase",
+            "Aconitase",
+            "Pyruvate Dehydrogenase"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2017_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_I"
+        },
+        {
+          "id": "q_0280",
+          "year": 2017,
+          "group": "Group 1",
+          "question": "Which of the following is correct?\n\nThe term **systole** refers to\n\nI. Phase of contraction of lungs.\nII. Phase of relaxation of lungs.\nIII. Phase of relaxation of heart.\nIV. Phase of contraction of heart.",
+          "options": [
+            "I and II only",
+            "II and III only",
+            "II only",
+            "IV only"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G1",
+          "source": "PYQ_2017_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_I"
+        },
+        {
+          "id": "q_0281",
+          "year": 2017,
+          "group": "Group 1",
+          "question": "Aestivation is seen in",
+          "options": [
+            "Amphibians",
+            "Chimpanzee",
+            "Salmon",
+            "Squirrels"
+          ],
+          "correct_answer": 0,
+          "explanation": "Official TNPSC Answer Key confirms option (A).",
+          "difficulty": "G4",
+          "source": "PYQ_2017_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_I"
+        },
+        {
+          "id": "q_sci_g1_01",
+          "year": 2022,
+          "group": "Group 1",
+          "question": "Assertion [A]: Red shift observed in the spectral lines of distant galaxies provides empirical evidence that the universe is expanding.\nReason [R]: According to the Doppler effect, when a light source moves away from an observer, the observed wavelength shifts toward the longer, red end of the electromagnetic spectrum.\nSelect the correct answer:",
+          "options": [
+            "Both [A] and [R] are true, and [R] is the correct explanation of [A]",
+            "Both [A] and [R] are true, but [R] is NOT the correct explanation of [A]",
+            "[A] is true, but [R] is false",
+            "[A] is false, but [R] is true"
+          ],
+          "correct_answer": 0,
+          "explanation": "Edwin Hubble's observations showed cosmological redshift due to expansion of space, directly governed by the wave Doppler relation.",
+          "source": "PYQ_2022_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_I",
+          "difficulty": "G1"
+        },
+        {
+          "id": "q_sci_g1_02",
+          "year": 2024,
+          "group": "Group 1",
+          "question": "Match List-I (Vitamins) with List-II (Chemical Names and Deficiency Disorders):\nList-I:\n(a) Vitamin B1\n(b) Vitamin B3\n(c) Vitamin C\n(d) Vitamin D\nList-II:\n1. Niacin – Pellagra\n2. Thiamine – Beriberi\n3. Calciferol – Rickets and Osteomalacia\n4. Ascorbic Acid – Scurvy and delayed wound healing\nChoose the correct code:\n(a) - (b) - (c) - (d)",
+          "options": [
+            "2 - 1 - 4 - 3",
+            "1 - 2 - 3 - 4",
+            "2 - 4 - 1 - 3",
+            "4 - 1 - 2 - 3"
+          ],
+          "correct_answer": 0,
+          "explanation": "B1 is Thiamine (Beriberi), B3 is Niacin (Pellagra), C is Ascorbic acid (Scurvy), D is Calciferol (Rickets).",
+          "source": "PYQ_2024_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_I",
+          "difficulty": "G1"
+        }
+      ],
+      "syllabus_unit": "UNIT_I"
+    },
+    {
+      "id": "chemistry_elements",
+      "name": "Chemistry: Elements, Acids & Bases",
+      "questions": [
+        {
+          "id": "q_0282",
+          "year": 2021,
+          "group": "Group 2",
+          "question": "What is the pH value of pure distilled water at 25 degrees Celsius?",
+          "options": [
+            "0",
+            "7",
+            "14",
+            "4.5"
+          ],
+          "correct_answer": 1,
+          "explanation": "Pure water is neutral with a pH of 7.0 at standard room temperature.",
+          "difficulty": "G4",
+          "source": "PYQ_2021_G2",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_I"
+        }
+      ],
+      "syllabus_unit": "UNIT_I"
+    },
+    {
+      "id": "biology_human_physiology",
+      "name": "Biology: Cell Biology & Human Physiology",
+      "questions": [
+        {
+          "id": "q_0283",
+          "year": 2022,
+          "group": "Group 1",
+          "question": "Which organelle is universally known as the 'Powerhouse of the Cell'?",
+          "options": [
+            "Ribosome",
+            "Mitochondria",
+            "Golgi apparatus",
+            "Lysosome"
+          ],
+          "correct_answer": 1,
+          "explanation": "Mitochondria generate most of the cell's supply of adenosine triphosphate (ATP), used as chemical energy.",
+          "difficulty": "G4",
+          "source": "PYQ_2022_G1",
+          "is_pyq": true,
+          "syllabus_unit": "UNIT_I"
+        }
+      ],
+      "syllabus_unit": "UNIT_I"
+    }
+  ],
+  "syllabus_unit": "UNIT_I"
+}
