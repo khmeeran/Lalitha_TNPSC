@@ -191,7 +191,8 @@ export const TNPSCWizardGameInterface: React.FC = () => {
   const [currentRealmId, setCurrentRealmId] = useState<string>("realm_4_ancient");
   const [currentRealmName, setCurrentRealmName] = useState<string>("History Highlands");
 
-  // Questions Database State
+  // Raw loaded items (fetched once on mount) + active question pool
+  const [rawQuestionItems, setRawQuestionItems] = useState<QuestionItem[]>([]);
   const [questionPool, setQuestionPool] = useState<ActiveQuestionView[]>([FALLBACK_QUESTION]);
   const [currentQIndex, setCurrentQIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
@@ -282,89 +283,103 @@ export const TNPSCWizardGameInterface: React.FC = () => {
     return getDifficultyForLevel(userLevel, isBossChallengeActive);
   }, [userLevel, isBossChallengeActive]);
 
-  // Load and filter authentic TNPSC questions from JSON (Requirement 2 & 3)
+  // 1. Load raw TNPSC questions ONCE on mount with hard 1500ms preloader unlock guarantee
   useEffect(() => {
     let isMounted = true;
+    const safetyTimer = setTimeout(() => {
+      if (isMounted) setIsAppLoaded(true);
+    }, 1500);
 
-    async function loadQuestions() {
+    async function loadQuestionsOnce() {
       try {
         const result = await loadMasterTNPSCQuestions();
         if (!isMounted) return;
 
         const allItems: QuestionItem[] = [];
-        result.data.subjects.forEach((s) => {
-          s.topics.forEach((t) => {
-            t.questions.forEach((q) => {
-              allItems.push(q);
+        (result.data?.subjects || []).forEach((s) => {
+          (s.topics || []).forEach((t) => {
+            (t.questions || []).forEach((q) => {
+              if (q && Array.isArray(q.options) && q.options.length > 0) {
+                allItems.push(q);
+              }
             });
           });
         });
 
-        // Grind Mode Filter: If GRIND tab active, serve ONLY Cursed Topics
-        let targetPool = allItems;
-        if (activeTab === "GRIND") {
-          const cursedIds = new Set(
-            Object.values(state.questionSrs || {})
-              .filter((item) => item.isCursed)
-              .map((item) => item.questionId)
-          );
-          const cursedItems = allItems.filter((q) => cursedIds.has(q.id));
-          if (cursedItems.length > 0) {
-            targetPool = cursedItems;
-          }
-        }
-
-        // 70% PYQ Guaranteed Selection
-        const filtered =
-          activeTab === "GRIND"
-            ? targetPool
-            : selectGuaranteedQuestions(targetPool, 12, currentDifficultyTier);
-
-        const mapped: ActiveQuestionView[] = filtered.map((q, idx) => {
-          const optLetters = ["A", "B", "C", "D"];
-          return {
-            id: q.id || `q_${idx}`,
-            realm: currentRealmName,
-            syllabusUnit: q.syllabus_unit || "UNIT_IV",
-            topic: q.group || "TNPSC General Studies",
-            question: q.question,
-            questionTa: q.questionTa,
-            options: q.options.map((optText, i) => ({
-              id: optLetters[i] || `${i}`,
-              text: optText,
-              textTa: q.optionsTa && q.optionsTa[i] ? q.optionsTa[i] : undefined,
-              isCorrect: i === q.correct_answer,
-            })),
-            optionsTa: q.optionsTa,
-            explanation: q.explanation || "Official TNPSC Answer Key standard explanation.",
-            explanationTa: q.explanationTa,
-            difficulty: q.difficulty || currentDifficultyTier,
-            source: q.source || `PYQ_${q.year || 2022}_G1`,
-            isPyq: q.is_pyq ?? true,
-            goldReward: q.difficulty === "G1" ? 80 : q.difficulty === "G2" ? 60 : 40,
-            xpReward: q.difficulty === "G1" ? 180 : q.difficulty === "G2" ? 140 : 100,
-            errorAnalysis: q.error_analysis,
-            errorAnalysisTa: q.error_analysisTa,
-            correctAnswerIndex: q.correct_answer,
-          };
-        });
-
-        if (mapped.length > 0) {
-          setQuestionPool(mapped);
-          setCurrentQIndex(0);
-        }
-        setIsAppLoaded(true);
+        setRawQuestionItems(allItems);
       } catch (err) {
         console.error("Failed to load authentic questions:", err);
-        setIsAppLoaded(true);
+      } finally {
+        if (isMounted) {
+          clearTimeout(safetyTimer);
+          setIsAppLoaded(true);
+        }
       }
     }
 
-    loadQuestions();
+    loadQuestionsOnce();
     return () => {
       isMounted = false;
+      clearTimeout(safetyTimer);
     };
-  }, [currentRealmId, currentDifficultyTier, activeTab, state.questionSrs]);
+  }, []);
+
+  // 2. Build active questionPool when raw items, realm, difficulty tier, or tab change
+  useEffect(() => {
+    if (rawQuestionItems.length === 0) return;
+
+    let targetPool = rawQuestionItems;
+    if (activeTab === "GRIND") {
+      const cursedIds = new Set(
+        Object.values(state.questionSrs || {})
+          .filter((item) => item.isCursed)
+          .map((item) => item.questionId)
+      );
+      const cursedItems = rawQuestionItems.filter((q) => cursedIds.has(q.id));
+      if (cursedItems.length > 0) {
+        targetPool = cursedItems;
+      }
+    }
+
+    const filtered =
+      activeTab === "GRIND"
+        ? targetPool
+        : selectGuaranteedQuestions(targetPool, 12, currentDifficultyTier);
+
+    const mapped: ActiveQuestionView[] = filtered.map((q, idx) => {
+      const optLetters = ["A", "B", "C", "D"];
+      return {
+        id: q.id || `q_${idx}`,
+        realm: currentRealmName,
+        syllabusUnit: q.syllabus_unit || "UNIT_IV",
+        topic: q.group || "TNPSC General Studies",
+        question: q.question,
+        questionTa: q.questionTa,
+        options: q.options.map((optText, i) => ({
+          id: optLetters[i] || `${i}`,
+          text: optText,
+          textTa: q.optionsTa && q.optionsTa[i] ? q.optionsTa[i] : undefined,
+          isCorrect: i === q.correct_answer,
+        })),
+        optionsTa: q.optionsTa,
+        explanation: q.explanation || "Official TNPSC Answer Key standard explanation.",
+        explanationTa: q.explanationTa,
+        difficulty: q.difficulty || currentDifficultyTier,
+        source: q.source || `PYQ_${q.year || 2022}_G1`,
+        isPyq: q.is_pyq ?? true,
+        goldReward: q.difficulty === "G1" ? 80 : q.difficulty === "G2" ? 60 : 40,
+        xpReward: q.difficulty === "G1" ? 180 : q.difficulty === "G2" ? 140 : 100,
+        errorAnalysis: q.error_analysis,
+        errorAnalysisTa: q.error_analysisTa,
+        correctAnswerIndex: q.correct_answer,
+      };
+    });
+
+    if (mapped.length > 0) {
+      setQuestionPool(mapped);
+      setCurrentQIndex(0);
+    }
+  }, [rawQuestionItems, currentRealmId, currentDifficultyTier, activeTab]);
 
   const activeQuestion = questionPool[currentQIndex] || FALLBACK_QUESTION;
   const activeRealmObj = useMemo(

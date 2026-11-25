@@ -1,55 +1,20 @@
 // TNPSC Wizard PWA - Service Worker (Beta RC v1.0.1)
 // Offline caching for high-fantasy educational RPG assets, question banks, and audio
 
-const CACHE_NAME = "tnpsc-wizard-v1.0.2";
+const CACHE_NAME = "tnpsc-wizard-v1.0.3";
 
 const PRECACHE_RESOURCES = [
   "/",
-  "/realms",
-  "/lesson/node_hist_3",
-  "/quiz",
-  "/revision",
-  "/pyq",
-  "/progress",
-  "/exam",
   "/manifest.json",
   "/favicon.png",
   "/icons/icon-192x192.png",
   "/icons/icon-512x512.png",
-  "/icons/icon-512x512.webp",
   "/data/syllabus_mapping.json",
   "/data/tnpsc_questions.json",
   "/data/ui_strings_ta.json",
-  "/data/indian_history.json",
-  "/data/indian_polity.json",
-  "/data/general_science.json",
-  "/data/geography.json",
-  "/data/indian_economy.json",
-  "/data/indian_national_movement.json",
-  "/data/tamil_nadu_heritage.json",
-  "/data/aptitude_mental_ability.json",
-  "/assets/lalitha_character.webp",
-  "/assets/lalitha_character.png",
   "/assets/lalitha_wizard_hero.webp",
-  "/assets/lalitha_wizard_hero.png",
   "/assets/velan_wizard_companion.webp",
-  "/assets/velan_wizard_companion.png",
-  "/assets/prop_relic_urn.webp",
-  "/assets/prop_relic_urn.png",
-  "/assets/wizard_temple_bg.webp",
-  "/assets/wizard_temple_bg.png",
   "/assets/comfyui_wizard_bg.webp",
-  "/assets/comfyui_wizard_bg.png",
-  "/assets/mandapam_campfire_bg.webp",
-  "/assets/mandapam_campfire_bg.png",
-  "/assets/chola_battle_arena_bg.webp",
-  "/assets/chola_battle_arena_bg.png",
-  "/assets/ui_gold_coin.webp",
-  "/assets/ui_gold_coin.png",
-  "/assets/ui_study_scroll.webp",
-  "/assets/ui_study_scroll.png",
-  "/assets/ui_victory_star.webp",
-  "/assets/ui_victory_star.png",
 ];
 
 // 1. INSTALL EVENT: Precache core shell & critical game data

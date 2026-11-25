@@ -39,7 +39,11 @@ export interface MasterQuestionDatabase {
 }
 
 let cachedDatabase: MasterQuestionDatabase | null = null;
-let isLoading = false;
+let pendingFetchPromise: Promise<{
+  data: MasterQuestionDatabase;
+  isFallback: boolean;
+  error?: string;
+}> | null = null;
 
 // Fallback emergency seed questions if network/JSON fails to load
 const FALLBACK_DATABASE: MasterQuestionDatabase = {
@@ -98,35 +102,47 @@ export async function loadMasterTNPSCQuestions(): Promise<{
     return { data: FALLBACK_DATABASE, isFallback: true };
   }
 
-  try {
-    isLoading = true;
-    const response = await fetch("/data/tnpsc_questions.json", {
-      cache: "force-cache",
-      headers: { Accept: "application/json" }
-    });
-
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-
-    const json: MasterQuestionDatabase = await response.json();
-    if (!json.subjects || !Array.isArray(json.subjects)) {
-      throw new Error("Invalid question database format.");
-    }
-
-    cachedDatabase = json;
-    isLoading = false;
-    return { data: json, isFallback: false };
-  } catch (err: unknown) {
-    isLoading = false;
-    const errorMsg = err instanceof Error ? err.message : "Unknown error";
-    console.warn("Could not load /data/tnpsc_questions.json, using fallback library:", errorMsg);
-    return {
-      data: FALLBACK_DATABASE,
-      isFallback: true,
-      error: `Loading Library... (Using verified offline cache)`
-    };
+  if (pendingFetchPromise) {
+    return pendingFetchPromise;
   }
+
+  pendingFetchPromise = (async () => {
+    const controller = typeof AbortController !== "undefined" ? new AbortController() : null;
+    const timeoutId = controller ? setTimeout(() => controller.abort(), 4500) : null;
+
+    try {
+      const response = await fetch("/data/tnpsc_questions.json", {
+        cache: "force-cache",
+        headers: { Accept: "application/json" },
+        signal: controller?.signal,
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const json: MasterQuestionDatabase = await response.json();
+      if (!json.subjects || !Array.isArray(json.subjects)) {
+        throw new Error("Invalid question database format.");
+      }
+
+      cachedDatabase = json;
+      return { data: json, isFallback: false };
+    } catch (err: unknown) {
+      const errorMsg = err instanceof Error ? err.message : "Unknown error";
+      console.warn("Could not load /data/tnpsc_questions.json, using fallback library:", errorMsg);
+      return {
+        data: FALLBACK_DATABASE,
+        isFallback: true,
+        error: `Loading Library... (Using verified offline cache)`,
+      };
+    } finally {
+      if (timeoutId) clearTimeout(timeoutId);
+      pendingFetchPromise = null;
+    }
+  })();
+
+  return pendingFetchPromise;
 }
 
 /**
