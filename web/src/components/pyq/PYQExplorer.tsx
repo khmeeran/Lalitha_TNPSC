@@ -19,6 +19,7 @@ import {
 import { useLearning } from "../../context/LearningContext";
 import { useLanguage } from "../../context/LanguageContext";
 import { TranslationToggle } from "../translation/TranslationToggle";
+import { AudioSpeakButton } from "../audio/AudioSpeakButton";
 import { MOCK_PYQS } from "../../data/mockPYQData";
 import { PYQQuestion } from "../../types/learning";
 import { GameShell } from "../game/GameShell";
@@ -170,7 +171,23 @@ export const PYQExplorer: React.FC = () => {
                     </span>
                   </div>
 
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <AudioSpeakButton
+                      textEn={`${q.questionEn || q.questionTa}. ${q.options.map((o) => `Option ${o.id}: ${o.textEn}`).join(". ")}`}
+                      textTa={`${q.questionTa || q.questionEn}. ${q.options.map((o) => `விருப்பம் ${o.id}: ${o.textTa || o.textEn}`).join(". ")}`}
+                      labelEn="Listen"
+                      labelTa="கேட்க"
+                      variant="gold"
+                    />
+                    {!isTamil && (
+                      <AudioSpeakButton
+                        forceTamil
+                        textEn={q.questionEn}
+                        textTa={`${q.questionTa || q.questionEn}. ${q.options.map((o) => `விருப்பம் ${o.id}: ${o.textTa || o.textEn}`).join(". ")}`}
+                        labelTa="தமிழ்"
+                        variant="emerald"
+                      />
+                    )}
                     <button
                       onClick={() => togglePYQBookmark(q.id)}
                       className={`p-1.5 rounded-lg border transition-colors ${

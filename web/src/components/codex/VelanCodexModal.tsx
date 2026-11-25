@@ -5,6 +5,7 @@ import { BookOpen, X } from "lucide-react";
 import { useLanguage } from "../../context/LanguageContext";
 import { TranslationToggle } from "../translation/TranslationToggle";
 import { GlobalLanguageToggle } from "../translation/GlobalLanguageToggle";
+import { AudioSpeakButton } from "../audio/AudioSpeakButton";
 
 interface CodexChapter {
   id: string;
@@ -136,12 +137,35 @@ export const VelanCodexButton: React.FC<{ className?: string }> = ({ className =
                   key={chap.id}
                   className="p-4 rounded-2xl bg-[#1C053A]/85 border border-[#FFD700]/30 space-y-2"
                 >
-                  <h3 className="font-fantasy-header text-xs sm:text-sm text-[#FFD700]">
-                    {isTamil ? chap.titleTa : chap.titleEn}
-                  </h3>
+                  <div className="flex items-center justify-between gap-2 flex-wrap">
+                    <h3 className="font-fantasy-header text-xs sm:text-sm text-[#FFD700]">
+                      {isTamil ? chap.titleTa : chap.titleEn}
+                    </h3>
+                    <div className="flex items-center gap-1.5">
+                      <AudioSpeakButton
+                        textEn={chap.bodyEn}
+                        textTa={chap.bodyTa}
+                        tamilClipKey={`codex_${chap.id}`}
+                        labelEn="Listen"
+                        labelTa="கேட்க"
+                        variant="gold"
+                      />
+                      {!isTamil && (
+                        <AudioSpeakButton
+                          forceTamil
+                          textEn={chap.bodyEn}
+                          textTa={chap.bodyTa}
+                          tamilClipKey={`codex_${chap.id}`}
+                          labelTa="தமிழ்"
+                          variant="emerald"
+                        />
+                      )}
+                    </div>
+                  </div>
                   <TranslationToggle
                     englishText={chap.bodyEn}
                     tamilText={chap.bodyTa}
+                    tamilClipKey={`codex_${chap.id}`}
                     className="text-xs sm:text-sm text-[#FFF8DC]/90 leading-relaxed font-body"
                   />
                 </div>

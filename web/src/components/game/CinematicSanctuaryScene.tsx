@@ -5,14 +5,16 @@ import { useRouter } from "next/navigation";
 import gsap from "gsap";
 import { Flame, Volume2, VolumeX, ArrowRight, BookOpen, Sword, Scroll as ScrollIcon } from "lucide-react";
 import { AmbientSceneParticles } from "../scene/AmbientSceneParticles";
-import { speakNarration, stopNarration } from "../../utils/speechSynthesis";
+import { speakSmartNarration, stopNarration } from "../../utils/speechSynthesis";
 import { playCoinSound, playButtonClick, playBubblePop, playTypewriterTick } from "../../utils/soundEffects";
 import { triggerCoinRain, confetti, triggerRewardParticles } from "../../utils/particleEngine";
 import { useLearning } from "../../context/LearningContext";
+import { useLanguage } from "../../context/LanguageContext";
 
 export const CinematicSanctuaryScene: React.FC = () => {
   const router = useRouter();
   const { state, toggleAudioNarration } = useLearning();
+  const { isTamil } = useLanguage();
 
   // Scene references for GSAP animations
   const sceneContainerRef = useRef<HTMLDivElement>(null);
@@ -23,9 +25,11 @@ export const CinematicSanctuaryScene: React.FC = () => {
   const bubbleRef = useRef<HTMLDivElement>(null);
   const fadeOverlayRef = useRef<HTMLDivElement>(null);
 
-  // Scene interactive state (100% English per Language Mandate)
+  // Scene interactive state (Bilingual EN / TA)
   const [speaker, setSpeaker] = useState<"VELAN" | "LALITHA">("VELAN");
   const [dialogueText, setDialogueText] = useState("Lalitha! Shall we embark to investigate Ashoka's 13th Rock Edict?");
+  const [dialogueTextTa, setDialogueTextTa] = useState("லலிதா! அசோகரின் பதின்மூன்றாம் பாறைக் கல்வெட்டை ஆராய நாம் புறப்படலாமா?");
+  const [dialogueClipKey, setDialogueClipKey] = useState<string | undefined>("sanctuary_intro");
   const [activeAction, setActiveAction] = useState<{ label: string; onConfirm: () => void } | null>({
     label: "📖 Start Investigation",
     onConfirm: () => handleZoomToBook(),
@@ -81,6 +85,8 @@ export const CinematicSanctuaryScene: React.FC = () => {
   }, []);
 
   // 2. TYPEWRITER EFFECT & AUDIO TRIGGER
+  const activeDialogueText = isTamil && dialogueTextTa ? dialogueTextTa : dialogueText;
+
   useEffect(() => {
     setDisplayedText("");
     setIsTyping(true);
@@ -89,17 +95,17 @@ export const CinematicSanctuaryScene: React.FC = () => {
 
     const interval = setInterval(() => {
       index++;
-      setDisplayedText(dialogueText.slice(0, index));
+      setDisplayedText(activeDialogueText.slice(0, index));
       playTypewriterTick();
 
-      if (index >= dialogueText.length) {
+      if (index >= activeDialogueText.length) {
         setIsTyping(false);
         clearInterval(interval);
       }
     }, 28);
 
     return () => clearInterval(interval);
-  }, [dialogueText]);
+  }, [activeDialogueText]);
 
   // 3. PARALLAX MOUSE LISTENER
   const handleMouseMove = (e: React.MouseEvent) => {
@@ -114,19 +120,23 @@ export const CinematicSanctuaryScene: React.FC = () => {
     setParallaxOffset({ x: normX, y: normY });
   };
 
-  // 4. AUDIO NARRATION HANDLER (English Narration Profile)
-  const handleListenToggle = (e: React.MouseEvent) => {
+  // 4. AUDIO NARRATION HANDLER (Bilingual Smart Hybrid)
+  const handleListenToggle = (e: React.MouseEvent, preferTamilOverride?: boolean) => {
     e.stopPropagation();
     playButtonClick();
 
-    if (isSpeaking) {
+    if (isSpeaking && preferTamilOverride === undefined) {
       stopNarration();
       setIsSpeaking(false);
     } else {
       setIsSpeaking(true);
-      speakNarration(dialogueText, {
+      speakSmartNarration({
+        textEn: dialogueText,
+        textTa: dialogueTextTa,
+        isTamil,
+        preferTamil: preferTamilOverride,
+        tamilClipKey: dialogueClipKey,
         speaker,
-        lang: "en-IN",
         onEnd: () => setIsSpeaking(false),
         onError: () => setIsSpeaking(false),
       });
@@ -182,6 +192,8 @@ export const CinematicSanctuaryScene: React.FC = () => {
     triggerRewardParticles({ type: "STAR", originX: window.innerWidth * 0.16, originY: window.innerHeight * 0.75, count: 14 });
     setSpeaker("VELAN");
     setDialogueText("Ashoka's 13th Rock Edict! Let's uncover the secrets of the Kalinga War!");
+    setDialogueTextTa("அசோகரின் பதின்மூன்றாம் பாறைக் கல்வெட்டு! கலிங்கப் போரின் ரகசியங்களை ஆராய்வோம்!");
+    setDialogueClipKey(undefined);
     setActiveAction({
       label: "📖 Start Lesson (Investigation)",
       onConfirm: handleZoomToBook,
@@ -522,29 +534,41 @@ export const CinematicSanctuaryScene: React.FC = () => {
                 {speaker === "VELAN" ? "🦜 Mentor Velan" : "🎒 Explorer Lalitha"}
               </span>
 
-              <button
-                onClick={handleListenToggle}
-                aria-label="Listen to audio dialogue"
-                className={`flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-black transition-all active:scale-95 shadow cursor-pointer ${
-                  isSpeaking
-                    ? "bg-rose-500 text-white animate-pulse"
-                    : speaker === "VELAN"
-                    ? "bg-emerald-400/20 hover:bg-emerald-400/35 text-emerald-300 border border-emerald-400/50"
-                    : "bg-amber-400/20 hover:bg-amber-400/35 text-amber-300 border border-amber-400/50"
-                }`}
-              >
-                {isSpeaking ? (
-                  <>
-                    <VolumeX className="w-3.5 h-3.5" />
-                    <span>Stop</span>
-                  </>
-                ) : (
-                  <>
-                    <Volume2 className="w-3.5 h-3.5" />
-                    <span>🔊 Listen</span>
-                  </>
+              <div className="flex items-center gap-1.5">
+                <button
+                  onClick={(e) => handleListenToggle(e)}
+                  aria-label="Listen to audio dialogue"
+                  className={`flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-black transition-all active:scale-95 shadow cursor-pointer ${
+                    isSpeaking
+                      ? "bg-rose-500 text-white animate-pulse"
+                      : speaker === "VELAN"
+                      ? "bg-emerald-400/20 hover:bg-emerald-400/35 text-emerald-300 border border-emerald-400/50"
+                      : "bg-amber-400/20 hover:bg-amber-400/35 text-amber-300 border border-amber-400/50"
+                  }`}
+                >
+                  {isSpeaking ? (
+                    <>
+                      <VolumeX className="w-3.5 h-3.5" />
+                      <span>{isTamil ? "நிறுத்து" : "Stop"}</span>
+                    </>
+                  ) : (
+                    <>
+                      <Volume2 className="w-3.5 h-3.5" />
+                      <span>{isTamil ? "🔊 கேட்க" : "🔊 Listen"}</span>
+                    </>
+                  )}
+                </button>
+                {!isTamil && dialogueTextTa && (
+                  <button
+                    onClick={(e) => handleListenToggle(e, true)}
+                    aria-label="Listen in Tamil"
+                    className="flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-black bg-emerald-950/90 hover:bg-emerald-900 border border-emerald-400/60 text-emerald-300 transition-all active:scale-95 shadow cursor-pointer"
+                  >
+                    <Volume2 className="w-3 h-3" />
+                    <span>தமிழ்</span>
+                  </button>
                 )}
-              </button>
+              </div>
             </div>
 
             {/* STRICTLY MAX 2 LINES DIALOGUE TEXT */}

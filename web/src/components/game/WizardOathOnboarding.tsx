@@ -7,6 +7,7 @@ import { playButtonClick, playCoinSound } from "@/utils/soundEffects";
 import { triggerCoinRain, triggerRewardParticles, confetti } from "@/utils/particleEngine";
 import { TranslationToggle } from "../translation/TranslationToggle";
 import { GlobalLanguageToggle } from "../translation/GlobalLanguageToggle";
+import { AudioSpeakButton } from "../audio/AudioSpeakButton";
 import { useLanguage } from "@/context/LanguageContext";
 
 // Audio synthesized web-audio helpers for friction-free feedback
@@ -212,10 +213,31 @@ export const WizardOathOnboarding: React.FC = () => {
           </div>
 
           {/* Single-Sentence Dialogue */}
-          <div className="comic-speech-bubble-rpg max-w-lg mx-auto mb-6 text-left">
+          <div className="comic-speech-bubble-rpg max-w-lg mx-auto mb-6 text-left space-y-2">
+            <div className="flex items-center justify-end gap-1.5">
+              <AudioSpeakButton
+                textEn="Welcome, Apprentice! I am Velan. Together, we shall master the TNPSC realms!"
+                textTa="வணக்கம் இளம் வித்தைக்காரரே! நான் வேலன். ஒன்றாக இணைந்து TNPSC உலகங்களை வெல்வோம்!"
+                tamilClipKey="onboarding_step1"
+                labelEn="Listen"
+                labelTa="கேட்க"
+                variant="light"
+              />
+              {!isTamil && (
+                <AudioSpeakButton
+                  forceTamil
+                  textEn="Welcome, Apprentice! I am Velan. Together, we shall master the TNPSC realms!"
+                  textTa="வணக்கம் இளம் வித்தைக்காரரே! நான் வேலன். ஒன்றாக இணைந்து TNPSC உலகங்களை வெல்வோம்!"
+                  tamilClipKey="onboarding_step1"
+                  labelTa="தமிழ்"
+                  variant="emerald"
+                />
+              )}
+            </div>
             <TranslationToggle
               englishText="Welcome, Apprentice! I am Velan. Together, we shall master the TNPSC realms!"
               tamilText="வணக்கம் இளம் வித்தைக்காரரே! நான் வேலன். ஒன்றாக இணைந்து TNPSC உலகங்களை வெல்வோம்!"
+              tamilClipKey="onboarding_step1"
               variant="light"
               className="font-body font-bold text-sm sm:text-base text-[#1E053A] leading-relaxed"
             />
@@ -246,12 +268,21 @@ export const WizardOathOnboarding: React.FC = () => {
           <div className="ornate-corner-gem ornate-corner-br" />
 
           {/* Mentor Instruction (Strictly 1 sentence) */}
-          <div className="flex items-center justify-center gap-2 mb-3">
+          <div className="flex items-center justify-center gap-2 mb-3 flex-wrap">
             <span className="text-xl shrink-0">🦜</span>
             <TranslationToggle
               englishText="Tap the correct answer to cast your first spell!"
               tamilText="உங்கள் முதல் மந்திரத்தை வீச சரியான விடையைத் தட்டவும்!"
+              tamilClipKey="onboarding_step2"
               className="font-fantasy-header text-xs sm:text-sm text-[#FFD700] text-left"
+            />
+            <AudioSpeakButton
+              forceTamil
+              textEn="Tap the correct answer to cast your first spell! What sacred river nourished the Imperial Chola capital at Thanjavur?"
+              textTa="உங்கள் முதல் மந்திரத்தை வீச சரியான விடையைத் தட்டவும்! தஞ்சாவூரில் இருந்த சோழப் பேரரசின் தலைநகரை வளமாக்கிய புனித நதி எது?"
+              tamilClipKey="onboarding_step2"
+              labelTa="தமிழ்"
+              variant="gold"
             />
           </div>
 
@@ -347,12 +378,21 @@ export const WizardOathOnboarding: React.FC = () => {
           <div className="ornate-corner-gem ornate-corner-br" />
 
           {/* Mentor Instruction (Strictly 1 sentence) */}
-          <div className="flex items-center justify-center gap-2 mb-3">
+          <div className="flex items-center justify-center gap-2 mb-3 flex-wrap">
             <Compass className="w-4 h-4 text-[#2ECC71] shrink-0" />
             <TranslationToggle
               englishText="Your journey begins at History Highlands. Tap to unlock your first realm!"
               tamilText="உங்கள் பயணம் வரலாற்றுச் சிகரங்களில் தொடங்குகிறது. உங்கள் முதல் உலகத்தைத் திறக்கத் தட்டவும்!"
+              tamilClipKey="onboarding_step3"
               className="font-fantasy-header text-xs sm:text-sm text-[#FFD700] text-left"
+            />
+            <AudioSpeakButton
+              forceTamil
+              textEn="Your journey begins at History Highlands. Tap to unlock your first realm!"
+              textTa="உங்கள் பயணம் வரலாற்றுச் சிகரங்களில் தொடங்குகிறது. உங்கள் முதல் உலகத்தைத் திறக்கத் தட்டவும்!"
+              tamilClipKey="onboarding_step3"
+              labelTa="தமிழ்"
+              variant="gold"
             />
           </div>
 
@@ -448,10 +488,21 @@ export const WizardOathOnboarding: React.FC = () => {
           </div>
 
           {/* Single-Sentence Dialogue */}
-          <div className="comic-speech-bubble-rpg max-w-md mx-auto mb-4 text-left">
+          <div className="comic-speech-bubble-rpg max-w-md mx-auto mb-4 text-left space-y-2">
+            <div className="flex items-center justify-end gap-1.5">
+              <AudioSpeakButton
+                forceTamil
+                textEn="Your Oath is sealed! May wisdom guide your path to Rank 1."
+                textTa="உங்கள் உறுதிமொழி பொறிக்கப்பட்டது! முதல் தரவரிசைக்கான பாதையில் ஞானம் வழிகாட்டட்டும்."
+                tamilClipKey="onboarding_step4"
+                labelTa="தமிழ்"
+                variant="light"
+              />
+            </div>
             <TranslationToggle
               englishText="Your Oath is sealed! May wisdom guide your path to Rank 1."
               tamilText="உங்கள் உறுதிமொழி பொறிக்கப்பட்டது! முதல் தரவரிசைக்கான பாதையில் ஞானம் வழிகாட்டட்டும்."
+              tamilClipKey="onboarding_step4"
               variant="light"
               className="font-body font-bold text-sm sm:text-base text-[#1E053A] leading-relaxed"
             />

@@ -19,6 +19,7 @@ import {
 import { useLearning } from "../../context/LearningContext";
 import { useLanguage } from "../../context/LanguageContext";
 import { TranslationToggle } from "../translation/TranslationToggle";
+import { AudioSpeakButton } from "../audio/AudioSpeakButton";
 import {
   MOCK_EXAM_QUESTIONS,
   MOCK_EXAM_SECTIONS,
@@ -173,17 +174,35 @@ export const MockExamArena: React.FC = () => {
                       </span>
                     </div>
 
-                    <button
-                      onClick={handleToggleMarkReview}
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <AudioSpeakButton
+                        textEn={`${currentQ.questionEn || currentQ.questionTa}. ${currentQ.options.map((o) => `Option ${o.id}: ${o.textEn}`).join(". ")}`}
+                        textTa={`${currentQ.questionTa || currentQ.questionEn}. ${currentQ.options.map((o) => `விருப்பம் ${o.id}: ${o.textTa || o.textEn}`).join(". ")}`}
+                        labelEn="Listen"
+                        labelTa="கேட்க"
+                        variant="gold"
+                      />
+                      {!isTamil && (
+                        <AudioSpeakButton
+                          forceTamil
+                          textEn={currentQ.questionEn}
+                          textTa={`${currentQ.questionTa || currentQ.questionEn}. ${currentQ.options.map((o) => `விருப்பம் ${o.id}: ${o.textTa || o.textEn}`).join(". ")}`}
+                          labelTa="தமிழ்"
+                          variant="emerald"
+                        />
+                      )}
+                      <button
+                        onClick={handleToggleMarkReview}
                       className={`text-xs font-bold px-2.5 py-1 rounded-lg border transition-colors flex items-center gap-1 ${
                         markedForReview[currentQ.index]
                           ? "bg-purple-950/80 border-purple-400 text-purple-200"
                           : "bg-slate-950 border-amber-800/40 text-slate-400 hover:text-amber-300"
                       }`}
                     >
-                      <Bookmark className="w-3 h-3" />
-                      <span>{markedForReview[currentQ.index] ? "Marked" : "Mark for Review"}</span>
-                    </button>
+                        <Bookmark className="w-3 h-3" />
+                        <span>{markedForReview[currentQ.index] ? "Marked" : "Mark for Review"}</span>
+                      </button>
+                    </div>
                   </div>
 
                   {/* Question Statement */}

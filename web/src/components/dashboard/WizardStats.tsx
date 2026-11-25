@@ -26,6 +26,7 @@ import { calculateSyllabusCoverage, SYLLABUS_MAPPING } from "../../data/syllabus
 import { audioEngine } from "../../lib/audioEngine";
 import { TranslationToggle } from "../translation/TranslationToggle";
 import { GlobalLanguageToggle } from "../translation/GlobalLanguageToggle";
+import { AudioSpeakButton } from "../audio/AudioSpeakButton";
 
 // Staff themes and magical names for all 10 TNPSC Syllabus Units
 const UNIT_STAFF_METADATA: Record<
@@ -285,7 +286,25 @@ export const WizardStats: React.FC = () => {
                 className="text-xl sm:text-2xl font-black text-amber-950 font-fantasy-header tracking-tight leading-snug"
               />
             </div>
-            <GlobalLanguageToggle />
+            <div className="flex items-center gap-2">
+              <AudioSpeakButton
+                textEn={`${oracle.headline}. ${oracle.subheadline}`}
+                textTa={`${oracle.headlineTa || oracle.headline}. ${oracle.subheadlineTa || oracle.subheadline}`}
+                labelEn="Listen"
+                labelTa="கேட்க"
+                variant="light"
+              />
+              {!isTamil && (oracle.headlineTa || oracle.subheadlineTa) && (
+                <AudioSpeakButton
+                  forceTamil
+                  textEn={`${oracle.headline}. ${oracle.subheadline}`}
+                  textTa={`${oracle.headlineTa || oracle.headline}. ${oracle.subheadlineTa || oracle.subheadline}`}
+                  labelTa="தமிழ்"
+                  variant="emerald"
+                />
+              )}
+              <GlobalLanguageToggle />
+            </div>
           </div>
 
           <TranslationToggle

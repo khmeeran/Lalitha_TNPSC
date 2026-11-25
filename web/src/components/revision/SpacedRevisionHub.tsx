@@ -19,6 +19,7 @@ import {
 import { useLearning } from "../../context/LearningContext";
 import { useLanguage } from "../../context/LanguageContext";
 import { TranslationToggle } from "../translation/TranslationToggle";
+import { AudioSpeakButton } from "../audio/AudioSpeakButton";
 import { FlashcardItem, SM2QualityGrade } from "../../types/learning";
 import { getDailyRevisionQueue, computeQueueStats } from "../../utils/sm2Algorithm";
 import { LalithaAvatar } from "../mascot/LalithaAvatar";
@@ -130,9 +131,27 @@ export const SpacedRevisionHub: React.FC = () => {
                     🏛️ {currentCard.provenance}
                   </span>
                 </div>
-                <div className="flex items-center gap-1.5 text-xs font-bold text-amber-400">
-                  <Rotate3d className="w-4 h-4" />
-                  <span>{isCardFlipped ? "Flip to Front" : "Flip to Reveal"}</span>
+                <div className="flex items-center gap-2 flex-wrap">
+                  <AudioSpeakButton
+                    textEn={isCardFlipped ? currentCard.backEn : currentCard.frontEn}
+                    textTa={isCardFlipped ? currentCard.backTa : currentCard.frontTa}
+                    labelEn="Listen"
+                    labelTa="கேட்க"
+                    variant="gold"
+                  />
+                  {!isTamil && (
+                    <AudioSpeakButton
+                      forceTamil
+                      textEn={isCardFlipped ? currentCard.backEn : currentCard.frontEn}
+                      textTa={isCardFlipped ? currentCard.backTa : currentCard.frontTa}
+                      labelTa="தமிழ்"
+                      variant="emerald"
+                    />
+                  )}
+                  <div className="flex items-center gap-1.5 text-xs font-bold text-amber-400">
+                    <Rotate3d className="w-4 h-4" />
+                    <span>{isCardFlipped ? "Flip to Front" : "Flip to Reveal"}</span>
+                  </div>
                 </div>
               </div>
 

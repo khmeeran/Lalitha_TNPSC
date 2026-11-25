@@ -21,7 +21,8 @@ import { VelanMascotSvg } from "../VelanMascotSvg";
 import { useLearning } from "../../context/LearningContext";
 import { useLanguage } from "../../context/LanguageContext";
 import { TranslationToggle } from "../translation/TranslationToggle";
-import { speakNarration } from "../../utils/speechSynthesis";
+import { AudioSpeakButton } from "../audio/AudioSpeakButton";
+import { speakSmartNarration } from "../../utils/speechSynthesis";
 import { GameShell } from "../game/GameShell";
 import { confetti, triggerCoinRain, triggerRewardParticles } from "../../utils/particleEngine";
 import { playCoinSound } from "../../utils/soundEffects";
@@ -87,9 +88,21 @@ export const QuizArenaPlayer: React.FC<QuizArenaPlayerProps> = ({ quiz }) => {
 
     if (state.settings.audioNarrationEnabled) {
       if (selectedOption === currentQuestion.correctOptionId) {
-        speakNarration("Splendid! Your strike shattered the temple seal!", { speaker: "VELAN" });
+        speakSmartNarration({
+          textEn: "Splendid! Your strike shattered the temple seal!",
+          textTa: "அருமை! உங்கள் விடை கோயில் முத்திரையைத் தகர்த்தது!",
+          tamilClipKey: "feedback_correct",
+          isTamil,
+          speaker: "VELAN",
+        });
       } else {
-        speakNarration("Attention Lalitha! Read the explanation and try again.", { speaker: "VELAN" });
+        speakSmartNarration({
+          textEn: "Attention Lalitha! Read the explanation and try again.",
+          textTa: "கவனம் லலிதா! விளக்கத்தைப் படித்து மீண்டும் முயற்சி செய்யுங்கள்.",
+          tamilClipKey: "feedback_wrong",
+          isTamil,
+          speaker: "VELAN",
+        });
       }
     }
   };
@@ -225,14 +238,32 @@ export const QuizArenaPlayer: React.FC<QuizArenaPlayerProps> = ({ quiz }) => {
             {/* Main Battle Card: Question Deck */}
             <div className="flex-1 bg-slate-900/95 rounded-2xl border-2 border-amber-600/40 p-5 sm:p-7 shadow-2xl flex flex-col justify-between">
               <div>
-                {/* Topic & Syllabus Provenance Badges */}
-                <div className="flex items-center justify-between gap-2 mb-3">
+                {/* Topic & Syllabus Provenance Badges + Bilingual Audio */}
+                <div className="flex items-center justify-between gap-2 mb-3 flex-wrap">
                   <span className="px-2.5 py-1 rounded-lg text-[10px] font-black uppercase tracking-wider bg-red-500/20 text-red-300 border border-red-500/30">
                     Battle Question {currentIndex + 1}
                   </span>
-                  <span className="text-xs font-bold text-amber-400">
-                    🏛️ {currentQuestion.provenance || "Unit VIII: Tamil Heritage"}
-                  </span>
+                  <div className="flex items-center gap-1.5 flex-wrap">
+                    <AudioSpeakButton
+                      textEn={`${currentQuestion.questionEn || currentQuestion.questionTa}. ${(currentQuestion.options || []).map((o) => `Option ${o.id}: ${o.textEn}`).join(". ")}`}
+                      textTa={`${currentQuestion.questionTa || currentQuestion.questionEn}. ${(currentQuestion.options || []).map((o) => `விருப்பம் ${o.id}: ${o.textTa || o.textEn}`).join(". ")}`}
+                      labelEn="Listen"
+                      labelTa="வினா கேட்க"
+                      variant="gold"
+                    />
+                    {!isTamil && (
+                      <AudioSpeakButton
+                        forceTamil
+                        textEn={currentQuestion.questionEn}
+                        textTa={`${currentQuestion.questionTa || currentQuestion.questionEn}. ${(currentQuestion.options || []).map((o) => `விருப்பம் ${o.id}: ${o.textTa || o.textEn}`).join(". ")}`}
+                        labelTa="தமிழ்"
+                        variant="emerald"
+                      />
+                    )}
+                    <span className="text-xs font-bold text-amber-400">
+                      🏛️ {currentQuestion.provenance || "Unit VIII: Tamil Heritage"}
+                    </span>
+                  </div>
                 </div>
 
                 {/* Question Prompt */}

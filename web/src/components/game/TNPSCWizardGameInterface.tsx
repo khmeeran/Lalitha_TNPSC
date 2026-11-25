@@ -28,7 +28,9 @@ import {
 } from "lucide-react";
 import { playButtonClick, playBubblePop, playTypewriterTick, playCoinSound } from "../../utils/soundEffects";
 import { triggerCoinRain, triggerRewardParticles, confetti } from "../../utils/particleEngine";
-import { speakNarration, stopNarration } from "../../utils/speechSynthesis";
+import { speakNarration, speakSmartNarration, stopNarration } from "../../utils/speechSynthesis";
+import { AudioSpeakButton } from "../audio/AudioSpeakButton";
+import { getStoryHookClipKey } from "../../data/tamilAudioManifest";
 import { useLearning } from "../../context/LearningContext";
 import { loadMasterTNPSCQuestions, QuestionItem } from "../../utils/tnpscDataLoader";
 import {
@@ -242,6 +244,7 @@ export const TNPSCWizardGameInterface: React.FC = () => {
   );
   const [isTyping, setIsTyping] = useState(false);
   const [isSpeakingAudio, setIsSpeakingAudio] = useState(false);
+  const [activeDialogueClipKey, setActiveDialogueClipKey] = useState<string | undefined>(undefined);
   const [isAudioMuted, setIsAudioMuted] = useState(false);
 
   // Mobile Quest Log Drawer
@@ -414,19 +417,23 @@ export const TNPSCWizardGameInterface: React.FC = () => {
     return () => clearInterval(timer);
   }, [activeDialogueSource]);
 
-  // Audio speech narration toggle with volume ducking (Phase 3 Audio Engine)
-  const handleToggleAudio = () => {
+  // Audio speech narration toggle with volume ducking & bilingual Smart Hybrid playback
+  const handleToggleAudio = (preferTamilOverride?: boolean) => {
     playButtonClick();
-    if (isSpeakingAudio) {
+    if (isSpeakingAudio && preferTamilOverride === undefined) {
       stopNarration();
       setIsSpeakingAudio(false);
       audioEngine.duckAudio(false);
     } else {
       setIsSpeakingAudio(true);
       audioEngine.duckAudio(true);
-      speakNarration(dialogueText, {
+      speakSmartNarration({
+        textEn: dialogueText,
+        textTa: dialogueTextTa,
+        isTamil,
+        preferTamil: preferTamilOverride,
+        tamilClipKey: activeDialogueClipKey,
         speaker,
-        lang: "en-IN",
         onEnd: () => {
           setIsSpeakingAudio(false);
           audioEngine.duckAudio(false);
@@ -438,6 +445,20 @@ export const TNPSCWizardGameInterface: React.FC = () => {
       });
     }
   };
+
+  // Build Question + Options speech strings (EN and Tamil)
+  const trialAudioEn = useMemo(() => {
+    const opts = activeQuestion.options.map((o) => `Option ${o.id}: ${o.text}`).join(". ");
+    return `${activeQuestion.question}. ${opts}`;
+  }, [activeQuestion]);
+
+  const trialAudioTa = useMemo(() => {
+    const qText = activeQuestion.questionTa || activeQuestion.question;
+    const opts = activeQuestion.options
+      .map((o) => `விருப்பம் ${o.id}: ${o.textTa || o.text}`)
+      .join(". ");
+    return `${qText}. ${opts}`;
+  }, [activeQuestion]);
 
   // Option Click Handler with Pedagogical Scaffolding, SRS Tracking & Phase 3 Sensory Cues
   const handleSelectOption = (optionId: string, isCorrect: boolean) => {
@@ -492,6 +513,7 @@ export const TNPSCWizardGameInterface: React.FC = () => {
       setSpeaker(dialogue.speaker);
       setDialogueText(dialogue.text);
       setDialogueTextTa(dialogue.textTa);
+      setActiveDialogueClipKey(undefined);
     } else {
       setStreak(0);
       setMana((prev) => Math.max(10, prev - 20));
@@ -515,6 +537,7 @@ export const TNPSCWizardGameInterface: React.FC = () => {
       setSpeaker(dialogue.speaker);
       setDialogueText(dialogue.text);
       setDialogueTextTa(dialogue.textTa);
+      setActiveDialogueClipKey(undefined);
 
       const chosenOpt = activeQuestion.options.find((o) => o.id === optionId);
       const correctOpt = activeQuestion.options.find((o) => o.isCorrect);
@@ -578,11 +601,13 @@ export const TNPSCWizardGameInterface: React.FC = () => {
       setSpeaker("VELAN");
       setDialogueText(`Next trial! Notice the difficulty rating: ${activeQuestion.difficulty}. Let's examine it carefully!`);
       setDialogueTextTa(`அடுத்த வினா! இதன் தேர்வுத் தரம் ${activeQuestion.difficulty}. கவனமாகப் படித்து விடையளிப்போம்!`);
+      setActiveDialogueClipKey(undefined);
     } else {
       triggerCoinRain(2000);
       setSpeaker("LALITHA");
       setDialogueText("You have completed all trials in this circuit! Challenge the Region Boss to prove mastery!");
       setDialogueTextTa("இந்தச் சுற்றின் அனைத்து வினாக்களையும் முடித்துவிட்டீர்கள்! இறுதித் தேர்வை எதிர்கொண்டு தேர்ச்சியை நிரூபியுங்கள்!");
+      setActiveDialogueClipKey(undefined);
     }
   };
 
@@ -604,6 +629,7 @@ export const TNPSCWizardGameInterface: React.FC = () => {
       setSpeaker("LALITHA");
       setDialogueText("Reviewing the previous trial. Consistent recall builds Civil Service rank!");
       setDialogueTextTa("முந்தைய வினாவை மீள்பார்வை செய்கிறோம். தொடர் பயிற்சியே வெற்றியைத் தரும்!");
+      setActiveDialogueClipKey(undefined);
     }
   };
 
@@ -646,6 +672,7 @@ export const TNPSCWizardGameInterface: React.FC = () => {
         ? `"${hook.narrativeTa}" இலக்கு: ${hook.investigatorGoalTa || hook.investigatorGoal}`
         : undefined
     );
+    setActiveDialogueClipKey(getStoryHookClipKey(targetRealmId));
   };
 
   // Trigger Boss Trial (>80% Gatekeeper Evaluation)
@@ -939,24 +966,37 @@ export const TNPSCWizardGameInterface: React.FC = () => {
                     {speaker === "VELAN" ? "Velan the Wise Mentor" : "Lalitha the Hero"}
                   </span>
                 </div>
-                {/* Audio Narration Button */}
-                <button
-                  onClick={handleToggleAudio}
-                  aria-label={isSpeakingAudio ? "Stop Velan audio narration" : "Listen to Velan audio narration"}
-                  className="px-2.5 py-1 rounded-full bg-[#6A0DAD] text-[#FFF8DC] text-xs font-bold flex items-center gap-1 hover:brightness-110 active:scale-95 transition-all shadow"
-                >
-                  {isSpeakingAudio ? (
-                    <>
-                      <VolumeX className="w-3.5 h-3.5 text-[#FFD700]" />
-                      <span>Stop</span>
-                    </>
-                  ) : (
-                    <>
-                      <Volume2 className="w-3.5 h-3.5 text-[#FFD700]" />
-                      <span>Listen</span>
-                    </>
+                {/* Audio Narration Buttons (Auto-language + Direct Tamil) */}
+                <div className="flex items-center gap-1.5 shrink-0">
+                  <button
+                    onClick={() => handleToggleAudio()}
+                    aria-label={isSpeakingAudio ? "Stop Velan audio narration" : "Listen to Velan audio narration"}
+                    className="px-2.5 py-1 rounded-full bg-[#6A0DAD] text-[#FFF8DC] text-xs font-bold flex items-center gap-1 hover:brightness-110 active:scale-95 transition-all shadow cursor-pointer"
+                  >
+                    {isSpeakingAudio ? (
+                      <>
+                        <VolumeX className="w-3.5 h-3.5 text-[#FFD700]" />
+                        <span>{isTamil ? "நிறுத்து" : "Stop"}</span>
+                      </>
+                    ) : (
+                      <>
+                        <Volume2 className="w-3.5 h-3.5 text-[#FFD700]" />
+                        <span>{isTamil ? "கேட்க" : "Listen"}</span>
+                      </>
+                    )}
+                  </button>
+                  {!isTamil && dialogueTextTa && (
+                    <button
+                      onClick={() => handleToggleAudio(true)}
+                      aria-label="Listen to Velan in Tamil"
+                      title="தமிழில் கேட்க (Listen in Tamil)"
+                      className="px-2 py-1 rounded-full bg-emerald-900/90 border border-emerald-400/60 text-emerald-200 text-xs font-bold flex items-center gap-1 hover:brightness-110 active:scale-95 transition-all shadow cursor-pointer"
+                    >
+                      <Volume2 className="w-3 h-3 text-emerald-300" />
+                      <span>தமிழ்</span>
+                    </button>
                   )}
-                </button>
+                </div>
               </div>
 
               {/* Dialogue Text with Typewriter & On-Demand Tamil Translation */}
@@ -991,6 +1031,7 @@ export const TNPSCWizardGameInterface: React.FC = () => {
                     setSpeaker("VELAN");
                     setDialogueText("70% of questions here come from the last 10 years of TNPSC exams! Authentic PYQs are your key to Rank 1!");
                     setDialogueTextTa("இங்குள்ள 70% வினாக்கள் கடந்த 10 ஆண்டு TNPSC தேர்வுகளிலிருந்து எடுக்கப்பட்டவை! முந்தைய வினாக்களே முதல் தரவரிசைக்கான திறவுகோல்!");
+                    setActiveDialogueClipKey("velan_easter_egg");
                   }}
                   onKeyDown={(e) => {
                     if (e.key === "Enter" || e.key === " ") {
@@ -1000,6 +1041,7 @@ export const TNPSCWizardGameInterface: React.FC = () => {
                       setSpeaker("VELAN");
                       setDialogueText("70% of questions here come from the last 10 years of TNPSC exams! Authentic PYQs are your key to Rank 1!");
                       setDialogueTextTa("இங்குள்ள 70% வினாக்கள் கடந்த 10 ஆண்டு TNPSC தேர்வுகளிலிருந்து எடுக்கப்பட்டவை! முந்தைய வினாக்களே முதல் தரவரிசைக்கான திறவுகோல்!");
+                      setActiveDialogueClipKey("velan_easter_egg");
                     }
                   }}
                 className="absolute left-10 sm:left-16 top-1 sm:top-2 z-20 cursor-pointer group transition-transform hover:scale-110 active:scale-95 animate-bounce focus:outline-none focus:ring-2 focus:ring-[#FFD700] rounded-full"
@@ -1031,6 +1073,7 @@ export const TNPSCWizardGameInterface: React.FC = () => {
                   setSpeaker("LALITHA");
                   setDialogueText("I am ready! Every trial question mastered brings me closer to the Sub-Collector appointment!");
                   setDialogueTextTa("நான் தயார்! ஒவ்வொரு வினாவிலும் தேர்ச்சி பெறுவது என்னைத் துணை ஆட்சியர் பதவிக்கு நெருக்கமாகக் கொண்டு செல்கிறது!");
+                  setActiveDialogueClipKey("lalitha_easter_egg");
                 }}
                 onKeyDown={(e) => {
                   if (e.key === "Enter" || e.key === " ") {
@@ -1040,6 +1083,7 @@ export const TNPSCWizardGameInterface: React.FC = () => {
                     setSpeaker("LALITHA");
                     setDialogueText("I am ready! Every trial question mastered brings me closer to the Sub-Collector appointment!");
                     setDialogueTextTa("நான் தயார்! ஒவ்வொரு வினாவிலும் தேர்ச்சி பெறுவது என்னைத் துணை ஆட்சியர் பதவிக்கு நெருக்கமாகக் கொண்டு செல்கிறது!");
+                    setActiveDialogueClipKey("lalitha_easter_egg");
                   }
                 }}
                 className="relative z-10 cursor-pointer group transition-transform hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-[#FFD700] rounded-full"
@@ -1137,6 +1181,24 @@ export const TNPSCWizardGameInterface: React.FC = () => {
                   </div>
 
                   <div className="flex items-center gap-1.5 font-ui">
+                    <AudioSpeakButton
+                      textEn={trialAudioEn}
+                      textTa={trialAudioTa}
+                      speaker="VELAN"
+                      labelEn="Read Q"
+                      labelTa="வினா கேட்க"
+                      variant="purple"
+                    />
+                    {!isTamil && (
+                      <AudioSpeakButton
+                        forceTamil
+                        textEn={trialAudioEn}
+                        textTa={trialAudioTa}
+                        speaker="VELAN"
+                        labelTa="தமிழ்"
+                        variant="emerald"
+                      />
+                    )}
                     <span className="px-2.5 py-0.5 rounded-md bg-[#6A0DAD] border border-[#FFD700]/50 text-[#FFF8DC] text-xs font-ui font-bold">
                       {activeQuestion.difficulty}
                     </span>
@@ -1251,10 +1313,10 @@ export const TNPSCWizardGameInterface: React.FC = () => {
 
                   <div className="flex items-center gap-2">
                     <button
-                      onClick={handleToggleAudio}
+                      onClick={() => handleToggleAudio()}
                       aria-label={isSpeakingAudio ? "Stop Audio Narration" : "Play Audio Narration"}
                       className="magic-button magic-button-gold magic-button-round"
-                      title="Audio Dialogue (▶️)"
+                      title={isTamil ? "ஒலி விளக்கம் (▶️)" : "Audio Dialogue (▶️)"}
                     >
                       {isSpeakingAudio ? (
                         <VolumeX className="w-6 h-6 text-[#381B02]" />
@@ -1799,16 +1861,25 @@ export const TNPSCWizardGameInterface: React.FC = () => {
             <div className="ornate-corner-gem ornate-corner-bl" />
             <div className="ornate-corner-gem ornate-corner-br" />
 
-            <div className="flex items-center justify-between border-b border-red-500/40 pb-2 mb-3">
+            <div className="flex items-center justify-between border-b border-red-500/40 pb-2 mb-3 gap-2 flex-wrap">
               <div className="flex items-center gap-2">
                 <span className="text-xl">💀</span>
                 <h3 className="font-fantasy-header text-xs sm:text-sm text-red-400">
                   {isTamil ? "வினாப் பிழை பகுப்பாய்வு & விளக்கம்" : "TRIAL POST-MORTEM & ERROR ANALYSIS"}
                 </h3>
               </div>
-              <span className="px-2 py-0.5 rounded bg-red-950 border border-red-500 text-red-300 text-[9px] font-ui font-black uppercase">
-                Tagged as Cursed Topic (Day {postMortemModal.intervalDays})
-              </span>
+              <div className="flex items-center gap-1.5 flex-wrap">
+                <AudioSpeakButton
+                  forceTamil
+                  textEn={`${postMortemModal.distractorReason}. ${postMortemModal.coreExplanation}`}
+                  textTa={`${postMortemModal.distractorReasonTa || postMortemModal.distractorReason}. சரியான விடை: ${postMortemModal.correctOptionTextTa || postMortemModal.correctOptionText}. ${postMortemModal.coreExplanationTa || postMortemModal.coreExplanation}`}
+                  labelTa="தமிழ் விளக்கம்"
+                  variant="emerald"
+                />
+                <span className="px-2 py-0.5 rounded bg-red-950 border border-red-500 text-red-300 text-[9px] font-ui font-black uppercase">
+                  Tagged as Cursed Topic (Day {postMortemModal.intervalDays})
+                </span>
+              </div>
             </div>
 
             {/* Option Chosen vs Verified Commission Key */}

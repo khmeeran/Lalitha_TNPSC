@@ -1,7 +1,7 @@
 // TNPSC Wizard PWA - Service Worker (Beta RC v1.0.1)
 // Offline caching for high-fantasy educational RPG assets, question banks, and audio
 
-const CACHE_NAME = "tnpsc-wizard-v1.0.3";
+const CACHE_NAME = "tnpsc-wizard-v1.0.4";
 
 const PRECACHE_RESOURCES = [
   "/",

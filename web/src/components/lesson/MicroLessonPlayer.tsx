@@ -22,8 +22,10 @@ import { MicroLessonPayload, LessonCard } from "../../types/learning";
 import { LalithaAvatar } from "../mascot/LalithaAvatar";
 import { VelanMascotSvg } from "../VelanMascotSvg";
 import { useLearning } from "../../context/LearningContext";
+import { useLanguage } from "../../context/LanguageContext";
 import { TranslationToggle } from "../translation/TranslationToggle";
-import { speakNarration, stopNarration } from "../../utils/speechSynthesis";
+import { AudioSpeakButton } from "../audio/AudioSpeakButton";
+import { speakSmartNarration, stopNarration } from "../../utils/speechSynthesis";
 import { GameShell } from "../game/GameShell";
 import { confetti } from "../../utils/particleEngine";
 import { playCoinSound } from "../../utils/soundEffects";
@@ -36,6 +38,7 @@ interface MicroLessonPlayerProps {
 export const MicroLessonPlayer: React.FC<MicroLessonPlayerProps> = ({ lesson }) => {
   const router = useRouter();
   const { state, completeLesson, toggleAudioNarration } = useLearning();
+  const { isTamil } = useLanguage();
 
   const [activeStep, setActiveStep] = useState(0);
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
@@ -61,13 +64,20 @@ export const MicroLessonPlayer: React.FC<MicroLessonPlayerProps> = ({ lesson }) 
     setShowHint(false);
     setActiveGlossaryTerm(null);
 
-    // If audio narration is enabled, trigger speech for the new card
+    // If audio narration is enabled, trigger bilingual speech for the new card
     if (state.settings.audioNarrationEnabled) {
-      const textToRead = currentCard.velanDialogueEn
+      const textEn = currentCard.velanDialogueEn
         ? `${currentCard.velanDialogueEn}. ${currentCard.bodyEn}`
         : `${currentCard.headlineEn}. ${currentCard.bodyEn}`;
+      const textTa = currentCard.velanDialogueTa
+        ? `${currentCard.velanDialogueTa}. ${currentCard.bodyTa}`
+        : `${currentCard.headlineTa}. ${currentCard.bodyTa}`;
       setIsSpeaking(true);
-      speakNarration(textToRead, {
+      speakSmartNarration({
+        textEn,
+        textTa,
+        isTamil,
+        speaker: "VELAN",
         onEnd: () => setIsSpeaking(false),
         onError: () => setIsSpeaking(false),
       });
@@ -76,7 +86,7 @@ export const MicroLessonPlayer: React.FC<MicroLessonPlayerProps> = ({ lesson }) 
     if (cardRef.current) {
       cardRef.current.focus();
     }
-  }, [activeStep, state.settings.audioNarrationEnabled]);
+  }, [activeStep, state.settings.audioNarrationEnabled, isTamil]);
 
   useEffect(() => {
     return () => {
@@ -147,11 +157,23 @@ export const MicroLessonPlayer: React.FC<MicroLessonPlayerProps> = ({ lesson }) 
         colors: ["#FFD700", "#FFA500", "#FF6347"],
       });
       if (state.settings.audioNarrationEnabled) {
-        speakNarration("Splendid Lalitha! Correct answer!", { speaker: "VELAN" });
+        speakSmartNarration({
+          textEn: "Splendid Lalitha! Correct answer!",
+          textTa: "அருமை லலிதா! சரியான விடை!",
+          tamilClipKey: "feedback_correct",
+          isTamil,
+          speaker: "VELAN",
+        });
       }
     } else {
       if (state.settings.audioNarrationEnabled) {
-        speakNarration("Let us try again Lalitha. Note the hint.", { speaker: "VELAN" });
+        speakSmartNarration({
+          textEn: "Let us try again Lalitha. Note the hint.",
+          textTa: "மீண்டும் முயற்சி செய் லலிதா. குறிப்பைப் பார்க்கவும்.",
+          tamilClipKey: "feedback_wrong",
+          isTamil,
+          speaker: "VELAN",
+        });
       }
     }
   };
@@ -260,24 +282,44 @@ export const MicroLessonPlayer: React.FC<MicroLessonPlayerProps> = ({ lesson }) 
           aria-live="polite"
         >
           <div>
-            {/* Metadata Badges */}
-            <div className="flex items-center justify-between gap-2 mb-3">
+            {/* Metadata Badges + Lesson Card Audio Controls */}
+            <div className="flex items-center justify-between gap-2 mb-3 flex-wrap">
               <span className="px-2.5 py-1 rounded-lg text-[10px] sm:text-xs font-bold uppercase tracking-wider bg-amber-500/20 text-amber-300 border border-amber-500/30">
                 {currentCard.cardType.replace(/_/g, " ")}
               </span>
-              <span className="text-xs font-semibold text-slate-400">
-                {lesson.subClause}
-              </span>
+              <div className="flex items-center gap-1.5 flex-wrap">
+                <AudioSpeakButton
+                  textEn={`${currentCard.headlineEn}. ${currentCard.bodyEn}`}
+                  textTa={`${currentCard.headlineTa || currentCard.headlineEn}. ${currentCard.bodyTa || currentCard.bodyEn}`}
+                  speaker="VELAN"
+                  labelEn="Listen"
+                  labelTa="பாடம் கேட்க"
+                  variant="gold"
+                />
+                {!isTamil && (currentCard.bodyTa || currentCard.headlineTa) && (
+                  <AudioSpeakButton
+                    forceTamil
+                    textEn={`${currentCard.headlineEn}. ${currentCard.bodyEn}`}
+                    textTa={`${currentCard.headlineTa || currentCard.headlineEn}. ${currentCard.bodyTa || currentCard.bodyEn}`}
+                    speaker="VELAN"
+                    labelTa="தமிழ்"
+                    variant="emerald"
+                  />
+                )}
+                <span className="text-xs font-semibold text-slate-400">
+                  {lesson.subClause}
+                </span>
+              </div>
             </div>
 
             {/* Headline */}
-            <h2 className="text-base sm:text-xl font-extrabold text-amber-100 leading-snug mb-3">
-              {currentCard.headlineEn || currentCard.headlineTa}
+            <h2 className={`text-base sm:text-xl font-extrabold text-amber-100 leading-snug mb-3 ${isTamil ? "font-tamil" : ""}`}>
+              {isTamil ? (currentCard.headlineTa || currentCard.headlineEn) : (currentCard.headlineEn || currentCard.headlineTa)}
             </h2>
 
             {/* Body Text */}
-            <div className="text-sm sm:text-base text-slate-200 leading-relaxed mb-5 font-normal">
-              <p>{currentCard.bodyEn || currentCard.bodyTa}</p>
+            <div className={`text-sm sm:text-base text-slate-200 leading-relaxed mb-5 font-normal ${isTamil ? "font-tamil" : ""}`}>
+              <p>{isTamil ? (currentCard.bodyTa || currentCard.bodyEn) : (currentCard.bodyEn || currentCard.bodyTa)}</p>
             </div>
 
             {/* Key Terms Highlight (Card 2) */}

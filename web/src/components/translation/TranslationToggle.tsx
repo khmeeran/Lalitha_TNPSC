@@ -4,10 +4,15 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Languages, Eye, EyeOff } from "lucide-react";
 import { useLanguage } from "../../context/LanguageContext";
+import { AudioSpeakButton } from "../audio/AudioSpeakButton";
+import type { CharacterSpeaker } from "../../utils/speechSynthesis";
 
 export interface TranslationToggleProps {
   englishText: string;
   tamilText?: string;
+  tamilClipKey?: string;
+  speaker?: CharacterSpeaker;
+  hideAudio?: boolean;
   className?: string;
   tamilClassName?: string;
   inline?: boolean;
@@ -19,6 +24,9 @@ export interface TranslationToggleProps {
 export const TranslationToggle: React.FC<TranslationToggleProps> = ({
   englishText,
   tamilText,
+  tamilClipKey,
+  speaker = "VELAN",
+  hideAudio = false,
   className = "",
   tamilClassName = "",
   inline = false,
@@ -31,14 +39,29 @@ export const TranslationToggle: React.FC<TranslationToggleProps> = ({
 
   const safeEnglish = englishText || "";
   const hasTamil = Boolean(tamilText && tamilText.trim().length > 0 && tamilText.trim() !== safeEnglish.trim());
+  const isLight = variant === "light";
 
   // Global Tamil mode: replace text globally when Tamil translation exists; otherwise fall back to English
   if (isTamil) {
     if (hasTamil) {
       return (
-        <span className={`font-tamil text-base leading-relaxed block ${tamilClassName || className}`}>
-          {tamilText}
-        </span>
+        <div className={`flex items-start justify-between gap-2 ${tamilClassName || className}`}>
+          <span className="font-tamil text-base leading-relaxed flex-1 min-w-0">
+            {tamilText}
+          </span>
+          {!hideAudio && (
+            <AudioSpeakButton
+              forceTamil
+              textEn={safeEnglish}
+              textTa={tamilText}
+              tamilClipKey={tamilClipKey}
+              speaker={speaker}
+              size="icon"
+              variant={isLight ? "light" : "gold"}
+              ariaLabel="தமிழில் கேட்க (Listen in Tamil)"
+            />
+          )}
+        </div>
       );
     }
     return <span className={className}>{safeEnglish}</span>;
@@ -48,8 +71,6 @@ export const TranslationToggle: React.FC<TranslationToggleProps> = ({
   if (!hasTamil) {
     return <span className={className}>{safeEnglish}</span>;
   }
-
-  const isLight = variant === "light";
 
   return (
     <div className={`relative ${inline ? "inline-block" : "block"} ${className}`}>
@@ -98,13 +119,24 @@ export const TranslationToggle: React.FC<TranslationToggleProps> = ({
             className="overflow-hidden"
           >
             <div
-              className={`mt-2 p-3 rounded-xl border text-base font-tamil italic leading-relaxed shadow-inner ${
+              className={`mt-2 p-3 rounded-xl border text-base font-tamil italic leading-relaxed shadow-inner flex items-start justify-between gap-2 ${
                 isLight
                   ? "bg-amber-50/95 border-amber-500/50 text-emerald-900"
                   : "bg-emerald-950/50 border-[#FFD700]/35 text-emerald-300"
               }`}
             >
-              <p className="font-medium text-base leading-relaxed">{tamilText}</p>
+              <p className="font-medium text-base leading-relaxed flex-1 min-w-0">{tamilText}</p>
+              {!hideAudio && (
+                <AudioSpeakButton
+                  forceTamil
+                  textEn={safeEnglish}
+                  textTa={tamilText}
+                  tamilClipKey={tamilClipKey}
+                  speaker={speaker}
+                  labelTa="கேட்க"
+                  variant={isLight ? "light" : "emerald"}
+                />
+              )}
             </div>
           </motion.div>
         )}

@@ -653,33 +653,150 @@ SYLLABUS_TAMIL_TRANSLATIONS: Dict[str, Dict[str, str]] = {
 }
 
 
-def translate_with_ollama(question_obj: Dict[str, Any], model: str = "llama3.1") -> Optional[Dict[str, Any]]:
-    """Optional local Ollama LLM translator for future bulk runs outside sandbox."""
+import re
+
+TAMIL_UNICODE_RE = re.compile(r"[\u0B80-\u0BFF]")
+
+
+def has_tamil_script(text: Any) -> bool:
+    return isinstance(text, str) and bool(TAMIL_UNICODE_RE.search(text))
+
+
+def is_valid_translation(q_obj: Dict[str, Any], parsed: Any) -> bool:
+    if not isinstance(parsed, dict):
+        return False
+    q_ta = parsed.get("questionTa")
+    opts_ta = parsed.get("optionsTa")
+    exp_ta = parsed.get("explanationTa")
+    expected_len = len(q_obj.get("options", []))
+    if not has_tamil_script(q_ta) or not has_tamil_script(exp_ta):
+        return False
+    if not isinstance(opts_ta, list) or len(opts_ta) != expected_len:
+        return False
+    # At least one option should have meaningful text (some numerical options may stay digits)
+    if not all(isinstance(o, str) and o.strip() for o in opts_ta):
+        return False
+    return True
+
+
+def _ollama_chat_json(prompt: str, model: str = "qwen3:14b", timeout: int = 120) -> Optional[Any]:
     try:
         import requests
     except ImportError:
         return None
 
+    payload: Dict[str, Any] = {
+        "model": model,
+        "prompt": prompt,
+        "stream": False,
+        "format": "json",
+        "keep_alive": "30m",
+        "options": {"temperature": 0.1},
+    }
+    if model.startswith("qwen3"):
+        payload["think"] = False
+
+    try:
+        resp = requests.post("http://localhost:11434/api/generate", json=payload, timeout=timeout)
+        if resp.ok:
+            raw = resp.json().get("response", "{}")
+            return json.loads(raw)
+    except Exception as exc:
+        print(f"[!] Ollama request error: {exc}", flush=True)
+    return None
+
+
+def translate_batch_with_ollama(
+    questions: List[Dict[str, Any]], model: str = "qwen3:14b"
+) -> Dict[str, Dict[str, Any]]:
+    """Batch translate 4-5 TNPSC questions into formal academic Tamil using local Ollama."""
+    items_payload = [
+        {
+            "id": q.get("id"),
+            "question": q.get("question"),
+            "options": q.get("options"),
+            "explanation": q.get("explanation"),
+            "error_analysis": q.get("error_analysis", {}),
+        }
+        for q in questions
+    ]
+    prompt = (
+        "Translate every TNPSC competitive exam item into clear, natural, formal academic Tamil "
+        "(suitable for TNPSC Group 1/2/4 candidates). Keep numeric values, dates, formulas, and units accurate.\n"
+        "Return ONLY valid JSON of the shape:\n"
+        '{"items": [{"id": "...", "questionTa": "...", "optionsTa": ["..."], "explanationTa": "...", "error_analysisTa": {"0": "..."}}]}\n'
+        "Preserve every input item id and keep optionsTa the exact same length as options.\n\n"
+        f"Input JSON:\n{json.dumps(items_payload, ensure_ascii=False)}"
+    )
+    parsed = _ollama_chat_json(prompt, model=model, timeout=180)
+    results: Dict[str, Dict[str, Any]] = {}
+    if isinstance(parsed, dict) and isinstance(parsed.get("items"), list):
+        by_id = {q.get("id"): q for q in questions}
+        for item in parsed["items"]:
+            if isinstance(item, dict):
+                qid = item.get("id")
+                if qid in by_id and is_valid_translation(by_id[qid], item):
+                    results[qid] = item
+    return results
+
+
+def translate_with_ollama(question_obj: Dict[str, Any], model: str = "qwen3:14b") -> Optional[Dict[str, Any]]:
+    """Single-item Ollama fallback translator."""
     prompt = (
         "Translate the following TNPSC competitive exam question, options, explanation, and error analysis "
         "into clear, formal academic Tamil suitable for TNPSC Group 1/2/4 preparation. "
-        "Return ONLY valid JSON with keys: questionTa (str), optionsTa (list of str), "
+        "Return ONLY valid JSON with EXACT keys: questionTa (str), optionsTa (list of str), "
         "explanationTa (str), error_analysisTa (dict matching error_analysis keys).\n\n"
         f"Input JSON:\n{json.dumps({k: question_obj.get(k) for k in ['question', 'options', 'explanation', 'error_analysis']}, ensure_ascii=False)}"
     )
-    try:
-        resp = requests.post(
-            "http://localhost:11434/api/generate",
-            json={"model": model, "prompt": prompt, "stream": False, "format": "json"},
-            timeout=45
-        )
-        if resp.ok:
-            raw = resp.json().get("response", "{}")
-            parsed = json.loads(raw)
-            if isinstance(parsed.get("questionTa"), str) and isinstance(parsed.get("optionsTa"), list):
-                return parsed
-    except Exception as exc:
-        print(f"[!] Ollama translation failed for {question_obj.get('id')}: {exc}")
+    parsed = _ollama_chat_json(prompt, model=model, timeout=120)
+    if is_valid_translation(question_obj, parsed):
+        return parsed
+    return None
+
+
+def _fast_translate_text(session: Any, text: str) -> str:
+    if not text or not text.strip():
+        return text
+    # Skip translating pure numeric/symbolic strings like "1912" or "42%"
+    stripped = text.strip()
+    if re.fullmatch(r"[\d\s.,%+\-/:()]+", stripped):
+        return stripped
+    for attempt in range(3):
+        try:
+            resp = session.get(
+                "https://translate.googleapis.com/translate_a/single",
+                params={"client": "gtx", "sl": "en", "tl": "ta", "dt": "t", "q": stripped},
+                timeout=12,
+            )
+            if resp.ok:
+                data = resp.json()
+                translated = "".join(seg[0] for seg in data[0] if seg and seg[0])
+                if translated.strip():
+                    return translated.strip()
+        except Exception:
+            pass
+    return stripped
+
+
+def translate_with_fast_ta(question_obj: Dict[str, Any], session: Any) -> Optional[Dict[str, Any]]:
+    """Fast HTTP translator fallback for bulk coverage across all 401 questions."""
+    q_ta = _fast_translate_text(session, question_obj.get("question", ""))
+    opts_ta = [_fast_translate_text(session, str(opt)) for opt in question_obj.get("options", [])]
+    exp_ta = _fast_translate_text(session, question_obj.get("explanation", ""))
+    err_ta: Dict[str, str] = {}
+    for k, v in (question_obj.get("error_analysis") or {}).items():
+        if isinstance(v, str) and v.strip():
+            err_ta[str(k)] = _fast_translate_text(session, v)
+
+    candidate = {
+        "questionTa": q_ta,
+        "optionsTa": opts_ta,
+        "explanationTa": exp_ta,
+        "error_analysisTa": err_ta,
+    }
+    if is_valid_translation(question_obj, candidate):
+        return candidate
     return None
 
 
@@ -719,45 +836,111 @@ def strip_stale_placeholder_ta(q: Dict[str, Any]) -> None:
         q.pop("error_analysisTa", None)
 
 
+def _apply_translation(q: Dict[str, Any], trans: Dict[str, Any]) -> None:
+    q["questionTa"] = trans["questionTa"].strip()
+    q["optionsTa"] = [str(o).strip() for o in trans["optionsTa"]]
+    if has_tamil_script(trans.get("explanationTa")):
+        q["explanationTa"] = trans["explanationTa"].strip()
+    if isinstance(trans.get("error_analysisTa"), dict):
+        q["error_analysisTa"] = trans["error_analysisTa"]
+
+
 def enrich_questions_with_tamil(
     data: Dict[str, Any],
     limit: int,
     use_ollama: bool = False,
     use_gemini: bool = False,
-    ollama_model: str = "llama3.1"
+    use_fast_ta: bool = False,
+    ollama_model: str = "qwen3:14b",
+    checkpoint_path: Optional[str] = None
 ) -> int:
     """Enriches tnpsc_questions.json with authentic Tamil translations."""
-    count = 0
+    all_questions: List[Dict[str, Any]] = []
     for subj in data.get("subjects", []):
         for topic in subj.get("topics", []):
             for q in topic.get("questions", []):
-                qid = q.get("id")
                 strip_stale_placeholder_ta(q)
-
+                qid = q.get("id")
                 if qid in CURATED_TRANSLATIONS:
-                    trans = CURATED_TRANSLATIONS[qid]
-                    q["questionTa"] = trans["questionTa"]
-                    q["optionsTa"] = trans["optionsTa"]
-                    q["explanationTa"] = trans["explanationTa"]
-                    q["error_analysisTa"] = trans["error_analysisTa"]
+                    _apply_translation(q, CURATED_TRANSLATIONS[qid])
+                all_questions.append(q)
+
+    already_translated = [
+        q for q in all_questions if has_tamil_script(q.get("questionTa")) and isinstance(q.get("optionsTa"), list)
+    ]
+    count = len(already_translated)
+
+    if not (use_ollama or use_gemini or use_fast_ta) or count >= limit:
+        return count
+
+    pending = [
+        q for q in all_questions
+        if not (has_tamil_script(q.get("questionTa")) and isinstance(q.get("optionsTa"), list) and has_tamil_script(q.get("explanationTa")))
+    ]
+    remaining_budget = max(0, limit - count)
+    pending = pending[:remaining_budget]
+    mode_label = (
+        f"Ollama {ollama_model}" if use_ollama else ("Fast Concurrent TA" if use_fast_ta else "Gemini")
+    )
+    print(f"[*] Translating {len(pending)} pending questions using {mode_label}...", flush=True)
+
+    if use_fast_ta:
+        import requests
+        from concurrent.futures import ThreadPoolExecutor, as_completed
+
+        session = requests.Session()
+        adapter = requests.adapters.HTTPAdapter(pool_connections=16, pool_maxsize=16)
+        session.mount("https://", adapter)
+
+        with ThreadPoolExecutor(max_workers=10) as pool:
+            future_map = {pool.submit(translate_with_fast_ta, q, session): q for q in pending}
+            done_since_ckpt = 0
+            for fut in as_completed(future_map):
+                q = future_map[fut]
+                trans = fut.result()
+                if trans:
+                    _apply_translation(q, trans)
                     count += 1
-                elif count < limit and (use_ollama or use_gemini):
-                    if q.get("questionTa"):
-                        count += 1
-                        continue
-                    translated = (
-                        translate_with_ollama(q, model=ollama_model)
-                        if use_ollama
-                        else translate_with_gemini(q)
-                    )
-                    if translated:
-                        q["questionTa"] = translated["questionTa"]
-                        q["optionsTa"] = translated["optionsTa"]
-                        if translated.get("explanationTa"):
-                            q["explanationTa"] = translated["explanationTa"]
-                        if isinstance(translated.get("error_analysisTa"), dict):
-                            q["error_analysisTa"] = translated["error_analysisTa"]
-                        count += 1
+                    done_since_ckpt += 1
+                    if count % 25 == 0 or count == len(all_questions):
+                        print(f"  [OK] Translated {count}/{len(all_questions)}", flush=True)
+                else:
+                    print(f"  [SKIP] {q.get('id')} failed validation", flush=True)
+
+                if checkpoint_path and done_since_ckpt >= 40:
+                    done_since_ckpt = 0
+                    with open(checkpoint_path, "w", encoding="utf-8") as cf:
+                        json.dump(data, cf, indent=2, ensure_ascii=False)
+    elif use_ollama:
+        batch_size = 4
+        newly_done = 0
+        for idx in range(0, len(pending), batch_size):
+            batch = pending[idx:idx + batch_size]
+            batch_res = translate_batch_with_ollama(batch, model=ollama_model)
+            for q in batch:
+                qid = q.get("id")
+                trans = batch_res.get(qid)
+                if not trans:
+                    trans = translate_with_ollama(q, model=ollama_model)
+                if trans:
+                    _apply_translation(q, trans)
+                    count += 1
+                    newly_done += 1
+                    print(f"  [OK] {qid} ({count}/{len(all_questions)})", flush=True)
+                else:
+                    print(f"  [SKIP] {qid} failed validation", flush=True)
+
+            if checkpoint_path and newly_done > 0 and idx % (batch_size * 2) == 0:
+                with open(checkpoint_path, "w", encoding="utf-8") as cf:
+                    json.dump(data, cf, indent=2, ensure_ascii=False)
+    else:
+        for q in pending:
+            translated = translate_with_gemini(q)
+            if translated and is_valid_translation(q, translated):
+                _apply_translation(q, translated)
+                count += 1
+                print(f"  [OK] {q.get('id')} ({count}/{len(all_questions)})", flush=True)
+
     return count
 
 
@@ -786,8 +969,9 @@ def main():
     parser = argparse.ArgumentParser(description="TNPSC Wizard Tamil Translation Generator")
     parser.add_argument("--limit", type=int, default=25, help="Number of questions to translate")
     parser.add_argument("--ollama", action="store_true", help="Use local Ollama LLM for non-curated questions")
-    parser.add_argument("--ollama-model", type=str, default="llama3.1", help="Ollama model name")
+    parser.add_argument("--ollama-model", type=str, default="qwen3:14b", help="Ollama model name")
     parser.add_argument("--gemini", action="store_true", help="Use Gemini API (requires GEMINI_API_KEY)")
+    parser.add_argument("--fast-ta", action="store_true", help="Use fast concurrent Tamil translation for bulk coverage")
     parser.add_argument("--dry-run", action="store_true", help="Preview without writing files")
     args = parser.parse_args()
 
@@ -810,7 +994,9 @@ def main():
         args.limit,
         use_ollama=args.ollama,
         use_gemini=args.gemini,
-        ollama_model=args.ollama_model
+        use_fast_ta=args.fast_ta,
+        ollama_model=args.ollama_model,
+        checkpoint_path=None if args.dry_run else QUESTIONS_JSON_PATH,
     )
     print(f"[+] Questions enriched with authentic Tamil (Ta) fields: {q_count}")
 

@@ -1,7 +1,8 @@
-// TNPSC Quest - Browser-Native Audio Narration Utility
-// Uses the Web Speech API (window.speechSynthesis) with character voice profiles,
-// graceful fallback, and zero paid dependencies.
+// TNPSC Quest - Smart Hybrid Bilingual Audio Narration Engine
+// Combines studio-generated Tamil MP3 clips (gTTS/offline-cached) with
+// browser-native Web Speech API (ta-IN / en-IN) and zero paid cloud runtime APIs.
 
+import { getTamilClipUrl } from "../data/tamilAudioManifest";
 import { playVoiceStartChirp } from "./soundEffects";
 
 export type CharacterSpeaker = "VELAN" | "LALITHA";
@@ -18,6 +19,41 @@ export interface SpeechOptions {
   onBoundary?: (event: SpeechSynthesisEvent) => void;
 }
 
+export interface SmartSpeechParams extends SpeechOptions {
+  textEn?: string;
+  textTa?: string;
+  isTamil?: boolean;
+  preferTamil?: boolean;
+  tamilClipKey?: string;
+}
+
+let cachedVoices: SpeechSynthesisVoice[] = [];
+let voicesListenerAttached = false;
+let activeAudioEl: HTMLAudioElement | null = null;
+let currentPlaybackToken = 0;
+let activeEndNotifier: (() => void) | null = null;
+
+function ensureVoicesLoaded(): SpeechSynthesisVoice[] {
+  if (typeof window === "undefined" || !("speechSynthesis" in window)) return [];
+
+  if (!voicesListenerAttached) {
+    voicesListenerAttached = true;
+    try {
+      window.speechSynthesis.addEventListener?.("voiceschanged", () => {
+        cachedVoices = window.speechSynthesis.getVoices() || [];
+      });
+    } catch {
+      // Ignore Safari listener quirks
+    }
+  }
+
+  const fresh = window.speechSynthesis.getVoices();
+  if (fresh && fresh.length > 0) {
+    cachedVoices = fresh;
+  }
+  return cachedVoices;
+}
+
 export function isSpeechSynthesisSupported(): boolean {
   return typeof window !== "undefined" && "speechSynthesis" in window;
 }
@@ -27,40 +63,79 @@ export function isSpeechSynthesisSupported(): boolean {
  */
 function cleanTextForSpeech(text: string): string {
   return text
-    .replace(/\[|\]/g, "") // strip markdown brackets
-    .replace(/[*_#`~]/g, "") // strip markdown styling
-    // Remove common UI emojis so speech doesn't awkwardly pronounce them
+    .replace(/\[|\]/g, "")
+    .replace(/[*_#`~]/g, "")
     .replace(/[\u{1F300}-\u{1F9FF}]|[\u{2600}-\u{26FF}]|[\u{2700}-\u{27BF}]/gu, "")
+    .replace(/\s+/g, " ")
     .trim();
 }
 
+export function hasTamilScript(text?: string | null): boolean {
+  return Boolean(text && /[\u0B80-\u0BFF]/.test(text));
+}
+
 /**
- * Find the optimal voice for Tamil or Indian English based on browser voice catalogue.
+ * Find the optimal matching voice strictly for the requested language family.
+ * Avoids forcing an English voice object onto a ta-IN utterance on Android/iOS.
  */
 function pickBestVoice(targetLang: string): SpeechSynthesisVoice | null {
-  if (typeof window === "undefined" || !("speechSynthesis" in window)) return null;
-  const voices = window.speechSynthesis.getVoices();
+  const voices = ensureVoicesLoaded();
   if (!voices || voices.length === 0) return null;
 
-  // 1. Direct match for exact locale (e.g. "ta-IN")
-  const exactMatch = voices.find((v) => v.lang === targetLang);
-  if (exactMatch) return exactMatch;
+  const targetLower = targetLang.toLowerCase();
+  const langPrefix = targetLower.split("-")[0];
 
-  // 2. Language prefix match (e.g. starts with "ta")
-  const langPrefix = targetLang.split("-")[0];
-  const langMatch = voices.find((v) => v.lang.toLowerCase().startsWith(langPrefix.toLowerCase()));
-  if (langMatch) return langMatch;
+  // Filter voices matching this exact language family (e.g. "ta" or "en")
+  const familyVoices = voices.filter((v) => v.lang.toLowerCase().startsWith(langPrefix));
+  if (familyVoices.length === 0) {
+    return null;
+  }
 
-  // 3. Indian English fallback ("en-IN") for natural Indian accent pronunciation
-  const indianEn = voices.find((v) => v.lang === "en-IN");
-  if (indianEn) return indianEn;
+  // Prefer exact locale match (e.g. ta-IN / en-IN)
+  const exactMatches = familyVoices.filter((v) => v.lang.toLowerCase().replace("_", "-") === targetLower);
+  const pool = exactMatches.length > 0 ? exactMatches : familyVoices;
 
-  // 4. Default system voice
-  const defaultVoice = voices.find((v) => v.default);
-  return defaultVoice || voices[0] || null;
+  // Prefer natural/Google/Microsoft voices first
+  const preferred = pool.find((v) => /google|natural|valluvar|pallavi|microsoft|apple|siri/i.test(v.name));
+  return preferred || pool[0] || null;
+}
+
+function stopActiveAudioElement(): void {
+  if (activeAudioEl) {
+    try {
+      activeAudioEl.pause();
+      activeAudioEl.currentTime = 0;
+      activeAudioEl.src = "";
+    } catch {
+      // Ignore cleanup errors
+    }
+    activeAudioEl = null;
+  }
+}
+
+export function stopNarration(): void {
+  currentPlaybackToken += 1;
+  stopActiveAudioElement();
+
+  if (activeEndNotifier) {
+    const notify = activeEndNotifier;
+    activeEndNotifier = null;
+    notify();
+  }
+
+  if (isSpeechSynthesisSupported()) {
+    try {
+      window.speechSynthesis.cancel();
+    } catch {
+      // Ignored
+    }
+  }
 }
 
 export function speakNarration(text: string, options: SpeechOptions = {}): boolean {
+  stopNarration();
+  const token = currentPlaybackToken;
+
   if (!isSpeechSynthesisSupported()) {
     console.warn("SpeechSynthesis not supported on this browser.");
     options.onError?.(new Error("SpeechSynthesis not supported"));
@@ -68,9 +143,6 @@ export function speakNarration(text: string, options: SpeechOptions = {}): boole
   }
 
   try {
-    // Cancel any previous utterance
-    window.speechSynthesis.cancel();
-
     const cleanText = cleanTextForSpeech(text);
     if (!cleanText) {
       options.onEnd?.();
@@ -82,41 +154,45 @@ export function speakNarration(text: string, options: SpeechOptions = {}): boole
     }
 
     const utterance = new SpeechSynthesisUtterance(cleanText);
-
-    // Apply Character Persona Vocal Profiles
     const speaker = options.speaker || "VELAN";
+    const isTamilUtterance = options.lang?.toLowerCase().startsWith("ta") || hasTamilScript(cleanText);
+
     if (speaker === "VELAN") {
-      // Wise mentor parrot: slightly animated pitch with measured, clear teaching cadence
-      utterance.pitch = options.pitch ?? 1.25;
-      utterance.rate = options.rate ?? 0.95;
+      utterance.pitch = options.pitch ?? (isTamilUtterance ? 1.05 : 1.25);
+      utterance.rate = options.rate ?? (isTamilUtterance ? 0.96 : 0.95);
     } else {
-      // Lalitha: Bright, curious young student cadence
-      utterance.pitch = options.pitch ?? 1.15;
-      utterance.rate = options.rate ?? 1.05;
+      utterance.pitch = options.pitch ?? 1.12;
+      utterance.rate = options.rate ?? 1.0;
     }
 
-    // Determine target language (Tamil if script detected, else en-IN)
-    const hasTamil = /[\u0B80-\u0BFF]/.test(cleanText);
-    const targetLang = options.lang || (hasTamil ? "ta-IN" : "en-IN");
+    const targetLang = options.lang || (isTamilUtterance ? "ta-IN" : "en-IN");
     utterance.lang = targetLang;
 
-    // Pick best matching voice
     const voice = pickBestVoice(targetLang);
     if (voice) {
       utterance.voice = voice;
     }
 
-    // Event hooks
-    utterance.onstart = () => {
-      options.onStart?.();
-    };
-
-    utterance.onend = () => {
+    activeEndNotifier = () => {
       options.onEnd?.();
     };
 
+    utterance.onstart = () => {
+      if (token === currentPlaybackToken) {
+        options.onStart?.();
+      }
+    };
+
+    utterance.onend = () => {
+      if (token === currentPlaybackToken) {
+        activeEndNotifier = null;
+        options.onEnd?.();
+      }
+    };
+
     utterance.onerror = (e) => {
-      // Ignore interruption/cancel errors
+      if (token !== currentPlaybackToken) return;
+      activeEndNotifier = null;
       if (e.error !== "canceled" && e.error !== "interrupted") {
         console.warn("Speech utterance error:", e.error);
         options.onError?.(e);
@@ -133,17 +209,101 @@ export function speakNarration(text: string, options: SpeechOptions = {}): boole
     return true;
   } catch (err) {
     console.error("Audio narration playback error:", err);
+    activeEndNotifier = null;
     options.onError?.(err);
     return false;
   }
 }
 
-export function stopNarration(): void {
-  if (isSpeechSynthesisSupported()) {
-    try {
-      window.speechSynthesis.cancel();
-    } catch {
-      // Ignored
+/**
+ * Smart Hybrid Audio Playback:
+ * - In Tamil mode (or when preferTamil is true):
+ *   1) If a studio pre-rendered Tamil MP3 exists for tamilClipKey, play it cleanly via <audio>.
+ *   2) If MP3 playback fails (or no static clip exists), speak textTa in ta-IN via Web Speech API.
+ *   3) If Tamil text doesn't exist yet for an item, gracefully speak textEn in en-IN.
+ * - In English mode: speaks textEn in en-IN.
+ */
+export function speakSmartNarration(params: SmartSpeechParams): boolean {
+  const {
+    textEn = "",
+    textTa = "",
+    isTamil = false,
+    preferTamil,
+    tamilClipKey,
+    ...speechOptions
+  } = params;
+
+  const wantTamil = preferTamil !== undefined ? preferTamil : isTamil;
+  const cleanTa = textTa.trim();
+  const cleanEn = textEn.trim();
+
+  if (wantTamil) {
+    const clipUrl = getTamilClipUrl(tamilClipKey);
+    if (clipUrl && typeof window !== "undefined") {
+      stopNarration();
+      const token = currentPlaybackToken;
+
+      if (speechOptions.playChirp !== false) {
+        playVoiceStartChirp();
+      }
+
+      try {
+        const audio = new Audio(clipUrl);
+        activeAudioEl = audio;
+        activeEndNotifier = () => {
+          speechOptions.onEnd?.();
+        };
+
+        audio.onplay = () => {
+          if (token === currentPlaybackToken) {
+            speechOptions.onStart?.();
+          }
+        };
+
+        audio.onended = () => {
+          if (token === currentPlaybackToken) {
+            activeAudioEl = null;
+            activeEndNotifier = null;
+            speechOptions.onEnd?.();
+          }
+        };
+
+        audio.onerror = () => {
+          if (token !== currentPlaybackToken) return;
+          activeAudioEl = null;
+          activeEndNotifier = null;
+          const fallback = cleanTa || cleanEn;
+          speakNarration(fallback, {
+            ...speechOptions,
+            lang: hasTamilScript(fallback) ? "ta-IN" : "en-IN",
+          });
+        };
+
+        const playPromise = audio.play();
+        if (playPromise && typeof playPromise.catch === "function") {
+          playPromise.catch(() => {
+            if (token !== currentPlaybackToken) return;
+            activeAudioEl = null;
+            activeEndNotifier = null;
+            const fallback = cleanTa || cleanEn;
+            speakNarration(fallback, {
+              ...speechOptions,
+              lang: hasTamilScript(fallback) ? "ta-IN" : "en-IN",
+            });
+          });
+        }
+        return true;
+      } catch {
+        // Fallback to Web Speech below
+      }
+    }
+
+    if (cleanTa && hasTamilScript(cleanTa)) {
+      return speakNarration(cleanTa, { ...speechOptions, lang: "ta-IN" });
     }
   }
+
+  const chosen = cleanEn || cleanTa;
+  const chosenLang = hasTamilScript(chosen) ? "ta-IN" : speechOptions.lang || "en-IN";
+  return speakNarration(chosen, { ...speechOptions, lang: chosenLang });
 }
