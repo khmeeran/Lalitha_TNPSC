@@ -212,12 +212,12 @@ export const WizardOathOnboarding: React.FC = () => {
           </div>
 
           {/* Single-Sentence Dialogue */}
-          <div className="comic-speech-bubble-rpg max-w-lg mx-auto mb-6 text-left sm:text-center">
+          <div className="comic-speech-bubble-rpg max-w-lg mx-auto mb-6 text-left">
             <TranslationToggle
               englishText="Welcome, Apprentice! I am Velan. Together, we shall master the TNPSC realms!"
               tamilText="வணக்கம் இளம் வித்தைக்காரரே! நான் வேலன். ஒன்றாக இணைந்து TNPSC உலகங்களை வெல்வோம்!"
               variant="light"
-              className="font-fantasy-header-dark text-xs sm:text-sm text-[#3E1E04] leading-relaxed"
+              className="font-body font-bold text-sm sm:text-base text-[#1E053A] leading-relaxed"
             />
           </div>
 
@@ -448,12 +448,12 @@ export const WizardOathOnboarding: React.FC = () => {
           </div>
 
           {/* Single-Sentence Dialogue */}
-          <div className="comic-speech-bubble-rpg max-w-md mx-auto mb-4 text-left sm:text-center">
+          <div className="comic-speech-bubble-rpg max-w-md mx-auto mb-4 text-left">
             <TranslationToggle
               englishText="Your Oath is sealed! May wisdom guide your path to Rank 1."
               tamilText="உங்கள் உறுதிமொழி பொறிக்கப்பட்டது! முதல் தரவரிசைக்கான பாதையில் ஞானம் வழிகாட்டட்டும்."
               variant="light"
-              className="font-fantasy-header-dark text-xs sm:text-sm text-[#3E1E04] leading-relaxed"
+              className="font-body font-bold text-sm sm:text-base text-[#1E053A] leading-relaxed"
             />
           </div>
 

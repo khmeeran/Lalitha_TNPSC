@@ -108,14 +108,14 @@ export const PwaManager: React.FC = () => {
           role="complementary"
           aria-label="Application Installation"
           data-testid="pwa-install-banner"
-          className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-md p-3.5 rounded-2xl bg-gradient-to-r from-purple-950/95 via-indigo-950/95 to-slate-950/95 border-2 border-amber-400 shadow-2xl backdrop-blur-md flex items-center justify-between gap-3 animate-in fade-in slide-in-from-top-4 duration-300"
+          className="fixed top-18 right-4 z-40 w-[calc(100%-2rem)] max-w-sm p-3 rounded-2xl bg-gradient-to-r from-purple-950/95 via-indigo-950/95 to-slate-950/95 border-2 border-amber-400 shadow-2xl backdrop-blur-md flex items-center justify-between gap-2.5 animate-in fade-in slide-in-from-top-4 duration-300"
         >
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-amber-500/20 border border-amber-400 flex items-center justify-center text-xl shadow-md shrink-0">
               ⚡
             </div>
             <div>
-              <h4 className="text-xs font-black text-amber-200 uppercase tracking-wider font-fantasy-header">
+              <h4 className="text-xs font-extrabold text-amber-200 tracking-wide font-ui">
                 Install TNPSC Wizard
               </h4>
               <p className="text-[11px] text-slate-300 line-clamp-1">

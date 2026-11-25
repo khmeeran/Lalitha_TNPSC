@@ -748,14 +748,14 @@ export const TNPSCWizardGameInterface: React.FC = () => {
                 playButtonClick();
                 setFocusMode("TRIAL");
               }}
-              className={`px-2.5 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs font-fantasy-header flex items-center gap-1 transition-all ${
+              className={`px-2.5 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs font-ui font-extrabold flex items-center gap-1 transition-all ${
                 focusMode === "TRIAL"
-                  ? "bg-gradient-to-r from-[#FFD700] to-[#E6B800] text-[#1E053A] font-extrabold shadow-sm"
-                  : "text-[#FFF8DC]/70 hover:text-[#FFF8DC]"
+                  ? "bg-gradient-to-r from-[#FFD700] to-[#E6B800] !text-[#1E053A] shadow-sm"
+                  : "text-[#FFF8DC]/85 hover:text-[#FFF8DC]"
               }`}
-              title="Trial Focus Mode: Contextually dims map & secondary UI for deep concentration"
+              title="Trial Focus Mode: Highlights active trial card for deep concentration"
             >
-              <Sparkles className="w-3 h-3 text-[#6A0DAD]" />
+              <Sparkles className={`w-3 h-3 ${focusMode === "TRIAL" ? "text-[#3F0569]" : "text-[#FFD700]"}`} />
               <span>Trial Focus</span>
             </button>
             <button
@@ -763,24 +763,20 @@ export const TNPSCWizardGameInterface: React.FC = () => {
                 playButtonClick();
                 setFocusMode("MAP");
               }}
-              className={`px-2.5 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs font-fantasy-header flex items-center gap-1 transition-all ${
+              className={`px-2.5 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs font-ui font-extrabold flex items-center gap-1 transition-all ${
                 focusMode === "MAP"
-                  ? "bg-gradient-to-r from-[#2ECC71] to-[#27AE60] text-[#0F0320] font-extrabold shadow-sm"
-                  : "text-[#FFF8DC]/70 hover:text-[#FFF8DC]"
+                  ? "bg-gradient-to-r from-[#2ECC71] to-[#27AE60] !text-[#062915] shadow-sm"
+                  : "text-[#FFF8DC]/85 hover:text-[#FFF8DC]"
               }`}
               title="Atlas Map Mode: Elevates World Map and Quest Atlas into 100% focus"
             >
-              <Compass className="w-3 h-3 text-[#0F0320]" />
+              <Compass className={`w-3 h-3 ${focusMode === "MAP" ? "text-[#062915]" : "text-[#2ECC71]"}`} />
               <span>Atlas Map</span>
             </button>
           </div>
 
-          {/* Secondary HUD Stats (Auto-dimmed in Trial Focus Mode) */}
-          <div
-            className={`hidden xl:flex items-center gap-3 transition-opacity duration-500 ${
-              focusMode === "TRIAL" ? "opacity-35 hover:opacity-100" : "opacity-100"
-            }`}
-          >
+          {/* Secondary HUD Stats */}
+          <div className="hidden xl:flex items-center gap-3">
             {/* Requirement 2: Dynamic Difficulty Tag */}
             <div
               className={`px-2.5 py-0.5 rounded-full border text-[11px] font-black uppercase flex items-center gap-1 ${
@@ -825,11 +821,7 @@ export const TNPSCWizardGameInterface: React.FC = () => {
         {/* Right: Currency Pouch, Streak, & Quest Log Drawer */}
         <div className="flex items-center gap-2 sm:gap-4">
           {/* Gold Coin Pouch */}
-          <div
-            className={`px-2.5 sm:px-3 py-1 rounded-full bg-[#0F0320] border-2 border-[#FFD700] flex items-center gap-1.5 shadow-md shadow-[#FFD700]/20 transition-opacity duration-500 ${
-              focusMode === "TRIAL" ? "opacity-60 hover:opacity-100" : "opacity-100"
-            }`}
-          >
+          <div className="px-2.5 sm:px-3 py-1 rounded-full bg-[#0F0320] border-2 border-[#FFD700] flex items-center gap-1.5 shadow-md shadow-[#FFD700]/20">
             <span className="text-sm sm:text-base">🪙</span>
             <span className="font-ui font-black text-xs sm:text-sm text-[#FFD700] tabular-nums">
               {goldCoins}
@@ -837,11 +829,7 @@ export const TNPSCWizardGameInterface: React.FC = () => {
           </div>
 
           {/* Streak Flame */}
-          <div
-            className={`hidden sm:flex px-2.5 py-1 rounded-full bg-[#0F0320] border-2 border-orange-500/80 items-center gap-1.5 transition-opacity duration-500 ${
-              focusMode === "TRIAL" ? "opacity-50 hover:opacity-100" : "opacity-100"
-            }`}
-          >
+          <div className="hidden sm:flex px-2.5 py-1 rounded-full bg-[#0F0320] border-2 border-orange-500/80 items-center gap-1.5">
             <Flame className="w-3.5 h-3.5 text-orange-400 fill-orange-500 animate-bounce" />
             <span className="font-ui font-black text-[11px] text-orange-300 tabular-nums">7 Day</span>
           </div>

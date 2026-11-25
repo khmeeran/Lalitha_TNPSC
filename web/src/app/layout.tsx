@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Cinzel_Decorative, Nunito, Rajdhani, Noto_Sans_Tamil } from "next/font/google";
+import { Cinzel, Plus_Jakarta_Sans, Nunito, Noto_Sans_Tamil } from "next/font/google";
 import "./globals.css";
 import { LearningProvider } from "../context/LearningContext";
 import { LanguageProvider } from "../context/LanguageContext";
@@ -7,11 +7,18 @@ import { PwaManager } from "../components/pwa/PwaManager";
 import { FrictionReporter } from "../components/feedback/FrictionReporter";
 import { CleanSlateReset } from "../components/debug/CleanSlateReset";
 
-const cinzel = Cinzel_Decorative({
-  weight: ["400", "700"],
+const cinzel = Cinzel({
+  weight: ["600", "700"],
   subsets: ["latin"],
   display: "swap",
   variable: "--font-cinzel",
+});
+
+const jakarta = Plus_Jakarta_Sans({
+  weight: ["400", "500", "600", "700", "800"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-jakarta",
 });
 
 const nunito = Nunito({
@@ -19,13 +26,6 @@ const nunito = Nunito({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-nunito",
-});
-
-const rajdhani = Rajdhani({
-  weight: ["500", "600", "700"],
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-rajdhani",
 });
 
 const notoTamil = Noto_Sans_Tamil({
@@ -65,7 +65,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${cinzel.variable} ${nunito.variable} ${rajdhani.variable} ${notoTamil.variable} h-full`}
+      className={`${cinzel.variable} ${jakarta.variable} ${nunito.variable} ${notoTamil.variable} h-full`}
     >
       <head>
         <meta name="apple-mobile-web-app-capable" content="yes" />
