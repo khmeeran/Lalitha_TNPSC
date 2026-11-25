@@ -9,7 +9,7 @@
 
 :root {
   --font-display: var(--font-cinzel), var(--font-jakarta), Georgia, serif;
-  --font-body: var(--font-jakarta), var(--font-nunito), var(--font-tamil), system-ui, -apple-system, sans-serif;
+  --font-body: var(--font-jakarta), var(--font-tamil), system-ui, -apple-system, sans-serif;
   --font-ui: var(--font-jakarta), var(--font-tamil), system-ui, -apple-system, sans-serif;
   --background: #0F0320;
   --foreground: #FFF8DC;

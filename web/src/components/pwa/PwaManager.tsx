@@ -62,7 +62,7 @@ export const PwaManager: React.FC = () => {
       }
     }
 
-    // 5. Detect if AudioContext is blocked by Autoplay policy
+    // 5. Detect if AudioContext is blocked by Autoplay policy & auto-unlock on first tap
     const checkAudioState = () => {
       try {
         const AudioCtxClass = window.AudioContext || (window as any).webkitAudioContext;
@@ -77,8 +77,12 @@ export const PwaManager: React.FC = () => {
     };
     checkAudioState();
 
+    const unlockOnFirstTap = () => setIsAudioSuspended(false);
+    window.addEventListener("pointerdown", unlockOnFirstTap, { once: true });
+
     return () => {
       window.removeEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
+      window.removeEventListener("pointerdown", unlockOnFirstTap);
     };
   }, []);
 
@@ -102,26 +106,19 @@ export const PwaManager: React.FC = () => {
 
   return (
     <>
-      {/* 1. Install PWA Prompt Banner (If not in standalone mode and not dismissed) */}
+      {/* 1. Install PWA Prompt Banner (Compact pill, never overlaps Quill or Questions) */}
       {isInstallable && !isStandalone && !dismissedInstall && (
         <aside
           role="complementary"
           aria-label="Application Installation"
           data-testid="pwa-install-banner"
-          className="fixed top-18 right-4 z-40 w-[calc(100%-2rem)] max-w-sm p-3 rounded-2xl bg-gradient-to-r from-purple-950/95 via-indigo-950/95 to-slate-950/95 border-2 border-amber-400 shadow-2xl backdrop-blur-md flex items-center justify-between gap-2.5 animate-in fade-in slide-in-from-top-4 duration-300"
+          className="fixed bottom-3 left-3 right-18 sm:left-auto sm:right-20 sm:w-auto z-40 px-3 py-2 rounded-2xl bg-slate-950/95 border border-amber-400/80 shadow-2xl backdrop-blur-md flex items-center justify-between gap-2.5 animate-in fade-in slide-in-from-bottom-4 duration-300"
         >
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-amber-500/20 border border-amber-400 flex items-center justify-center text-xl shadow-md shrink-0">
-              ⚡
-            </div>
-            <div>
-              <h4 className="text-xs font-extrabold text-amber-200 tracking-wide font-ui">
-                Install TNPSC Wizard
-              </h4>
-              <p className="text-[11px] text-slate-300 line-clamp-1">
-                Zero friction, offline study on Lalitha&apos;s home screen
-              </p>
-            </div>
+          <div className="flex items-center gap-2 min-w-0">
+            <span className="text-base shrink-0">⚡</span>
+            <h4 className="text-xs font-bold text-amber-200 font-ui truncate">
+              Install TNPSC Wizard
+            </h4>
           </div>
 
           <div className="flex items-center gap-2 shrink-0">
@@ -174,17 +171,17 @@ export const PwaManager: React.FC = () => {
         </div>
       )}
 
-      {/* 3. Audio Autoplay Safety: "Tap to Enable Arcane Sound" Floating Pill */}
+      {/* 3. Audio Autoplay Safety: Compact non-blocking pill */}
       {isAudioSuspended && (
         <aside
           role="complementary"
           aria-label="Audio Controls"
           data-testid="audio-enable-banner"
           onClick={handleEnableAudio}
-          className="fixed bottom-20 left-4 z-40 px-3.5 py-2 rounded-full bg-slate-900/90 border border-amber-400/80 text-amber-300 text-xs font-bold shadow-xl backdrop-blur-md flex items-center gap-2 cursor-pointer hover:bg-slate-800 transition-all animate-bounce"
+          className="hidden sm:flex fixed bottom-20 left-4 z-30 px-3 py-1.5 rounded-full bg-slate-900/90 border border-amber-400/80 text-amber-300 text-xs font-bold shadow-xl backdrop-blur-md items-center gap-2 cursor-pointer hover:bg-slate-800 transition-all"
         >
           <Volume2 className="w-4 h-4 text-amber-400" />
-          <span>Tap to Enable Arcane Sound</span>
+          <span>Enable Sound</span>
         </aside>
       )}
     </>

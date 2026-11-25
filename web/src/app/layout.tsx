@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Cinzel, Plus_Jakarta_Sans, Nunito, Noto_Sans_Tamil } from "next/font/google";
+import { Cinzel, Inter, Noto_Sans_Tamil } from "next/font/google";
 import "./globals.css";
 import { LearningProvider } from "../context/LearningContext";
 import { LanguageProvider } from "../context/LanguageContext";
@@ -14,18 +14,11 @@ const cinzel = Cinzel({
   variable: "--font-cinzel",
 });
 
-const jakarta = Plus_Jakarta_Sans({
+const inter = Inter({
   weight: ["400", "500", "600", "700", "800"],
   subsets: ["latin"],
   display: "swap",
   variable: "--font-jakarta",
-});
-
-const nunito = Nunito({
-  weight: ["400", "600", "700"],
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-nunito",
 });
 
 const notoTamil = Noto_Sans_Tamil({
@@ -65,7 +58,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${cinzel.variable} ${jakarta.variable} ${nunito.variable} ${notoTamil.variable} h-full`}
+      className={`${cinzel.variable} ${inter.variable} ${notoTamil.variable} h-full`}
     >
       <head>
         <meta name="apple-mobile-web-app-capable" content="yes" />

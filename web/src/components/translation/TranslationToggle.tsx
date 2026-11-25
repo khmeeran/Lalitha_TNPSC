@@ -68,8 +68,8 @@ export const TranslationToggle: React.FC<TranslationToggleProps> = ({
           }}
           aria-label={isExpanded ? "Hide Tamil translation" : "View Tamil translation"}
           aria-expanded={isExpanded}
-          className={`shrink-0 ml-1 rounded-full font-ui font-black flex items-center gap-1 border transition-all cursor-pointer active:scale-95 shadow-sm ${
-            compact ? "px-1.5 py-0.5 text-[10px]" : "px-2 py-0.5 text-[11px]"
+          className={`shrink-0 ml-1 rounded-full font-ui font-bold whitespace-nowrap flex items-center gap-1 border transition-all cursor-pointer active:scale-95 shadow-sm ${
+            compact ? "px-2 py-0.5 text-xs" : "px-2.5 py-1 text-xs"
           } ${
             isExpanded
               ? isLight

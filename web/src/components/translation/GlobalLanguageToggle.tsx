@@ -20,7 +20,7 @@ export const GlobalLanguageToggle: React.FC<{ className?: string }> = ({ classNa
       data-testid="global-language-toggle"
       aria-label={`Language mode: currently ${isTamil ? "Tamil" : "English"}. Click to toggle language`}
       aria-pressed={isTamil}
-      className={`px-2.5 py-1 rounded-full border-2 transition-all flex items-center gap-1.5 font-ui text-[11px] font-black cursor-pointer shadow active:scale-95 ${
+      className={`px-2.5 py-1 rounded-full border-2 transition-all flex items-center gap-1.5 font-ui text-xs font-bold whitespace-nowrap shrink-0 cursor-pointer shadow active:scale-95 ${
         isTamil
           ? "bg-emerald-950/90 border-[#2ECC71] text-emerald-300 shadow-[0_0_10px_rgba(46,204,113,0.4)]"
           : "bg-[#0F0320]/90 border-[#FFD700]/70 text-[#FFD700] hover:bg-[#6A0DAD]/40"

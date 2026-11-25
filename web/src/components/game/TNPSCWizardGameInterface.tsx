@@ -720,27 +720,27 @@ export const TNPSCWizardGameInterface: React.FC = () => {
       )}
 
       {/* =========================================================================
-          TOP GAME HUD (Mana, Level, Coins, Streak & Difficulty Tier)
+          TOP GAME HUD (Responsive 2-row on Mobile, 1-row on Desktop — Zero Clipping)
           ========================================================================= */}
-      <header className="relative z-30 h-14 sm:h-16 px-3 sm:px-6 flex items-center justify-between border-b-2 border-[#FFD700]/50 bg-[#1C053A]/90 backdrop-blur-md shadow-xl">
+      <header className="relative z-30 px-3 sm:px-6 py-2 sm:py-0 sm:h-16 flex flex-wrap sm:flex-nowrap items-center justify-between gap-2 border-b-2 border-[#FFD700]/50 bg-[#1C053A]/95 backdrop-blur-md shadow-xl shrink-0">
         {/* Left: Title & Active Realm */}
-        <div className="flex items-center gap-2.5">
-          <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-[#FFD700] to-[#B8860B] p-0.5 shadow-lg shadow-[#FFD700]/20 flex items-center justify-center">
+        <div className="flex items-center gap-2.5 min-w-0">
+          <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-[#FFD700] to-[#B8860B] p-0.5 shadow-lg shadow-[#FFD700]/20 flex items-center justify-center shrink-0">
             <span className="text-xl">🧙‍♀️</span>
           </div>
-          <div>
-            <h1 className="font-fantasy-header title-gold-gradient text-sm sm:text-base leading-none">
+          <div className="min-w-0">
+            <h1 className="font-fantasy-header title-gold-gradient text-sm sm:text-base font-extrabold leading-tight truncate">
               {isTamil ? "TNPSC வித்தைக்காரர்" : "TNPSC WIZARD"}
             </h1>
-            <p className="text-[10px] sm:text-xs text-[#2ECC71] font-bold tracking-wider uppercase realm-name-smallcaps font-ui flex items-center gap-1">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#2ECC71] animate-ping" />
-              {isTamil ? (activeRealmObj?.nameTa || currentRealmName) : currentRealmName}
+            <p className="text-xs text-[#2ECC71] font-bold tracking-wide font-ui flex items-center gap-1 truncate">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#2ECC71] animate-ping shrink-0" />
+              <span className="truncate">{isTamil ? (activeRealmObj?.nameTa || currentRealmName) : currentRealmName}</span>
             </p>
           </div>
         </div>
 
         {/* Center: Cognitive Load Switcher & Secondary Potions */}
-        <div className="flex items-center gap-3">
+        <div className="order-3 sm:order-2 w-full sm:w-auto flex items-center justify-between sm:justify-center gap-2 pt-1 sm:pt-0 border-t border-white/10 sm:border-t-0">
           {/* Focus Mode Contextual Switcher Pill */}
           <div className="focus-switcher-pill p-0.5 rounded-full flex items-center gap-1 shadow-md">
             <button
@@ -748,14 +748,14 @@ export const TNPSCWizardGameInterface: React.FC = () => {
                 playButtonClick();
                 setFocusMode("TRIAL");
               }}
-              className={`px-2.5 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs font-ui font-extrabold flex items-center gap-1 transition-all ${
+              className={`px-3 py-1 rounded-full text-xs font-ui font-bold whitespace-nowrap flex items-center gap-1 transition-all ${
                 focusMode === "TRIAL"
                   ? "bg-gradient-to-r from-[#FFD700] to-[#E6B800] !text-[#1E053A] shadow-sm"
-                  : "text-[#FFF8DC]/85 hover:text-[#FFF8DC]"
+                  : "text-[#FFF8DC]/90 hover:text-[#FFF8DC]"
               }`}
               title="Trial Focus Mode: Highlights active trial card for deep concentration"
             >
-              <Sparkles className={`w-3 h-3 ${focusMode === "TRIAL" ? "text-[#3F0569]" : "text-[#FFD700]"}`} />
+              <Sparkles className={`w-3.5 h-3.5 ${focusMode === "TRIAL" ? "text-[#3F0569]" : "text-[#FFD700]"}`} />
               <span>Trial Focus</span>
             </button>
             <button
@@ -763,23 +763,33 @@ export const TNPSCWizardGameInterface: React.FC = () => {
                 playButtonClick();
                 setFocusMode("MAP");
               }}
-              className={`px-2.5 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs font-ui font-extrabold flex items-center gap-1 transition-all ${
+              className={`px-3 py-1 rounded-full text-xs font-ui font-bold whitespace-nowrap flex items-center gap-1 transition-all ${
                 focusMode === "MAP"
                   ? "bg-gradient-to-r from-[#2ECC71] to-[#27AE60] !text-[#062915] shadow-sm"
-                  : "text-[#FFF8DC]/85 hover:text-[#FFF8DC]"
+                  : "text-[#FFF8DC]/90 hover:text-[#FFF8DC]"
               }`}
               title="Atlas Map Mode: Elevates World Map and Quest Atlas into 100% focus"
             >
-              <Compass className={`w-3 h-3 ${focusMode === "MAP" ? "text-[#062915]" : "text-[#2ECC71]"}`} />
+              <Compass className={`w-3.5 h-3.5 ${focusMode === "MAP" ? "text-[#062915]" : "text-[#2ECC71]"}`} />
               <span>Atlas Map</span>
             </button>
           </div>
+
+          {/* Mobile Quick Quest Log Button (Row 2 Right on < sm) */}
+          <button
+            onClick={() => setIsMobileParchmentOpen(!isMobileParchmentOpen)}
+            className="sm:hidden magic-button magic-button-gold px-3 py-1.5 text-xs font-bold whitespace-nowrap flex items-center gap-1"
+            aria-label="Toggle Quest Log"
+          >
+            <ScrollIcon className="w-3.5 h-3.5" />
+            <span>Quest Log</span>
+          </button>
 
           {/* Secondary HUD Stats */}
           <div className="hidden xl:flex items-center gap-3">
             {/* Requirement 2: Dynamic Difficulty Tag */}
             <div
-              className={`px-2.5 py-0.5 rounded-full border text-[11px] font-black uppercase flex items-center gap-1 ${
+              className={`px-2.5 py-0.5 rounded-full border text-xs font-bold uppercase flex items-center gap-1 ${
                 currentDifficultyTier === "G1"
                   ? "bg-purple-900/60 border-purple-400 text-purple-200 shadow-[0_0_10px_rgba(156,57,238,0.5)]"
                   : currentDifficultyTier === "G2"
@@ -788,7 +798,7 @@ export const TNPSCWizardGameInterface: React.FC = () => {
               }`}
               title="Difficulty scales dynamically: Levels 1-10 (G4), 11-20 (G2), 21+ & Boss (G1)"
             >
-              <ShieldCheck className="w-3 h-3" />
+              <ShieldCheck className="w-3.5 h-3.5" />
               <span>
                 {currentDifficultyTier === "G1"
                   ? "G1 Degree"
@@ -800,38 +810,38 @@ export const TNPSCWizardGameInterface: React.FC = () => {
 
             {/* Mana Potion Bar */}
             <div className="flex items-center gap-1.5 font-ui">
-              <span className="text-[11px] font-ui font-bold text-[#2ECC71] tracking-wider">💧 MANA</span>
+              <span className="text-xs font-ui font-bold text-[#2ECC71] tracking-wide">💧 MANA</span>
               <div className="w-20 h-4 potion-glass-tube">
                 <div className="liquid-fill-emerald" style={{ width: `${mana}%` }} />
               </div>
-              <span className="text-[10px] font-ui font-black text-[#2ECC71] tabular-nums">{mana}%</span>
+              <span className="text-xs font-ui font-bold text-[#2ECC71] tabular-nums">{mana}%</span>
             </div>
 
             {/* XP Gem Bar */}
             <div className="flex items-center gap-1.5 font-ui">
-              <span className="text-[11px] font-ui font-bold text-[#FFD700] tracking-wider">✨ LVL {userLevel}</span>
+              <span className="text-xs font-ui font-bold text-[#FFD700] tracking-wide">✨ LVL {userLevel}</span>
               <div className="w-22 h-4 potion-glass-tube">
                 <div className="liquid-fill-gold" style={{ width: `${(xp % 1000) / 10}%` }} />
               </div>
-              <span className="text-[10px] font-ui font-black text-[#FFD700] tabular-nums">{xp} XP</span>
+              <span className="text-xs font-ui font-bold text-[#FFD700] tabular-nums">{xp} XP</span>
             </div>
           </div>
         </div>
 
-        {/* Right: Currency Pouch, Streak, & Quest Log Drawer */}
-        <div className="flex items-center gap-2 sm:gap-4">
+        {/* Right: Currency Pouch, Streak, Codex, Language & Tablet Quest Log */}
+        <div className="order-2 sm:order-3 flex items-center gap-1.5 sm:gap-3 shrink-0">
           {/* Gold Coin Pouch */}
-          <div className="px-2.5 sm:px-3 py-1 rounded-full bg-[#0F0320] border-2 border-[#FFD700] flex items-center gap-1.5 shadow-md shadow-[#FFD700]/20">
-            <span className="text-sm sm:text-base">🪙</span>
-            <span className="font-ui font-black text-xs sm:text-sm text-[#FFD700] tabular-nums">
+          <div className="px-2.5 py-1 rounded-full bg-[#0F0320] border-2 border-[#FFD700] flex items-center gap-1 shadow-md shadow-[#FFD700]/20">
+            <span className="text-sm">🪙</span>
+            <span className="font-ui font-extrabold text-xs sm:text-sm text-[#FFD700] tabular-nums">
               {goldCoins}
             </span>
           </div>
 
           {/* Streak Flame */}
-          <div className="hidden sm:flex px-2.5 py-1 rounded-full bg-[#0F0320] border-2 border-orange-500/80 items-center gap-1.5">
+          <div className="hidden md:flex px-2.5 py-1 rounded-full bg-[#0F0320] border-2 border-orange-500/80 items-center gap-1.5">
             <Flame className="w-3.5 h-3.5 text-orange-400 fill-orange-500 animate-bounce" />
-            <span className="font-ui font-black text-[11px] text-orange-300 tabular-nums">7 Day</span>
+            <span className="font-ui font-bold text-xs text-orange-300 tabular-nums">7 Day</span>
           </div>
 
           {/* Phase 3 Accessibility & Sensory Audio Toggle */}
@@ -848,12 +858,12 @@ export const TNPSCWizardGameInterface: React.FC = () => {
             {isAudioMuted ? (
               <>
                 <VolumeX className="w-3.5 h-3.5 text-red-400" />
-                <span className="hidden md:inline text-[10px] font-ui font-bold text-red-400">Muted</span>
+                <span className="hidden md:inline text-xs font-ui font-bold text-red-400">Muted</span>
               </>
             ) : (
               <>
                 <Volume2 className="w-3.5 h-3.5 text-[#FFD700]" />
-                <span className="hidden md:inline text-[10px] font-ui font-bold text-[#FFD700]">Sensory On</span>
+                <span className="hidden md:inline text-xs font-ui font-bold text-[#FFD700]">Audio</span>
               </>
             )}
           </button>
@@ -862,15 +872,17 @@ export const TNPSCWizardGameInterface: React.FC = () => {
           <VelanCodexButton />
           <GlobalLanguageToggle />
 
-          {/* Mobile Quest Log Toggle Button */}
-          <button
-            onClick={() => setIsMobileParchmentOpen(!isMobileParchmentOpen)}
-            className="lg:hidden magic-button magic-button-gold px-2.5 py-1 text-xs flex items-center gap-1"
-            aria-label="Toggle Quest Log"
-          >
-            <ScrollIcon className="w-3.5 h-3.5" />
-            <span>Quest Log</span>
-          </button>
+          {/* Tablet Quest Log Toggle Button (hidden on mobile <sm and desktop >=lg) */}
+          <div className="hidden sm:block lg:hidden">
+            <button
+              onClick={() => setIsMobileParchmentOpen(!isMobileParchmentOpen)}
+              className="magic-button magic-button-gold px-2.5 py-1 text-xs font-bold whitespace-nowrap flex items-center gap-1"
+              aria-label="Toggle Quest Log"
+            >
+              <ScrollIcon className="w-3.5 h-3.5" />
+              <span>Quest Log</span>
+            </button>
+          </div>
         </div>
       </header>
 
@@ -879,9 +891,9 @@ export const TNPSCWizardGameInterface: React.FC = () => {
           ========================================================================= */}
       <div className="relative flex-1 flex overflow-hidden">
         {/* =======================================================================
-            LEFT PANEL (60% Desktop, Full on Mobile): THE CINEMATIC STAGE
+            LEFT PANEL (60% Desktop, Full Scrollable on Mobile): THE CINEMATIC STAGE
             ======================================================================= */}
-        <section className="relative w-full lg:w-[60%] h-full flex flex-col justify-between overflow-hidden">
+        <section className="relative w-full lg:w-[60%] h-full flex flex-col justify-between overflow-y-auto lg:overflow-hidden pb-6 lg:pb-0">
           {/* 1. Atmospheric Temple Arches Background */}
           <div className="absolute inset-0 pointer-events-none z-0">
             <img
@@ -905,10 +917,10 @@ export const TNPSCWizardGameInterface: React.FC = () => {
           <div className="relative z-10 p-2 sm:p-4 flex flex-col items-center shrink-0">
             {/* Comic-Book Style Speech Bubble */}
             <div className="w-full max-w-xl mb-1 sm:mb-2 comic-speech-bubble-rpg flex flex-col min-h-[96px] sm:min-h-[104px]">
-              <div className="flex items-center justify-between border-b-2 border-[#200438]/20 pb-1 mb-1 shrink-0">
+              <div className="flex items-center justify-between border-b-2 border-[#200438]/20 pb-1.5 mb-1.5 shrink-0">
                 <div className="flex items-center gap-1.5">
-                  <span className="text-sm">{speaker === "VELAN" ? "🦜" : "✨"}</span>
-                  <span className="font-fantasy-header-dark text-xs text-[#3E1E04]">
+                  <span className="text-base">{speaker === "VELAN" ? "🦜" : "✨"}</span>
+                  <span className="font-fantasy-header-dark text-sm font-extrabold text-[#2E1503]">
                     {speaker === "VELAN" ? "Velan the Wise Mentor" : "Lalitha the Hero"}
                   </span>
                 </div>
@@ -916,16 +928,16 @@ export const TNPSCWizardGameInterface: React.FC = () => {
                 <button
                   onClick={handleToggleAudio}
                   aria-label={isSpeakingAudio ? "Stop Velan audio narration" : "Listen to Velan audio narration"}
-                  className="px-2 py-0.5 rounded-full bg-[#6A0DAD] text-[#FFF8DC] text-[10px] font-bold flex items-center gap-1 hover:brightness-110 active:scale-95 transition-all shadow"
+                  className="px-2.5 py-1 rounded-full bg-[#6A0DAD] text-[#FFF8DC] text-xs font-bold flex items-center gap-1 hover:brightness-110 active:scale-95 transition-all shadow"
                 >
                   {isSpeakingAudio ? (
                     <>
-                      <VolumeX className="w-3 h-3 text-[#FFD700]" />
+                      <VolumeX className="w-3.5 h-3.5 text-[#FFD700]" />
                       <span>Stop</span>
                     </>
                   ) : (
                     <>
-                      <Volume2 className="w-3 h-3 text-[#FFD700]" />
+                      <Volume2 className="w-3.5 h-3.5 text-[#FFD700]" />
                       <span>Listen</span>
                     </>
                   )}
@@ -935,7 +947,7 @@ export const TNPSCWizardGameInterface: React.FC = () => {
               {/* Dialogue Text with Typewriter & On-Demand Tamil Translation */}
               <div className="min-h-[46px] sm:min-h-[52px] flex flex-col justify-start">
                 {isTamil ? (
-                  <p className="text-base text-[#200438] leading-relaxed font-tamil font-semibold">
+                  <p className="text-base text-[#1A082E] leading-relaxed font-tamil font-semibold">
                     &ldquo;{displayedText}&rdquo;
                     {isTyping && <span className="inline-block w-1.5 h-3.5 bg-[#6A0DAD] ml-0.5 animate-pulse" />}
                   </p>
@@ -945,14 +957,14 @@ export const TNPSCWizardGameInterface: React.FC = () => {
                     tamilText={!isTyping ? dialogueTextTa : undefined}
                     variant="light"
                     compact
-                    className="text-xs sm:text-sm text-[#200438] leading-relaxed font-body font-semibold"
+                    className="text-[15px] sm:text-base text-[#1A082E] leading-relaxed font-body font-semibold"
                   />
                 )}
               </div>
             </div>
 
             {/* 3D Characters (Lalitha Hero + Velan Parrot Companion) */}
-            <div className="relative w-full max-w-md h-32 sm:h-40 flex items-end justify-center shrink-0">
+            <div className="relative w-full max-w-md h-24 sm:h-36 flex items-end justify-center shrink-0">
               {/* Velan Parrot */}
               <div
                 role="button"
@@ -979,7 +991,7 @@ export const TNPSCWizardGameInterface: React.FC = () => {
                 style={{ animationDuration: "2.8s" }}
                 title="Velan the Parrot Companion (Click or press Enter to interact!)"
               >
-                <div className="relative w-16 h-16 sm:w-20 sm:h-20 filter drop-shadow-[0_0_12px_rgba(46,204,113,0.7)]">
+                <div className="relative w-14 h-14 sm:w-20 sm:h-20 filter drop-shadow-[0_0_12px_rgba(46,204,113,0.7)]">
                   <img
                     src="/assets/velan_wizard_companion.webp"
                     alt="Velan the companion parrot"
@@ -1018,7 +1030,7 @@ export const TNPSCWizardGameInterface: React.FC = () => {
                 className="relative z-10 cursor-pointer group transition-transform hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-[#FFD700] rounded-full"
                 title="Lalitha the Hero Wizard (Click or press Enter to interact!)"
               >
-                <div className="w-32 h-32 sm:w-44 sm:h-44 filter drop-shadow-[0_0_20px_rgba(106,13,173,0.8)]">
+                <div className="w-24 h-24 sm:w-40 sm:h-40 filter drop-shadow-[0_0_20px_rgba(106,13,173,0.8)]">
                   <img
                     src="/assets/lalitha_wizard_hero.webp"
                     alt="Lalitha Hero Wizard"
@@ -1080,15 +1092,15 @@ export const TNPSCWizardGameInterface: React.FC = () => {
                 <div className="ornate-corner-gem ornate-corner-br" />
 
                 {/* Requirement 2 & 3: PYQ Provenance Badge & Difficulty Tag */}
-                <div className="flex items-center justify-between mb-1.5 flex-wrap gap-1">
-                  <div className="flex items-center gap-1.5">
-                    <span className="font-fantasy-header text-[11px] sm:text-xs text-[#FFD700] tracking-wider flex items-center gap-1">
-                      <Sparkles className="w-3.5 h-3.5 text-[#FFD700]" />
+                <div className="flex items-center justify-between mb-2.5 flex-wrap gap-1.5">
+                  <div className="flex items-center gap-1.5 flex-wrap">
+                    <span className="font-fantasy-header text-xs sm:text-sm text-[#FFD700] font-extrabold tracking-wide flex items-center gap-1">
+                      <Sparkles className="w-4 h-4 text-[#FFD700]" />
                       TRIAL #{currentQIndex + 1}
                     </span>
                     {/* PYQ Source Citation Badge */}
-                    <span className="px-2 py-0.5 rounded-md bg-[#FFD700]/15 border border-[#FFD700]/70 text-[#FFD700] text-[10px] font-ui font-black flex items-center gap-1">
-                      <ScrollIcon className="w-3 h-3" />
+                    <span className="px-2.5 py-0.5 rounded-md bg-[#FFD700]/15 border border-[#FFD700]/70 text-[#FFD700] text-xs font-ui font-bold flex items-center gap-1">
+                      <ScrollIcon className="w-3.5 h-3.5" />
                       <span>{activeQuestion.source}</span>
                     </span>
                     {/* Focus Mode Pill Status */}
@@ -1097,7 +1109,7 @@ export const TNPSCWizardGameInterface: React.FC = () => {
                         e.stopPropagation();
                         setFocusMode(focusMode === "TRIAL" ? "MAP" : "TRIAL");
                       }}
-                      className={`hidden sm:flex items-center gap-1 px-2 py-0.5 rounded-full text-[9px] font-ui font-black uppercase cursor-pointer border transition-all ${
+                      className={`hidden sm:flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-ui font-bold cursor-pointer border transition-all ${
                         focusMode === "TRIAL"
                           ? "bg-[#6A0DAD]/40 border-[#FFD700]/60 text-[#FFD700] shadow-[0_0_8px_rgba(255,215,0,0.3)]"
                           : "bg-slate-800 border-slate-600 text-slate-300"
@@ -1110,27 +1122,27 @@ export const TNPSCWizardGameInterface: React.FC = () => {
                   </div>
 
                   <div className="flex items-center gap-1.5 font-ui">
-                    <span className="px-2 py-0.5 rounded-md bg-[#6A0DAD] border border-[#FFD700]/50 text-[#FFF8DC] text-[10px] font-ui font-bold">
+                    <span className="px-2.5 py-0.5 rounded-md bg-[#6A0DAD] border border-[#FFD700]/50 text-[#FFF8DC] text-xs font-ui font-bold">
                       {activeQuestion.difficulty}
                     </span>
-                    <span className="px-2 py-0.5 rounded-full bg-[#2ECC71]/20 border border-[#2ECC71]/70 text-[#2ECC71] text-[10px] font-ui font-black tabular-nums">
+                    <span className="px-2.5 py-0.5 rounded-full bg-[#2ECC71]/20 border border-[#2ECC71]/70 text-[#2ECC71] text-xs font-ui font-bold tabular-nums">
                       +{activeQuestion.goldReward}🪙
                     </span>
                   </div>
                 </div>
 
                 {/* Question Text with On-Demand Bilingual Translation */}
-                <div className="mb-2.5">
+                <div className="mb-3">
                   <TranslationToggle
                     englishText={activeQuestion.question}
                     tamilText={activeQuestion.questionTa}
-                    className="text-xs sm:text-sm font-extrabold text-[#FFF8DC] leading-snug font-body"
+                    className="text-base sm:text-lg font-bold text-[#FFF8DC] leading-snug font-body"
                   />
                 </div>
 
                 {/* On-demand Option Translation Pill (Only in EN mode when optionsTa exists) */}
                 {!isTamil && activeQuestion.options.some((o) => Boolean(o.textTa)) && (
-                  <div className="flex justify-end mb-1.5">
+                  <div className="flex justify-end mb-2">
                     <button
                       type="button"
                       onClick={(e) => {
@@ -1139,7 +1151,7 @@ export const TNPSCWizardGameInterface: React.FC = () => {
                       }}
                       aria-expanded={showOptionsTa}
                       aria-label={showOptionsTa ? "Hide Tamil options" : "View Tamil options"}
-                      className={`px-2 py-0.5 rounded-full text-[10px] font-ui font-bold border transition-all cursor-pointer ${
+                      className={`px-2.5 py-1 rounded-full text-xs font-ui font-bold border transition-all cursor-pointer ${
                         showOptionsTa
                           ? "bg-emerald-950/90 border-emerald-400 text-emerald-300"
                           : "bg-[#200438]/80 hover:bg-[#6A0DAD]/60 border-[#FFD700]/50 text-[#FFD700]"
@@ -1151,12 +1163,12 @@ export const TNPSCWizardGameInterface: React.FC = () => {
                 )}
 
                 {/* Clickable Option Tiles */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-2.5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mb-3">
                   {activeQuestion.options.map((opt) => {
                     const isSelected = selectedOption === opt.id;
                     let borderStyle = "border-[#D1AC69]";
                     let bgStyle = "bg-[#FFFDF0]";
-                    let textStyle = "text-[#381A02]";
+                    let textStyle = "text-[#2A1200]";
 
                     if (hasAnswered) {
                       if (opt.isCorrect) {
@@ -1176,19 +1188,19 @@ export const TNPSCWizardGameInterface: React.FC = () => {
                         onClick={() => handleSelectOption(opt.id, opt.isCorrect)}
                         disabled={hasAnswered}
                         aria-label={`Option ${opt.id}: ${isTamil && opt.textTa ? opt.textTa : opt.text}`}
-                        className={`parchment-tile ${borderStyle} ${bgStyle} ${textStyle} min-h-[48px] touch-target-48 cursor-pointer active:scale-[0.98] p-2 sm:p-2.5 text-left flex items-center gap-2 text-xs font-bold transition-all`}
+                        className={`parchment-tile ${borderStyle} ${bgStyle} ${textStyle} min-h-[52px] touch-target-48 cursor-pointer active:scale-[0.98] px-3 py-2.5 text-left flex items-center gap-2.5 text-[15px] sm:text-base font-bold transition-all`}
                       >
-                        <div className="w-5 h-5 rounded-md bg-[#6A0DAD] text-[#FFD700] font-ui font-black text-[11px] flex items-center justify-center shrink-0 shadow">
+                        <div className="w-7 h-7 rounded-lg bg-[#6A0DAD] text-[#FFD700] font-ui font-extrabold text-xs flex items-center justify-center shrink-0 shadow">
                           {opt.id}
                         </div>
-                        <div className="leading-tight flex-1 flex flex-col font-body">
+                        <div className="leading-snug flex-1 flex flex-col font-body">
                           {isTamil ? (
-                            <span className="font-semibold font-tamil text-base leading-snug">
+                            <span className="font-bold font-tamil text-base leading-snug">
                               {opt.textTa || opt.text}
                             </span>
                           ) : (
                             <>
-                              <span className="font-semibold">{opt.text}</span>
+                              <span className="font-bold">{opt.text}</span>
                               <AnimatePresence initial={false}>
                                 {showOptionsTa && opt.textTa && (
                                   <motion.span
@@ -1196,7 +1208,7 @@ export const TNPSCWizardGameInterface: React.FC = () => {
                                     animate={{ opacity: 1, height: "auto" }}
                                     exit={{ opacity: 0, height: 0 }}
                                     transition={{ duration: 0.18 }}
-                                    className="overflow-hidden text-base text-emerald-800 font-tamil italic font-medium mt-0.5 block"
+                                    className="overflow-hidden text-base text-emerald-800 font-tamil italic font-semibold mt-0.5 block"
                                   >
                                     {opt.textTa}
                                   </motion.span>

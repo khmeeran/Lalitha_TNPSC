@@ -81,7 +81,7 @@ export const VelanCodexButton: React.FC<{ className?: string }> = ({ className =
         type="button"
         onClick={() => setIsOpen(true)}
         data-testid="velan-codex-btn"
-        className={`px-2.5 py-1 rounded-full bg-[#0F0320]/90 border-2 border-[#FFD700]/60 text-[#FFD700] hover:bg-[#6A0DAD]/40 transition-all flex items-center gap-1.5 font-ui text-[11px] font-black cursor-pointer shadow active:scale-95 ${className}`}
+        className={`px-2.5 py-1 rounded-full bg-[#0F0320]/90 border-2 border-[#FFD700]/60 text-[#FFD700] hover:bg-[#6A0DAD]/40 transition-all flex items-center gap-1.5 font-ui text-xs font-bold whitespace-nowrap shrink-0 cursor-pointer shadow active:scale-95 ${className}`}
         title="Open Velan's Codex (Bilingual User Manual)"
         aria-label="Open Velan's Codex User Manual"
       >

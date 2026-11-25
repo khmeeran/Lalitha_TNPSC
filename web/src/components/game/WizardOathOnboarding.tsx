@@ -267,7 +267,7 @@ export const WizardOathOnboarding: React.FC = () => {
               <TranslationToggle
                 englishText="What sacred river nourished the Imperial Chola capital at Thanjavur?"
                 tamilText="தஞ்சாவூரில் இருந்த சோழப் பேரரசின் தலைநகரை வளமாக்கிய புனித நதி எது?"
-                className="font-extrabold text-xs sm:text-sm text-[#FFF8DC] leading-snug"
+                className="font-bold text-base sm:text-lg text-[#FFF8DC] leading-snug"
               />
             </div>
 
@@ -277,18 +277,18 @@ export const WizardOathOnboarding: React.FC = () => {
               <button
                 onClick={handleStep2ClickOptionA}
                 data-testid="option-a-btn"
-                className={`p-2.5 rounded-xl text-left flex items-center gap-2 transition-all cursor-pointer ${
+                className={`p-3 rounded-xl text-left flex items-center gap-2.5 transition-all cursor-pointer ${
                   hasAnsweredMock
                     ? "bg-[#D1F2D9] border-2 border-[#2ECC71] text-[#0E5E30] ring-4 ring-[#2ECC71]/40"
-                    : "bg-[#FFFDF0] border-2 border-[#FFD700] text-[#381A02] pulsing-action-target"
+                    : "bg-[#FFFDF0] border-2 border-[#FFD700] text-[#2A1200] pulsing-action-target"
                 }`}
               >
-                <div className="w-6 h-6 rounded-md bg-[#6A0DAD] text-[#FFD700] font-fantasy-header text-xs flex items-center justify-center shrink-0 shadow">
+                <div className="w-7 h-7 rounded-md bg-[#6A0DAD] text-[#FFD700] font-ui font-extrabold text-xs flex items-center justify-center shrink-0 shadow">
                   A
                 </div>
                 <div className="flex-1">
-                  <span className="text-xs font-black block">River Cauvery (Ponni)</span>
-                  <span className="text-[9px] text-[#2ECC71] font-bold">
+                  <span className="text-[15px] font-bold block">River Cauvery (Ponni)</span>
+                  <span className="text-xs text-[#1E8449] font-bold">
                     {hasAnsweredMock ? "✓ Spell Cast! +10 XP" : "👈 Tap to Cast Spell!"}
                   </span>
                 </div>
@@ -297,34 +297,34 @@ export const WizardOathOnboarding: React.FC = () => {
               {/* Option B (Dimmed) */}
               <button
                 disabled
-                className="p-2.5 rounded-xl bg-slate-800/40 border border-slate-700 text-slate-500 text-left flex items-center gap-2 opacity-35 cursor-not-allowed"
+                className="p-3 rounded-xl bg-slate-800/40 border border-slate-700 text-slate-400 text-left flex items-center gap-2.5 opacity-45 cursor-not-allowed"
               >
-                <div className="w-6 h-6 rounded-md bg-slate-700 text-slate-400 font-fantasy-header text-xs flex items-center justify-center shrink-0">
+                <div className="w-7 h-7 rounded-md bg-slate-700 text-slate-300 font-ui font-bold text-xs flex items-center justify-center shrink-0">
                   B
                 </div>
-                <span className="text-xs font-medium">River Vaigai</span>
+                <span className="text-[15px] font-semibold">River Vaigai</span>
               </button>
 
               {/* Option C (Dimmed) */}
               <button
                 disabled
-                className="p-2.5 rounded-xl bg-slate-800/40 border border-slate-700 text-slate-500 text-left flex items-center gap-2 opacity-35 cursor-not-allowed"
+                className="p-3 rounded-xl bg-slate-800/40 border border-slate-700 text-slate-400 text-left flex items-center gap-2.5 opacity-45 cursor-not-allowed"
               >
-                <div className="w-6 h-6 rounded-md bg-slate-700 text-slate-400 font-fantasy-header text-xs flex items-center justify-center shrink-0">
+                <div className="w-7 h-7 rounded-md bg-slate-700 text-slate-300 font-ui font-bold text-xs flex items-center justify-center shrink-0">
                   C
                 </div>
-                <span className="text-xs font-medium">River Palar</span>
+                <span className="text-[15px] font-semibold">River Palar</span>
               </button>
 
               {/* Option D (Dimmed) */}
               <button
                 disabled
-                className="p-2.5 rounded-xl bg-slate-800/40 border border-slate-700 text-slate-500 text-left flex items-center gap-2 opacity-35 cursor-not-allowed"
+                className="p-3 rounded-xl bg-slate-800/40 border border-slate-700 text-slate-400 text-left flex items-center gap-2.5 opacity-45 cursor-not-allowed"
               >
-                <div className="w-6 h-6 rounded-md bg-slate-700 text-slate-400 font-fantasy-header text-xs flex items-center justify-center shrink-0">
+                <div className="w-7 h-7 rounded-md bg-slate-700 text-slate-300 font-ui font-bold text-xs flex items-center justify-center shrink-0">
                   D
                 </div>
-                <span className="text-xs font-medium">River Thamirabarani</span>
+                <span className="text-[15px] font-semibold">River Thamirabarani</span>
               </button>
             </div>
           </div>
